@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+$font-stack:'Roboto', sans-serif;
+$backgroud:#1b1b29;
+$font-color:white;
+$font-weight:400;
+$font-weight-hard:800;
+$font-transparency:rgba(232, 229, 229, 0.63);
+$font-size:10px;
+
+@mixin flex($dis,$direction,$just,$alig) {
+  display: $dis;
+  flex-direction: $direction;
+  justify-content: $just;
+  align-items: $alig;
+}
+
+@mixin size($wid,$hei) {
+  width: $wid;
+  height: $hei;
+}
+
+@mixin margin($mar,$pad){
+  margin:$mar;
+  padding: $pad;
+}
+
+.cardFooter{
+  @include flex(flex,column,center,center);
+  font-size: $font-size;
+  position: relative;
+  top: 35rem;
+  padding: 20px;
+  font-family: $font-stack;
+  background-color: $backgroud;
+  color: $font-color;
+  width: 100%;
+}
+
+.cardFooter__brand{
+  @include flex(flex,column,none,flex-start);
+  @include size(100%,none);
+  @include margin(0,10px );
+}
+
+.cardFooter__containerImage{
+  display: flex;
+}
+
+.cardFooter__image{
+  @include size(10px,10px);
+  padding-top: 20px;
+}
+
+.cardFooter__brandName{
+  padding-top: 3px;
+
+}
+
+.cardFooter__text{
+  @include size(138px,none);
+  text-align: start;
+  font-weight: $font-weight;
+  color:$font-transparency
+}
+
+.cardFooter__update{
+  @include flex(flex,column,none,none);
+}
+
+.cardFooter__email{
+  font-weight: $font-weight;
+  color:$font-transparency
+}
+
+.cardFooter__titlebrand{
+  text-align: start;
+}
+
+.cardFooter__inputButton{
+  @include flex(flex,row,none,none);
+  @include size(50%,none);
+}
+
+.cardFooter__username{
+  @include size(105px,9px);
+  background-color:#18182e;
+  border-style: solid;
+  border-color: #18182e;
+}
+
+.cardFooter__subscribe{
+  @include size(260px,14px);
+  font-size: 8px;
+  text-align: center;
+  background-color: #2d2d4a;
+  border:none;
+  border-radius: 2px;
+  font-weight: $font-weight;
+  color:$font-color;
+}
+
+.cardFooter__Nuron{
+  @include flex(flex,column,flex-start,flex-start);
+  @include size(100%,none);
+  line-height: 1px;
+  align-content: flex-start;
+}
+
+.cardFooter__explore{
+  color:$font-transparency;
+}
+
+.cardFooter__token{
+  color:$font-transparency;
+}
+
+.cardFooter__time{
+  color:$font-transparency;
+}
+
+.cardFooter__checking{
+  color:$font-transparency;
+}
+
+.cardFooter__system{
+  color:$font-transparency;
+}
+
+.cardFooter__log{
+  color:$font-transparency;
+}
+
+.cardFooter__autoSince{
+  color:$font-transparency;
+}
+
+.cardFooter__information{
+  @include flex(flex,column,flex-start,flex-start);
+  @include size(100%,none);
+  @include margin(none,5px );
+  line-height: 1px;
+  align-content: flex-start;
+}
+
+.cardFooter__market{
+  color:$font-transparency;
+}
+
+.cardFooter__readytoken{
+  color:$font-transparency;
+}
+
+.cardFooter__option{
+  color:$font-transparency;
+}
+
+.cardFooter__product{
+  color:$font-transparency;
+}
+
+.cardFooter__grid{
+  color:$font-transparency;
+}
+
+.cardFooter__about{
+  color:$font-transparency;
+}
+
+.cardFooter__bug{
+  color:$font-transparency;
+}
+
+.cardFooter__soldout{
+    @include flex(flex,column,flex-start,flex-start);
+    @include size(100%,none);
+    align-content: flex-start;
+    line-height: 1px;
+}
+
+.cardFooter__product1{
+  display: flex;
+  flex-direction: column;
+}
+
+.cardFooter__image1{
+  width: 10px;
+  border-radius: 26px;
+  display: flex;
+  justify-content: flex-start;
+  height: 10px;
+  top: 5px;
+}
+
+.cardFooter__nameNFT{
+  @include margin(0,0 );
+  padding-bottom: 13px;
+}
+
+.cardFooter__characteristic{
+  color:$font-transparency;
+  @include margin(0,0);
+  line-height: 10px;
+}
+
+.cardFooter__price{
+  @include margin(0,8px);
+  color:rgb(6, 145, 220);
+  $font-weight:$font-weight-hard;
+}
+
+.cardFooter__lastfooter{
+  font-size: 4px;
+  padding-top: 30px;
+}
+.cardFooter__facebook{
+  width: 10px;
+}
+
+$breakpoint-tablet: 1200px;
+@media (min-width: $breakpoint-tablet) {
+  .cardFooter{
+    @include flex(flex,row,center,center);
+    font-size: 16px;
+  }
+
+  .cardFooter__image{
+    width: 25px;
+    height: 25px;
+    padding-top: 20px;
+  }
+
+  .cardFooter__text{
+    width: 82%;;
+  }
+
+  .cardFooter__titlebrand{
+    font-size: 16px;
+  }
+
+  .cardFooter__username{
+    width: 133px;
+    height: 22px;
+  }
+
+  .cardFooter__subscribe{
+    width: 318px;
+    height: 26px;
+    font-size: 10px;
+  }
+
+  .cardFooter__soldout{
+    line-height: 6px;
+  }
+
+  .cardFooter__image1{
+    width: 26px;
+    height: 26px;
+  }
+
+  .cardFooter__lastfooter{
+    display: flex;
+    flex-direction: column;
+    background-color: $backgroud;
+    color:$font-transparency;
+    font-family: $font-stack;
+    position: relative;
+    width: 100%;
+    font-weight: $font-weight;
+    font-size: $font-size;
+  }
+}
