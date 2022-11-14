@@ -1,23 +1,12 @@
-import logo from './logo.svg';
-import './scss/_global.scss';
-// import './index.scss';
+import './App.css';
+import NftCard from './components/NftCard';
 
 const App = () => (
-  <div className="App">
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>
-        Edit <code>src/App.js</code> and save to reload.
-      </p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
-    </header>
+  <div>
+    {/* <TopCollection imageSell={tree} imageProfile={profile} /> */}
+    {/* <Footer image={happy} name="picture" characteristic="Highest bid 1/20" price={30} /> */}
+    {/* <TopSeller imageTop={flower} textTop="TrodBrand" priceTop="$400" /> */}
+    <NftCard bit="5+" name="NameStroam" bid="1/20" price="0.244" likes="532" />
   </div>
 );
 
