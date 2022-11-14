@@ -1,0 +1,66 @@
+@import '../../scss/global.scss';
+
+.createnft-form {
+  margin: 0;
+  padding: 0;
+  color: white;
+
+  .createnft-form__img-uploadfile {
+    width: 300px;
+    border: 1.5px solid grey;
+    border-style: dashed;
+    border-radius: 4px;
+  }
+
+  .createnft-form__product {
+    display: flex;
+    flex-direction: column;
+    background-color: $main-background;
+    border: 1.7px solid $border-color-components;
+    border-radius: 7px;
+
+    &-name, &-description, &-price, &-size, &-propertie, &-royality {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      margin: 10px 30px;
+    }
+
+    label {
+      color: $text-silver;
+      font-size: 14px;
+      line-height: 30px;
+    }
+
+    input {
+      background-color: $background-color-input;
+      color: $text-silver;
+      border-radius: 5px;
+      border: 2px solid $border-color-components;
+      width: 275px;
+      height: 30px;
+    }
+  }
+
+  &__checklist {
+      display: flex;
+      flex-direction: column;
+      margin: 10px 30px;
+
+    .createnft-form__checklist-sale,
+    .createnft-form__checklist-saleprice,
+    .createnft-form__checklist-unlock {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-size: 12px;
+      color: $text-silver;
+
+      .checkbox {
+        width: 14px;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
