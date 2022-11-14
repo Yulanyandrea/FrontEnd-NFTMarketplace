@@ -18,6 +18,7 @@ module.exports = {
     'react',
   ],
   rules: {
+    'arrow-body-style': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/jsx-one-expression-per-line': 'off',
     'react/function-component-definition': [
