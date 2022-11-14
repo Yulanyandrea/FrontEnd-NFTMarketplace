@@ -1,11 +1,4 @@
 import './App.css';
-// import Footer from './components/footer/Footer';
-// import TopCollection from './components/TopCollection/TopCollection';
-// import happy from './components/footer/images/happy.jpg';
-// import tree from './components/TopCollection/images/tree.jpg';
-// import profile from './components/TopCollection/images/profile.png';
-import TopSeller from './components/TopSeller/TopSeller';
-import flower from './components/TopSeller/images/flower.jpg';
 
 const App = () => (
   <div className="App">

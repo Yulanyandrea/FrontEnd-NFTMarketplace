@@ -1,0 +1,118 @@
+@import '../../../scss/color.scss';
+
+.login-form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.login-form-first, .login-form-second {
+  margin: 20px 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  background-color: $main-background;
+  color: $text-silver;
+  width: 350px;
+  height: 400px;
+  padding: 40px 0;
+  border: 1.7px solid $border-color-components;
+  border-radius: 7px;
+  justify-content: space-around;
+}
+
+h2 {
+  color: white;
+  margin: 0;
+}
+
+.login-from-checkbox {
+  font-size: 13px;
+}
+
+
+h4 {
+  width: 250px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.login-from-email, .login-from-password {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+
+  input {
+    background-color: $background-color-input;
+    color: $text-silver;
+    border-radius: 5px;
+    border: 2px solid $border-color-components;
+    width: 275px;
+    height: 50px;
+  }
+}
+
+button {
+  padding: 0;
+  color: #FFFFFF;
+  background-color: #212E48;
+  border-radius: 10px;
+  border-style: none;
+  width: 90px;
+  height: 47px;
+  margin-right: 20px;
+  font-size: 16px;
+}
+
+.login-form-button-login {
+  background-color: #00A3FF;
+}
+
+.login-from-second-redsocials {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 290px;
+  height: 250px;
+
+  button {
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid $border-color-components;
+    background-color: $background-color-input;
+    text-align: left;
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 30px;
+      margin: 10px 15px;
+    }
+  }
+}
+
+
+@media (min-width: 1440px) {
+
+  .login-form-first, .login-form-second {
+    margin: 20px;
+    width: 450px;
+  }
+
+  .login-from-email, .login-from-password {
+
+    input {
+      width: 360px;
+    }
+  }
+
+  .login-from-second-redsocials {
+    width: 360px;
+  }
+
+}

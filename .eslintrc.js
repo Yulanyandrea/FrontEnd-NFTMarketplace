@@ -21,6 +21,9 @@ module.exports = {
     'arrow-body-style': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/jsx-one-expression-per-line': 'off',
+    'jsx-a11y/label-has-associated-control': [2, {
+      labelAttributes: ['label'],
+    }],
     'react/function-component-definition': [
       'error',
       {
