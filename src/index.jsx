@@ -6,6 +6,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import LoginForm from './components/Auth/loginForm';
 import RegisterForm from './components/Auth/RegisterForm';
+import CreateNFT from './components/CreateNft';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: '/register',
     element: <RegisterForm />,
+  },
+  {
+    path: '/createnft',
+    element: <CreateNFT />,
   },
 ]);
 
