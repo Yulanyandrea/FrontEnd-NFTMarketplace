@@ -1,11 +1,12 @@
 import './style.scss';
+import PropTypes from 'prop-types';
 
 const TopCollection = (props) => {
   const {
-    // eslint-disable-next-line react/prop-types
     imageSell,
-    // eslint-disable-next-line react/prop-types
     imageProfile,
+    name,
+    items,
   } = props;
   return (
     <div className="cardTopCollection">
@@ -18,11 +19,18 @@ const TopCollection = (props) => {
       </div>
 
       <div className="cardTopCollection__footerText">
-        <p className="cardTopCollection__nameImage">Cubic Trad</p>
-        <button type="submit" className="cardTopCollection__items"> 27 Items</button>
+        <p className="cardTopCollection__nameImage">{name}</p>
+        <button type="submit" className="cardTopCollection__items">{items}items</button>
       </div>
 
     </div>
   );
+};
+
+TopCollection.propTypes = {
+  imageSell: PropTypes.string.isRequired,
+  imageProfile: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  items: PropTypes.number.isRequired,
 };
 export default TopCollection;

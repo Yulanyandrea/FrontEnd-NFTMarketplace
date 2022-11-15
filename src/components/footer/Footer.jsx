@@ -1,12 +1,11 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/destructuring-assignment */
 import './style.scss';
+import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faFacebookF, faTwitter, faInstagram, faLinkedin,
+} from '@fortawesome/free-brands-svg-icons';
+import { faMessage } from '@fortawesome/free-solid-svg-icons';
 import logo from './images/logo.jpg';
-import facebook from './images/facebook.jpg';
-import twiter from './images/twiter.jpg';
-import instagram from './images/instagram.jpg';
-import social from './images/social.jpg';
-import message from './images/message.jpg';
 
 const Footer = (props) => {
   const {
@@ -82,16 +81,23 @@ const Footer = (props) => {
         <p className="cardFooter__inc">@2022 Nuron, Inc. All rights reserved.</p>
         <p className="cardFooter__policy">Terms . Privacy Policy</p>
         <div className="cardFooter__socialMedia">
-          <img src={facebook} alt="facebook" className="cardFooter__facebook" />
-          <img src={twiter} alt="twiter" className="cardFooter__facebook" />
-          <img src={instagram} alt="instagram" className="cardFooter__facebook" />
-          <img src={social} alt="social" className="cardFooter__facebook" />
-          <img src={message} alt="message" className="cardFooter__facebook" />
+          <FontAwesomeIcon icon={faFacebookF} style={{ color: 'white' }} className="cardFooter__facebook" />
+          <FontAwesomeIcon icon={faTwitter} style={{ color: 'white' }} className="cardFooter__facebook" />
+          <FontAwesomeIcon icon={faInstagram} style={{ color: 'white' }} className="cardFooter__facebook" />
+          <FontAwesomeIcon icon={faLinkedin} style={{ color: 'white' }} className="cardFooter__facebook" />
+          <FontAwesomeIcon icon={faMessage} style={{ color: 'white' }} className="cardFooter__facebook" />
         </div>
       </section>
 
     </div>
   );
+};
+
+Footer.propTypes = {
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  characteristic: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
 };
 
 export default Footer;
