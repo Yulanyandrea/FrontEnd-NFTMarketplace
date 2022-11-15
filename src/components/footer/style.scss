@@ -1,4 +1,3 @@
-// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 @import '../../scss/global.scss';
 $font-stack:'Roboto', sans-serif;
 $backgroud:#1b1b29;
@@ -28,7 +27,6 @@ $font-size:10px;
 *{
   margin: 0;
 }
-
 .cardFooter{
   @include flex(flex,column,center,center);
   font-size: $font-size;
@@ -146,7 +144,6 @@ $font-size:10px;
   @include size(100%,none);
   @include margin(none,5px );
   line-height: 22px;
-  align-content: flex-start;
 }
 
 .cardFooter__market{
@@ -183,6 +180,7 @@ $font-size:10px;
     align-content: flex-start;
     line-height: 14px;
 }
+
 
 .cardFooter__product1{
   display: flex;
@@ -264,7 +262,6 @@ $breakpoint-tablet: 1200px;
     height: 26px;
     font-size: 10px;
   }
-
   .cardFooter__Nuron{
     line-height: 30px;
   }
@@ -272,6 +269,7 @@ $breakpoint-tablet: 1200px;
   .cardFooter__information{
     line-height: 31px;
   }
+
   .cardFooter__soldout{
     line-height: 6px;
     padding: 27px;
@@ -306,5 +304,6 @@ $breakpoint-tablet: 1200px;
 
   .cardFooter__facebook{
     padding: 4px;
+
   }
 }

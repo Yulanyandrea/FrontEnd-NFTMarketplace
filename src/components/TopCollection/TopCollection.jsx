@@ -21,6 +21,7 @@ const TopCollection = (props) => {
       <div className="cardTopCollection__footerText">
         <p className="cardTopCollection__nameImage">{name}</p>
         <button type="submit" className="cardTopCollection__items">{items}items</button>
+
       </div>
 
     </div>
@@ -33,4 +34,5 @@ TopCollection.propTypes = {
   name: PropTypes.string.isRequired,
   items: PropTypes.number.isRequired,
 };
+
 export default TopCollection;

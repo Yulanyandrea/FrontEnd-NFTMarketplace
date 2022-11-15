@@ -21,7 +21,6 @@ const Footer = (props) => {
         <p className="cardFooter__text">Created with the collaboration of over
           60 of the world`s best Nuron Artist
         </p>
-
         <div className="cardFooter__update">
           <h2 className="cardFooter__titlebrand">Get the Latest Nuron Updates</h2>
           <div className="cardFooter__inputButton">
@@ -86,6 +85,7 @@ const Footer = (props) => {
           <FontAwesomeIcon icon={faInstagram} style={{ color: 'white' }} className="cardFooter__facebook" />
           <FontAwesomeIcon icon={faLinkedin} style={{ color: 'white' }} className="cardFooter__facebook" />
           <FontAwesomeIcon icon={faMessage} style={{ color: 'white' }} className="cardFooter__facebook" />
+
         </div>
       </section>
 
