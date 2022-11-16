@@ -1,4 +1,4 @@
-import './App.scss';
+import './App.css';
 import CreateNFT from './components/CreateNft';
 
 const App = () => (
