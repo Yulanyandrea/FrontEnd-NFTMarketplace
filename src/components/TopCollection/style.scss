@@ -1,0 +1,123 @@
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import '../../scss/global.scss';
+
+$font-stack:'Roboto', sans-serif;
+$backgroud:#1b1b29;
+$font-color:white;
+$font-weight:400;
+$font-weight-hard:800;
+$font-transparency:rgba(232, 229, 229, 0.63);
+$font-size:10px;
+
+@mixin size($wid,$hei,$pad,$marg) {
+  width: $wid;
+  height: $hei;
+  padding: $pad;
+  margin: $marg;
+}
+
+@mixin flex($dis,$flex,$just){
+  display: $dis;
+  flex-direction: $flex;
+  justify-content: $just;
+}
+
+@mixin borders($boR,$borS,$borC){
+  border-radius: $boR;
+  border-style: $borS;
+  border-color: $borC;
+}
+
+*{
+  box-sizing: border-box;
+  @include size(none,none,0,0);
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include size(none,none,10%,0);
+  @include flex (flex,none,center);
+}
+
+.cardTopCollection{
+  border-radius: 11px;
+  max-width: 90%;
+  justify-content: center;
+  padding: 19px;
+  padding-bottom: 5px;
+  background-color: $backgroud;
+  font-family: $font-stack;
+  @include flex(flex,column,center);
+  margin: auto;
+}
+
+.cardTopCollection__image{
+  align-items: center;
+  width: 100%;
+  border-radius: 5px;
+  @include flex(flex,none,center);
+}
+
+.cardTopCollection__imageProfile{
+  width: 9%;
+  position: absolute;
+  left: 46%;
+  top: 22%;
+  @include borders(68px,solid ,#474765 );
+}
+
+.cardTopCollection__smallImage{
+  @include flex(flex,none,flex-start);
+  padding-top: 5px;
+}
+
+.cardTopCollection__imageOne{
+  @include size(34%,none,2px,0);
+  border-radius: 5px;
+}
+
+.cardTopCollection__imageTwo{
+  @include size(34%,none,2px,0);
+  border-radius: 5px;
+}
+
+.cardTopCollection__imageThree{
+  @include size(33%,none,2px,0);
+  border-radius: 5px;
+}
+
+.cardTopCollection__footerText{
+  @include size(100%,none,none,0);
+  @include flex(flex,none,space-between);
+  font-size: $font-size;
+  color: $font-color;
+  padding-top: 8px;
+}
+
+.cardTopCollection__nameImage{
+  font-size: 15px;
+}
+
+.cardTopCollection__items{
+  background-color:#474765;
+  border: none;
+  color: $font-color;
+  font-size: 12px;
+  padding: 5px;
+}
+
+$breakpoint-tablet: 1200px;
+@media(min-width:$breakpoint-tablet){
+  .cardTopCollection{
+    padding: 51px;
+  }
+
+  .cardTopCollection__imageProfile{
+    width: 10%;
+    left: 45%;
+    top: 53%;
+  }
+
+}
