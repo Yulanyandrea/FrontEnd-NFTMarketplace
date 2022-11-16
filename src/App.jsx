@@ -1,21 +1,13 @@
-import './App.css';
-
-// import Footer from './components/Footer/Footer';
-// import happy from './components/Footer/images/happy.jpg';
-// import TopCollection from './components/TopCollection/TopCollection';
-// import tree from './components/TopCollection/images/tree.jpg';
-// import profile from './components/TopCollection/images/profile.png';
-// import TopSeller from './components/TopSeller/TopSeller';
-// import flower from './components/TopSeller/images/flower.jpg';
+import './App.scss';
+import CreateNFT from './components/CreateNft';
 
 const App = () => (
   <div className="App">
-    {/* <TopCollection imageSell={tree} imageProfile={profile} name="Cubic" items={27} /> */}
+    <CreateNFT />
+    {/* <TopCollection imageSell={tree} imageProfile={profile} /> */}
     {/* <Footer image={happy} name="picture" characteristic="Highest bid 1/20" price={30} /> */}
     {/* <TopSeller imageTop={flower} textTop="TrodBrand" priceTop="$400" /> */}
-    {/* <NftCard bit="5+" name="NameStroam" bid="1/20" price="0.244" likes="532" />  */}
-    {/* <Navbar /> */}
-
+    {/* <NftCard bit="5+" name="NameStroam" bid="1/20" price="0.244" likes="532" /> */}
   </div>
 );
 
