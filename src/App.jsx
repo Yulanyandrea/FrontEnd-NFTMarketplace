@@ -1,8 +1,11 @@
 import './App.css';
 import CreateNFT from './components/CreateNft';
+// import Footer from './components/Footer/index';
+// import Navbar from './components/Navbar/index';
 
 const App = () => (
   <div className="App">
+    {/* <Navbar /> */}
     <CreateNFT />
     {/* <TopCollection imageSell={tree} imageProfile={profile} /> */}
     {/* <Footer image={happy} name="picture" characteristic="Highest bid 1/20" price={30} /> */}
