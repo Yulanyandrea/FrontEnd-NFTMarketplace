@@ -7,7 +7,6 @@ import {
 import { faMessage } from '@fortawesome/free-solid-svg-icons';
 import logo from '../../assets/logo.png';
 
-
 const Footer = (props) => {
   const {
     image, name, characteristic, price,
