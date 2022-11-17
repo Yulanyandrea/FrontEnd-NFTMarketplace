@@ -4,11 +4,11 @@
 .navbar {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 20px;
+  margin-bottom: 15px;
 
   .navbar__logo {
-    height: 50px;
+    height: 40px;
+    margin: 10px;
   }
 
   .menu {
@@ -20,7 +20,8 @@
   }
 
   .menu__link {
-    color: $main-cards;
+    color: $text-silver;
+    font-weight: 500;
     text-decoration: none;
   }
 
@@ -36,20 +37,23 @@
 
   .menu__button {
     background-color: $main-background;
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     border: solid $text-silver;
     border-radius: 30px;
     border-width: 1px;
-    margin: 5px;
+    margin: 0px 3px 0px 3px;
   }
 
   .menu__button--color {
     width: max-content;
+    height: 40px;
     padding: 10px;
-    margin: 0;
+    margin: 0px 3px 0px 3px;
     color: $main-cards;
     font-weight: 700;
+    font-size: 14px;
+    border-radius: 7px;
   }
 }
 
@@ -58,36 +62,61 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    padding: 20px 70px 20px 70px;
+    gap: 10px;
+
+    .navbar__logo {
+      height: 30px;
+      margin: 0;
+    }
 
     .menu {
-      display: inline-flex;
+      display: inline;
     }
 
     .menu__list {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
       align-items: center;
-      gap: 20px;
+      gap: 25px;
+      height: 30px;
     }
 
     .menu__item{
-      font-size: 20px;
+      font-size: 15px;
+    }
+
+    .menu__form {
+      display: flex;
+      border: solid $text-silver;
+      border-radius: 7px;
+      border-width: 1px;
+      height: 40px;
+      align-items: center;
+      margin: 0px 3px 0px 3px;
     }
 
     .menu__input {
       display: inline-block;
+      border: none;
+      height: 30px;
+      background-color: $main-background;
     }
 
-      .buttons__container {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-      }
-
-      .button__bars {
-        display: none;
-      }
+    .button__search {
+      border: none;
+      height: 30px;
     }
+
+    .buttons__container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .button__bars {
+      display: none;
+    }
+  }
 }
 
