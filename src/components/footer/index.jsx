@@ -5,7 +5,7 @@ import {
   faFacebookF, faTwitter, faInstagram, faLinkedin,
 } from '@fortawesome/free-brands-svg-icons';
 import { faMessage } from '@fortawesome/free-solid-svg-icons';
-import logo from './images/logo.jpg';
+import logo from '../../assets/logo.png';
 
 const Footer = (props) => {
   const {
@@ -16,7 +16,7 @@ const Footer = (props) => {
       <section className="cardFooter__brand">
         <div className="cardFooter__containerImage">
           <img src={logo} alt="image_logo" className="cardFooter__image" />
-          <h2 className="cardFooter__brandName">nuron</h2>
+          {/* <h2 className="cardFooter__brandName">nuron</h2> */}
         </div>
         <p className="cardFooter__text">Created with the collaboration of over
           60 of the world`s best Nuron Artist
