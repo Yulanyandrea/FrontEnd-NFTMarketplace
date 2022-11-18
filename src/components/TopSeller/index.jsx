@@ -1,7 +1,7 @@
 import './style.scss';
+import PropTypes from 'prop-types';
 
 const TopSeller = (props) => {
-  // eslint-disable-next-line react/prop-types
   const { imageTop, textTop, priceTop } = props;
   return (
     <div className="cardTopSeller">
@@ -14,6 +14,12 @@ const TopSeller = (props) => {
       </section>
     </div>
   );
+};
+
+TopSeller.propTypes = {
+  imageTop: PropTypes.string.isRequired,
+  textTop: PropTypes.string.isRequired,
+  priceTop: PropTypes.number.isRequired,
 };
 
 export default TopSeller;
