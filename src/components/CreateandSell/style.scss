@@ -1,0 +1,47 @@
+@import '../../scss/_global.scss';
+@import '../../scss/_color.scss';
+
+.box{
+  display: flex;
+  flex-direction: column;
+  color: white;
+  width: 38%;
+  background-color: #18182e;
+  height: 384px;
+  color: white;
+  border-radius: 15px;
+}
+
+.box__header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.box__title{
+  padding-top: 30px;
+  padding-left: 47px;
+}
+
+.box__image{
+  width: 17%;
+}
+
+.box__article{
+  padding: 63px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.box__titleArticle{
+  padding-bottom: 31px;
+  font-size: 28px;
+}
+
+.box__description{
+  width: 95%;
+  text-align: left;
+  font-size: 19px;
+  color: rgba(142, 141, 141, 0.916);
+  line-height: 27px;
+}
