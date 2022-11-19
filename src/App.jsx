@@ -5,8 +5,8 @@ import './App.css';
 // import LoginForm from './components/Auth/loginForm';
 // import RegisterForm from './components/Auth/RegisterForm';
 // import CreateNFT from './components/CreateNft';
-// import Footer from './components/Footer/index';
-// import happy from './components/Footer/images/happy.jpg';
+import Footer from './components/Footer/index';
+import happy from './components/Footer/images/happy.jpg';
 import Create from './components/CreateandSell';
 import message from './components/CreateandSell/images/message.jpg';
 
@@ -32,7 +32,7 @@ const App = () => (
       <Route path="/createnft" element={<CreateNFT />} />
     </Routes> */}
 
-    {/* <Footer image={happy} name="picture" characteristic="Highest bid 1/20" price={30} /> */}
+    <Footer image={happy} name="picture" characteristic="Highest bid 1/20" price={30} />
 
   </div>
 );

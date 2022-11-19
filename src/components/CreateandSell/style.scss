@@ -5,8 +5,8 @@
   display: flex;
   flex-direction: column;
   color: white;
-  width: 38%;
-  background-color: #18182e;
+  width: 100%;
+  background-color: #1b1b29;
   height: 384px;
   color: white;
   border-radius: 15px;
@@ -44,4 +44,10 @@
   font-size: 19px;
   color: rgba(142, 141, 141, 0.916);
   line-height: 27px;
+}
+
+@media(min-width:1200px){
+  .box{
+    width: 30%;
+  }
 }
