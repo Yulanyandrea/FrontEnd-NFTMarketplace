@@ -3,6 +3,7 @@
 .login-form {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .login-form-first, .login-form-second {
@@ -17,13 +18,13 @@
   color: $text-silver;
   width: 350px;
   height: 400px;
-  padding: 40px 0;
   border: 1.7px solid $border-color-components;
   border-radius: 7px;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  text-align: left;
 }
 
-h2 {
+.login-form-title-login {
   color: white;
   margin: 0;
 }
@@ -33,7 +34,7 @@ h2 {
 }
 
 
-h4 {
+.login-form-description {
   width: 250px;
   font-weight: 400;
   line-height: 30px;
@@ -45,7 +46,7 @@ h4 {
   flex-wrap: nowrap;
   align-items: flex-start;
 
-  input {
+  .login-from-input {
     background-color: $background-color-input;
     color: $text-silver;
     border-radius: 5px;
@@ -55,7 +56,7 @@ h4 {
   }
 }
 
-button {
+.login-form-button-login, .login-form-button-singup {
   padding: 0;
   color: #FFFFFF;
   background-color: #212E48;
@@ -65,6 +66,7 @@ button {
   height: 47px;
   margin-right: 20px;
   font-size: 16px;
+  cursor: pointer;
 }
 
 .login-form-button-login {
@@ -79,7 +81,10 @@ button {
   width: 290px;
   height: 250px;
 
-  button {
+  .login-from-google,
+  .login-from-facebook,
+  .login-from-twitter,
+  .login-from-linkedin {
     width: 100%;
     height: 50px;
     border-radius: 5px;
@@ -88,8 +93,9 @@ button {
     text-align: left;
     display: flex;
     align-items: center;
+    color: white;
 
-    img {
+    .login-from-img {
       width: 30px;
       margin: 10px 15px;
     }
@@ -106,7 +112,7 @@ button {
 
   .login-from-email, .login-from-password {
 
-    input {
+    .login-from-input {
       width: 360px;
     }
   }
