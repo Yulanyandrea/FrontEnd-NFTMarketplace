@@ -1,12 +1,49 @@
+import { useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 // import MediaQuery from 'react-responsive';
 import './style.scss';
 import uploadFile from './images/uploadfile.jpg';
 
 const CreateNFT = () => {
-  const handleSubmit = (event) => {
+  const [form, setForm] = useState({
+    productName: '',
+    description: '',
+    price: '',
+    size: '',
+    propertie: '',
+    royalty: '',
+  });
+
+  const API = 'http://localhost:3000/api/';
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
+
+    const payload = {
+      method: 'POST',
+      Headers: {
+        'Content-type': 'aplication/json',
+      },
+      body: JSON.stringify(form),
+    };
+
+    try {
+      const response = await fetch(API, payload);
+      const data = await response.json();
+      // eslint-disable-next-line
+      console.log(data);
+    } catch (error) {
+      // eslint-disable-next-line
+      console.log(error);
+    }
+    // console.log(form);
   };
+
+  const handleChange = ({ target }) => {
+    const { id, value } = target;
+    setForm({ ...form, [id]: value });
+  };
+  // console.log(form);
 
   const hiddenDesktop = useMediaQuery({
     query: '(max-width: 1439px)',
@@ -43,32 +80,34 @@ const CreateNFT = () => {
       <div className="createnft-form__product">
         <div className="createnft-form__product-name">
           <label htmlFor="product-name">Product Name</label>
-          <input placeholder="e.g. `Digital Awesome Game`" />
+          <input id="productName" onChange={handleChange} placeholder="e.g. `Digital Awesome Game`" />
         </div>
         <div className="createnft-form__product-description">
           <label htmlFor="product-name">Description</label>
           <textarea
+            id="description"
             type="text"
+            onChange={handleChange}
             placeholder="e.g. 'After purshasing the product you can get time...'"
           />
         </div>
         <div className="createnft-form__product-viewDesktop">
           <div className="createnft-form__product-price">
             <label htmlFor="product-name">Item Price in $</label>
-            <input placeholder="e.g. `$20`" />
+            <input id="price" type="number" onChange={handleChange} placeholder="e.g. `$20`" />
           </div>
           <div className="createnft-form__product-size">
             <label htmlFor="product-name">Size</label>
-            <input placeholder="e.g. `Size`" />
+            <input id="size" onChange={handleChange} placeholder="e.g. `Size`" />
           </div>
           <div className="createnft-form__product-propertie">
             <label htmlFor="product-name">Propertie</label>
-            <input placeholder="e.g. `Propertie`" />
+            <input id="propertie" onChange={handleChange} placeholder="e.g. `Propertie`" />
           </div>
         </div>
         <div className="createnft-form__product-royality">
           <label htmlFor="product-name">Royality</label>
-          <input placeholder="e.g. `20%`" />
+          <input id="royalty" onChange={handleChange} placeholder="e.g. `20%`" />
         </div>
         <div className="createnft-form__checklist">
           <div className="createnft-form__checklist-sale">
