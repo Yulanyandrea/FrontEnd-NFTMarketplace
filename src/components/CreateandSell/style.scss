@@ -1,0 +1,59 @@
+@import '../../scss/_global.scss';
+@import '../../scss/_color.scss';
+
+@mixin display($dis,$flexd) {
+  display: $dis;
+  flex-direction: $flexd;
+}
+
+.box{
+  @include display(flex,column );
+  width: 100%;
+  background-color: #1b1b29;
+  height: 384px;
+  color: white;
+  border-radius: 15px;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.box__header{
+  @include display(flex,none );
+  justify-content: space-between;
+}
+
+.box__title{
+  padding-top: 30px;
+  padding-left: 47px;
+}
+
+.box__image{
+  width: 17%;
+}
+
+.box__article{
+  @include display(flex,column );
+  padding: 63px;
+  align-items: flex-start;
+}
+
+.box__titleArticle{
+  padding-bottom: 31px;
+  font-size: 28px;
+}
+
+.box__description{
+  width: 95%;
+  text-align: left;
+  font-size: 19px;
+  color: rgba(142, 141, 141, 0.916);
+  line-height: 27px;
+}
+
+@media(min-width:1200px){
+  .box{
+    width: 30%;
+    height: 338px;
+    font-size: 16px;
+  }
+}

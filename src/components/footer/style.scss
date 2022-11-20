@@ -6,7 +6,7 @@ $font-color:white;
 $font-weight:400;
 $font-weight-hard:800;
 $font-transparency:rgba(232, 229, 229, 0.63);
-$font-size:10px;
+$font-size:12px;
 
 @mixin flex($dis,$direction,$just,$alig) {
   display: $dis;
@@ -62,7 +62,7 @@ $font-size:10px;
 }
 
 .cardFooter__text{
-  @include size(138px,none);
+  @include size(170px,none);
   text-align: start;
   font-weight: $font-weight;
   color:$font-transparency
@@ -217,11 +217,11 @@ $font-size:10px;
 }
 
 .cardFooter__lastfooter{
-  font-size: 4px;
+  font-size: 7px;
   padding-top: 30px;
 }
 .cardFooter__facebook{
-  width: 10px;
+  width: 13px;
 }
 
 $breakpoint-tablet: 1200px;
