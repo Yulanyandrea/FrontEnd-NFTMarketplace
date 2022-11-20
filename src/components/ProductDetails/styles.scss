@@ -1,0 +1,85 @@
+@import "../../scss/_global.scss";
+@import "../../scss/_color.scss";
+
+.product__container {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: center;
+  width: 370px;
+  color: $text-silver;
+  gap: 10px;
+
+  .product__image {
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    border: solid $main-background;
+    border-width: 5px;
+  }
+
+  .product__info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+  }
+
+  .title__buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .product__like {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: $accent;
+    width: fit-content;
+    padding: 10px;
+    height: 40px;
+    border-radius: 10px;
+
+    .like__button {
+      border: none;
+      margin-right: 5px;
+      width: fit-content;
+      height: fit-content;
+      height: 40px;
+    }
+
+    .card__totalikes {
+      margin-left: 4px;
+      font-weight: 500;
+      width: fit-content;
+    }
+  }
+
+  .product__button {
+    background-color: $accent;
+    border: none;
+    color: $text-silver;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 30px;
+    text-align: center;
+    width: fit-content;
+    margin: 0;
+    height: 40px;
+  }
+
+  .product__owner {
+    align-self: center;
+  }
+
+  .owner__avatar {
+    width: 40px;
+    height: 40px;
+    border: solid $text-silver;
+    border-radius: 30px;
+    border-width: 2px;
+  }
+}

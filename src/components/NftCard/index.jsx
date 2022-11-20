@@ -4,15 +4,15 @@ import { faHeart as farHeart } from '@fortawesome/free-regular-svg-icons';
 // eslint-disable-next-line no-unused-vars
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
-import image from './images/image-equilibrium.jpg';
-import avatar from './images/image-avatar.png';
+import image from '../../assets/image-equilibrium.jpg';
+import avatar from '../../assets/image-avatar.png';
 
 // eslint-disable-next-line react/prop-types, object-curly-newline
 const NftCard = ({ bit, name, bid, price, likes }) => {
   return (
     <section className="card">
       <figure className="card__figure">
-        <img src={image} alt="Equilibrium" className="card__image" />
+        <img src={image} alt="NFT" className="card__image" />
       </figure>
       <div className="card__body">
         <section className="card__biders">

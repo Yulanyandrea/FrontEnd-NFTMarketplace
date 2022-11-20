@@ -1,7 +1,7 @@
 import './App.scss';
 import { Routes, Route } from 'react-router-dom';
 
-import Navbar from './components/Navbar/index';
+// import Navbar from './components/Navbar/index';
 import LoginForm from './components/Auth/loginForm';
 import RegisterForm from './components/Auth/RegisterForm';
 import CreateNFT from './components/CreateNft';
@@ -35,7 +35,7 @@ const App = () => (
       <Route path="/createnft" element={<CreateNFT />} />
     </Routes>
 
-    <Footer image={happy} name="picture" characteristic="Highest bid 1/20" price={30} />
+    {/* <Footer image={happy} name="picture" characteristic="Highest bid 1/20" price={30} /> */}
 
   </div>
 );
