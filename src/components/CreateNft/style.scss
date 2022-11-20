@@ -16,7 +16,6 @@
     margin: 30px 10px;
     font-size: 18px;
     font-weight: 700;
-    text-align: left;
 
     &-description {
       color: $text-silver;
@@ -40,20 +39,22 @@
   }
 
   &__product {
-    height: 900px;
     display: flex;
     flex-direction: column;
     background-color: $main-background;
     border: 1.7px solid $border-color-components;
     border-radius: 7px;
     align-items: center;
-    justify-content: center;
 
     &-name, &-description, &-price, &-size, &-propertie, &-royality {
       display: flex;
       flex-direction: column;
       flex-wrap: nowrap;
       margin: 10px 30px;
+    }
+
+    .createnft-form__product-name {
+      margin-top: 40px;
     }
 
     .createnft-form__product-description {
@@ -111,17 +112,23 @@
     flex-direction: column;
   }
 
-  button {
+  .button_preview {
+    width: 299px;
+    height: 55px;
+    margin: 7px 0;
+  }
+
+  .button_submititem {
     width: 299px;
     height: 55px;
     margin: 7px 0;
     cursor: pointer;
+    background-color: $main-color;
+    margin-bottom:40px;
   }
 
-  .button_submititem {
-    background-color: $main-color;
-  }
 }
+
 
 @media (min-width: 1440px) {
 
@@ -129,17 +136,18 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    height: 630px;
+    height: 800px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
   }
 
   .createnft-form__section {
-    width: 100%;
+    width: 350px;
     margin: 0 30px;
-    height: 100%;
+    height: 580px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
 
     .createnft-form__title {
       margin-bottom: 0;
@@ -147,7 +155,6 @@
   }
 
   .createnft-form__product {
-    height: 580px;
 
     input, textarea {
       width: 600px;
@@ -164,7 +171,7 @@
       display: flex;
       width: 100%;
       margin: 0 30px;
-      justify-content: space-evenly;
+      justify-content: space-around;
 
       div {
         margin: 0;
@@ -194,3 +201,4 @@
     }
   }
 }
+
