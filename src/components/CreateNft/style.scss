@@ -1,0 +1,196 @@
+@import '../../scss/global.scss';
+
+.createnft-form {
+  margin: 0;
+  padding: 0;
+  color: white;
+  width: 350px;
+
+  &__description{
+    font-size: 14px;
+    color: $text-silver;
+  }
+
+  &__note {
+    line-height: 40px;
+    margin: 30px 10px;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: left;
+
+    &-description {
+      color: $text-silver;
+      line-height: 25px;
+      margin: 0;
+      font-size: 15px;
+      font-weight: 400;
+
+      span {
+        font-weight: 700;
+      }
+    }
+  }
+
+  .createnft-form__img-uploadfile {
+    width: 345px;
+    border: 2px solid $border-color-components;
+    border-style: dashed;
+    border-radius: 4px;
+    margin: 20px 0;
+  }
+
+  &__product {
+    height: 900px;
+    display: flex;
+    flex-direction: column;
+    background-color: $main-background;
+    border: 1.7px solid $border-color-components;
+    border-radius: 7px;
+    align-items: center;
+    justify-content: center;
+
+    &-name, &-description, &-price, &-size, &-propertie, &-royality {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      margin: 10px 30px;
+    }
+
+    .createnft-form__product-description {
+
+      textarea {
+        height: 100px;
+        padding: 10px;
+        font-family: 'Roboto', sans-serif;
+        resize: none;
+      }
+    }
+
+    label {
+      color: $text-silver;
+      font-size: 14px;
+      line-height: 30px;
+    }
+
+    input, textarea {
+      background-color: $background-color-input;
+      color: $text-silver;
+      border-radius: 5px;
+      border: 2px solid $border-color-components;
+      width: 275px;
+      height: 40px;
+      padding: 0 10px;
+      font-size: 14px;
+    }
+  }
+
+  &__checklist {
+      display: flex;
+      flex-direction: column;
+      margin: 10px 30px;
+      width: 80%;
+
+    .createnft-form__checklist-sale,
+    .createnft-form__checklist-saleprice,
+    .createnft-form__checklist-unlock {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-size: 12px;
+      color: $text-silver;
+
+      .checkbox {
+        width: 14px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .createnft-form__buttons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  button {
+    width: 299px;
+    height: 55px;
+    margin: 7px 0;
+    cursor: pointer;
+  }
+
+  .button_submititem {
+    background-color: $main-color;
+  }
+}
+
+@media (min-width: 1440px) {
+
+  .createnft-form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 630px;
+  }
+
+  .createnft-form__section {
+    width: 100%;
+    margin: 0 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    .createnft-form__title {
+      margin-bottom: 0;
+    }
+  }
+
+  .createnft-form__product {
+    height: 580px;
+
+    input, textarea {
+      width: 600px;
+    }
+
+    &-price, &-size, &-propertie {
+
+      input {
+        width: 160px;
+      }
+    }
+
+    .createnft-form__product-viewDesktop {
+      display: flex;
+      width: 100%;
+      margin: 0 30px;
+      justify-content: space-evenly;
+
+      div {
+        margin: 0;
+      }
+    }
+
+    .createnft-form__buttons {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      width: 100%;
+
+      .button_preview {
+        width: 200px;
+      }
+
+      .button_submititem {
+        width: 400px;
+      }
+    }
+
+    .createnft-form__checklist {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      width: 100%;
+    }
+  }
+}
