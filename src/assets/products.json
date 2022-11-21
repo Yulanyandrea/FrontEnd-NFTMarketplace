@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "The Amazing Game",
-    "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+    "image": "https://picsum.photos/id/40/200",
     "bit": "9+",
     "bid": "1/20",
     "price": "0.244",
@@ -13,7 +13,7 @@
   {
     "id": 2,
     "name": "Diamond Dog",
-    "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
+    "image": "https://picsum.photos/id/56/200",
     "bit": "10+",
     "bid": "5/11",
     "price": "0.892",
@@ -24,7 +24,7 @@
   {
     "id": 3,
     "name": "Scourd",
-    "image": "https://rickandmortyapi.com/api/character/avatar/3.jpeg",
+    "image": "https://picsum.photos/id/223/200",
     "bit": "9+",
     "bid": "1/20",
     "price": "0.467",
@@ -35,7 +35,7 @@
   {
     "id": 4,
     "name": "Jackpot",
-    "image": "https://rickandmortyapi.com/api/character/avatar/4.jpeg",
+    "image": "https://picsum.photos/id/315/200",
     "bit": "22+",
     "bid": "1/20",
     "price": "0.467",
