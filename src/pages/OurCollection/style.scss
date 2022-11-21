@@ -1,0 +1,15 @@
+.bigbox{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+  padding-top: 5px;
+}
+
+@media(min-width:1200px){
+  .bigbox{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+    flex-wrap: wrap;
+  }
+}

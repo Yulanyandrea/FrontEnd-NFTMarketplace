@@ -33,14 +33,6 @@ $font-size:10px;
   @include size(none,none,0,0);
 }
 
-body{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @include size(none,none,10%,0);
-  @include flex (flex,none,center);
-}
-
 .cardTopCollection{
   border-radius: 11px;
   max-width: 90%;
@@ -61,10 +53,10 @@ body{
 }
 
 .cardTopCollection__imageProfile{
-  width: 9%;
+  width: 21%;
   position: absolute;
-  left: 46%;
-  top: 22%;
+  left: 38%;
+  //top: 43%;
   @include borders(68px,solid ,#474765 );
 }
 
@@ -110,14 +102,11 @@ body{
 
 $breakpoint-tablet: 1200px;
 @media(min-width:$breakpoint-tablet){
-  .cardTopCollection{
-    padding: 51px;
-  }
 
   .cardTopCollection__imageProfile{
-    width: 10%;
-    left: 45%;
-    top: 53%;
+   width: 10%;
+  //   // left: 10%;
+  //   // top: 40%;
   }
 
 }

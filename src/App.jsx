@@ -12,9 +12,13 @@ import happy from './components/Footer/images/happy.jpg';
 // import message from './components/CreateandSell/images/message.jpg';
 import Details from './pages/Details';
 
+// import ProductDetails from './components/ProductDetails';
+import OurCollection from './pages/OurCollection/OurCollection';
+import data from './assets/collection.json';
 
 const App = () => {
   return (
+
     <div className="App">
       {/* <Create
         title="STEP-01"
@@ -35,10 +39,13 @@ const App = () => {
         <Route path="/login" element={<LoginForm />} />
         <Route path="/register" element={<RegisterForm />} />
         <Route path="/createnft" element={<CreateNFT />} />
+        <Route path="/ourcollection" element={<OurCollection informations={data} />} />
+
       </Routes>
 
       <Footer image={happy} name="picture" characteristic="Highest bid 1/20" price={30} />
     </div>
+
   );
 };
 
