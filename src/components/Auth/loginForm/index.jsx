@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import './styles.scss';
-import logoGoogle from './images/google.png';
-import logoFacebook from './images/facebook.png';
-import logoTwitter from './images/twitter.png';
-import logoLinkedin from './images/linkedin.png';
+import logoGoogle from '../../../assets/google.png';
+import logoFacebook from '../../../assets/facebook.png';
+import logoTwitter from '../../../assets/twitter.png';
+import logoLinkedin from '../../../assets/linkedin.png';
 
 const LoginForm = () => {
   const [form, setForm] = useState({
