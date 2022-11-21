@@ -1,0 +1,14 @@
+@import "../../scss/_color.scss";
+@import "../../scss/_color.scss";
+
+.details__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.details__subtitle {
+  color: $wild-Sand;
+}

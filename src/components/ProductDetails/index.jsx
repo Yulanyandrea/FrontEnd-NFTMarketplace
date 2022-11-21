@@ -1,11 +1,13 @@
 import './styles.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart as farHeart } from '@fortawesome/free-regular-svg-icons';
-import image from '../../assets/image-equilibrium.jpg';
 import avatar from '../../assets/image-avatar.png';
 
 // eslint-disable-next-line react/prop-types, object-curly-newline
-const ProductDetails = ({ name, likes, bid, number, owner }) => {
+const ProductDetails = ({ product = {} }) => {
+  // eslint-disable-next-line object-curly-newline
+  const { image, name, bid, likes, number, owner } = product;
+
   return (
     <div className="product__container">
       <section className="images__container">

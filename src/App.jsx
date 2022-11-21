@@ -1,15 +1,17 @@
 import './App.scss';
-// import { Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import Navbar from './components/Navbar/index';
-// import LoginForm from './components/Auth/loginForm';
-// import RegisterForm from './components/Auth/RegisterForm';
-// import CreateNFT from './components/CreateNft';
+import LoginForm from './components/Auth/loginForm';
+import RegisterForm from './components/Auth/RegisterForm';
+import CreateNFT from './components/CreateNft';
 import Footer from './components/Footer/index';
-// import Home from './components/Home';
+import Home from './components/Home';
 import happy from './components/Footer/images/happy.jpg';
 // import Create from './components/CreateandSell';
 // import message from './components/CreateandSell/images/message.jpg';
+import Details from './pages/Details';
+
 // import ProductDetails from './components/ProductDetails';
 import OurCollection from './pages/OurCollection/OurCollection';
 import data from './pages/OurCollection/collection.json';
@@ -30,16 +32,17 @@ const App = () => {
       {/* <TopSeller imageTop={flower} textTop="TrodBrand" priceTop="$400" /> */}
       {/* <NftCard bit="5+" name="NameStroam" bid="1/20" price="0.244" likes="532" /> */}
       <Navbar />
-      {/*
+
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/productdetail"
-         element={<ProductDetails bid="0.244" number="22" owner="Broodband" />} />
+        <Route path="/productdetail/:id" element={<Details />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/register" element={<RegisterForm />} />
         <Route path="/createnft" element={<CreateNFT />} />
-      </Routes> */}
-      <OurCollection informations={data} />
+        <Route path="/ourcollection" element={<OurCollection informations={data} />} />
+
+      </Routes>
+
       <Footer image={happy} name="picture" characteristic="Highest bid 1/20" price={30} />
     </div>
 
