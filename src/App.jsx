@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import { Routes, Route } from 'react-router-dom';
 
 import Navbar from './components/Navbar/index';
@@ -6,10 +6,10 @@ import LoginForm from './components/Auth/loginForm';
 import RegisterForm from './components/Auth/RegisterForm';
 import CreateNFT from './components/CreateNft';
 import Footer from './components/Footer/index';
+import Home from './components/Home';
 import happy from './components/Footer/images/happy.jpg';
 // import Create from './components/CreateandSell';
 // import message from './components/CreateandSell/images/message.jpg';
-
 
 const App = () => (
   <div className="App">
@@ -28,6 +28,7 @@ const App = () => (
     <Navbar />
 
     <Routes>
+      <Route path="/" element={<Home />} />
       <Route path="/login" element={<LoginForm />} />
       <Route path="/register" element={<RegisterForm />} />
       <Route path="/createnft" element={<CreateNFT />} />
