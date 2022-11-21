@@ -2,7 +2,10 @@ import './style.scss';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faFacebookF, faTwitter, faInstagram, faLinkedin,
+  faFacebookF,
+  faTwitter,
+  faInstagram,
+  faLinkedin,
 } from '@fortawesome/free-brands-svg-icons';
 import { faMessage } from '@fortawesome/free-solid-svg-icons';
 import logo from '../../assets/logo.png';

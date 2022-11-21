@@ -6,23 +6,48 @@ import logoTwitter from './images/twitter.png';
 import logoLinkedin from './images/linkedin.png';
 
 const LoginForm = () => {
-  // const { showRegisterForm } = props;
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  };
-
   const [form, setForm] = useState({
     email: '',
     password: '',
   });
 
-  const handleChange = (event) => {
-    setForm({
-      ...form,
-      [event.target.id]: event.target.value,
-    });
+  const API = 'http://localhost:3000/api/';
+  // const { showRegisterForm } = props;
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const payload = {
+      method: 'POST',
+      headers: {
+        'Content-type': 'aplication/json',
+      },
+      body: JSON.stringify(form),
+    };
+
+    try {
+      const response = await fetch(API, payload);
+      const data = await response.json();
+      // eslint-disable-next-line
+      console.log(data);
+    } catch (error) {
+      // eslint-disable-next-line
+      console.error(error);
+    }
   };
-  // console.log(`El email es: ${form.email}`);
+
+  // const handleChange = (event) => {
+  //   setForm({
+  //     ...form,
+  //     [event.target.id]: event.target.value,
+  //   });
+  // };
+
+  const handleChange = ({ target }) => {
+    const { id, value } = target;
+    setForm({ ...form, [id]: value });
+  };
+  // console.log(form);
 
   const [checkbox, setCheckbox] = useState(false);
 
@@ -34,10 +59,11 @@ const LoginForm = () => {
   return (
     <div className="login-form">
       <form className="login-form-first">
-        <h2 className="title">Login</h2>
+        <h2 className="login-form-title-login">Login</h2>
         <div className="login-from-email">
           <label htmlFor="email">Email address</label>
           <input
+            className="login-from-input"
             id="email"
             type="text"
             value={form.email}
@@ -47,6 +73,7 @@ const LoginForm = () => {
         <div className="login-from-password">
           <label htmlFor="password">Password</label>
           <input
+            className="login-from-input"
             id="password"
             type="password"
             value={form.password}
@@ -55,6 +82,7 @@ const LoginForm = () => {
         </div>
         <div className="login-from-checkbox">
           <input
+            className="login-from-input"
             type="checkbox"
             value="checkbox"
             checked={checkbox}
@@ -82,23 +110,23 @@ const LoginForm = () => {
         </div>
       </form>
       <div className="login-form-second">
-        <h2 className="title">Another way yo long in</h2>
-        <h4>Lorem Ipsum is simply dummy text of the typesetting industry.</h4>
+        <h2 className="login-form-title-login">Another way yo long in</h2>
+        <h4 className="login-form-description">Lorem Ipsum is simply dummy text of the typesetting industry.</h4>
         <div className="login-from-second-redsocials">
           <button className="login-from-google" type="submit">
-            <img src={logoGoogle} alt="google" />
+            <img className="login-from-img" src={logoGoogle} alt="google" />
             <span>Log in with Google</span>
           </button>
           <button className="login-from-facebook" type="submit">
-            <img src={logoFacebook} alt="google" />
+            <img className="login-from-img" src={logoFacebook} alt="google" />
             <span>Log in with Facebook</span>
           </button>
           <button className="login-from-twitter" type="submit">
-            <img src={logoTwitter} alt="google" />
+            <img className="login-from-img" src={logoTwitter} alt="google" />
             <span>Log in with Twitter</span>
           </button>
           <button className="login-from-linkedin" type="submit">
-            <img src={logoLinkedin} alt="google" />
+            <img className="login-from-img" src={logoLinkedin} alt="google" />
             <span>Log in with Linkedin</span>
           </button>
         </div>
