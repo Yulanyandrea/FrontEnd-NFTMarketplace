@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": 0,
     "name": "The Amazing Game",
     "image": "https://picsum.photos/id/40/200",
     "bit": "9+",
@@ -11,7 +11,7 @@
     "owner": "Broodband"
   },
   {
-    "id": 2,
+    "id": 1,
     "name": "Diamond Dog",
     "image": "https://picsum.photos/id/56/200",
     "bit": "10+",
@@ -22,7 +22,7 @@
     "owner": "DufferBrothers"
   },
   {
-    "id": 3,
+    "id": 2,
     "name": "Scourd",
     "image": "https://picsum.photos/id/223/200",
     "bit": "9+",
@@ -33,7 +33,7 @@
     "owner": "Rick Sanchez"
   },
   {
-    "id": 4,
+    "id": 3,
     "name": "Jackpot",
     "image": "https://picsum.photos/id/315/200",
     "bit": "22+",

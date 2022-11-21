@@ -12,10 +12,9 @@ import avatar from '../../assets/image-avatar.png';
 const NftCard = ({ product = {} }) => {
   // eslint-disable-next-line object-curly-newline
   const { image, name, price, bit, bid, likes } = product;
-
   return (
     <section className="card">
-      <Link to="/productdetail" className="card__link">
+      <Link to={`/productdetail/${product.id}`} className="card__link">
         <img src={image} alt="NFT" className="card__image" />
       </Link>
       <div className="card__body">
