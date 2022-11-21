@@ -220,6 +220,22 @@ $font-size:12px;
   font-size: 7px;
   padding-top: 30px;
 }
+
+.cardFooter__inc{
+  display: flex;
+  justify-content: center;
+}
+
+.cardFooter__policy{
+  display: flex;
+  justify-content: center;
+}
+
+.cardFooter__socialMedia{
+  display: flex;
+  justify-content: center;
+}
+
 .cardFooter__facebook{
   width: 13px;
 }

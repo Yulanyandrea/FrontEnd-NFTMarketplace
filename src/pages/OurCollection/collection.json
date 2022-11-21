@@ -7,7 +7,8 @@
   { "id": 5, "imageSell": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png", "imageProfile": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png", "name":"pokemon", "items":20},
   { "id": 6, "imageSell": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png", "imageProfile": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png", "name":"clock", "items":20},
   { "id": 7, "imageSell": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png", "imageProfile": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png", "name":"aparment", "items":20},
-  { "id": 8, "imageSell": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png", "imageProfile": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png", "name":"aparment", "items":20}
+  { "id": 8, "imageSell": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png", "imageProfile": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png", "name":"clothes", "items":20},
+  { "id": 9, "imageSell": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png", "imageProfile": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png", "name":"stickers", "items":20}
 
 
 

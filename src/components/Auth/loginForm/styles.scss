@@ -105,8 +105,13 @@
 
 @media (min-width: 1440px) {
 
+  .login-form {
+    min-height: 700px;
+    align-content: center;
+  }
+
   .login-form-first, .login-form-second {
-    margin: 20px;
+    margin: 10px;
     width: 450px;
   }
 

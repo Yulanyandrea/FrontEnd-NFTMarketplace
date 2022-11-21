@@ -1,3 +1,153 @@
+@import '../../../scss/color.scss';
+
 .register-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+.register-from__firstname,
+.register-from__email,
+.register-from__lastname,
+.register-from__createpassword,
+.register-from__repassword {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+
+  .register-from-input {
+    background-color: $background-color-input;
+    color: $text-silver;
+    border-radius: 5px;
+    border: 2px solid $border-color-components;
+    width: 275px;
+    height: 45px;
+  }
+}
+
+.register-form-first {
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+
+  .register-form-first__label {
+    line-height: 30px;
+  }
+}
+
+.register-form-first, .register-form-second {
+  margin: 20px 0 20px 0;
+  align-content: center;
+  align-items: flex-start;
+  background-color: $main-background;
+  color: $text-silver;
+  width: 350px;
+  border: 1.7px solid $border-color-components;
+  border-radius: 7px;
+}
+
+.register-form-second {
+  height: 485px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.register-form-title-register {
   color: white;
+  margin: 0;
+  line-height: 60px;
+}
+
+.register-from-checkbox {
+  font-size: 13px;
+}
+
+
+.register-form-description {
+  width: 250px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+
+.register-form-button-register, .register-form-button-singup {
+  padding: 0;
+  color: #FFFFFF;
+  background-color: #212E48;
+  border-radius: 10px;
+  border-style: none;
+  width: 90px;
+  height: 47px;
+  margin-right: 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.register-form-button-register {
+  background-color: #00A3FF;
+}
+
+.register-from-second-redsocials {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 290px;
+  height: 250px;
+
+  .register-from-google,
+  .register-from-facebook,
+  .register-from-twitter,
+  .register-from-linkedin {
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid $border-color-components;
+    background-color: $background-color-input;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    color: white;
+
+    .register-from-img {
+      width: 30px;
+      margin: 10px 15px;
+    }
+  }
+}
+
+
+@media (min-width: 1440px) {
+
+  .register-form {
+    min-height: 900px;
+    align-content: center;
+  }
+
+  .register-form-first, .register-form-second {
+    margin: 10px;
+    width: 450px;
+  }
+
+  .register-from__firstname,
+  .register-from__lastname,
+  .register-from__email,
+  .register-from__createpassword,
+  .register-from__repassword {
+
+    .register-from-input {
+      width: 360px;
+    }
+  }
+
+  .register-from-second-redsocials {
+    width: 360px;
+  }
+
 }

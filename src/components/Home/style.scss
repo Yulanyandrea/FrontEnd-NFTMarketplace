@@ -1,0 +1,125 @@
+@import '../../scss/global.scss';
+
+.home {
+  min-height: 900px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-hero {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  .home-hero-info {
+
+    &__title {
+      font-weight: 400;
+      line-height: 35px;
+    }
+
+    &__description {
+      line-height: 25px;
+      font-size: 20px;
+      margin: 20px 0;
+      color: $text-silver;
+    }
+  }
+}
+
+.home-hero-img {
+  width: 340px;
+  margin: 50px 0;
+}
+
+.home-hero-buttons {
+  display: flex;
+
+  .home-hero-button__started {
+    width: 170px;
+    height: 60px;
+    margin: 7px 20px 7px 0;
+    cursor: pointer;
+    background-color: $main-color;
+    border-radius: 10px;
+    border-style: none;
+    font-size: 17px;
+    color: white;
+  }
+
+  .home-hero-button__create {
+    width: 120px;
+    height: 60px;
+    margin: 7px 0;
+    background-color: $accent;
+    cursor: pointer;
+    border-radius: 10px;
+    border-style: none;
+    font-size: 17px;
+    color: white;
+  }
+}
+
+.home-livebidding {
+  margin-bottom: 100px;
+
+  &__title {
+    display: flex;
+    align-items: center;
+
+    &__img {
+      margin-right: 10px;
+    }
+  }
+
+  .home-livebidding-title {
+    margin: 50px 0;
+  }
+}
+
+@media (min-width: 1440px) {
+
+  .home {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .home-hero, .home-livebidding {
+      width: 1300px;
+    }
+
+    .home-hero-img {
+      width: 550px;
+    }
+
+    .home-hero-info {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-content: center;
+      align-items: center;
+      justify-content: space-between;
+
+      .home-hero-info__text {
+        width: 550px;
+
+        .home-hero-info__title {
+          font-size: 60px;
+          line-height: 70px;
+        }
+
+        .home-hero-info__description {
+          width: 80%;
+        }
+      }
+    }
+
+    .home-hero-button__create {
+      width: 170px;
+    }
+  }
+}
