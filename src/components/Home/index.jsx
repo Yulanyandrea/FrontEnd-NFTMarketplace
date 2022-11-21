@@ -3,7 +3,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleDot } from '@fortawesome/free-solid-svg-icons';
 import './style.scss';
 import hero from '../../assets/hero.png';
+<<<<<<< HEAD
 import NftCard from '../NftCard';
+=======
+import products from '../../assets/products.json';
+import ListNft from '../ListNft';
+>>>>>>> 2352bb522ef7e7d3434b96b3a1c2326a3a43557c
 
 const Home = () => {
   const hiddenDesktop = useMediaQuery({
@@ -52,7 +57,11 @@ const Home = () => {
           <FontAwesomeIcon icon={faCircleDot} style={{ color: '#00A3FF' }} className="home-livebidding__title__img" />
           <h1 className="home-livebidding-title">Live Bidding</h1>
         </div>
+<<<<<<< HEAD
         <NftCard />
+=======
+        <ListNft products={products} />
+>>>>>>> 2352bb522ef7e7d3434b96b3a1c2326a3a43557c
       </div>
     </div>
   );

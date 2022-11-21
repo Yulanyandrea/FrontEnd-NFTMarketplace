@@ -113,9 +113,27 @@
   }
 
   .button_preview {
+<<<<<<< HEAD
     width: 299px;
     height: 55px;
     margin: 7px 0;
+  }
+
+  .button_submititem {
+=======
+>>>>>>> 2352bb522ef7e7d3434b96b3a1c2326a3a43557c
+    width: 299px;
+    height: 55px;
+    margin: 7px 0;
+    cursor: pointer;
+<<<<<<< HEAD
+    background-color: $main-color;
+    margin-bottom:40px;
+  }
+
+=======
+    border-radius: 10px;
+    border-style: none;
   }
 
   .button_submititem {
@@ -124,9 +142,12 @@
     margin: 7px 0;
     cursor: pointer;
     background-color: $main-color;
-    margin-bottom:40px;
+    color: white;
+    border-radius: 10px;
+    border-style: none;
   }
 
+>>>>>>> 2352bb522ef7e7d3434b96b3a1c2326a3a43557c
 }
 
 
@@ -148,6 +169,11 @@
     height: 580px;
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
+=======
+    align-items: flex-start;
+    justify-content: flex-start;
+>>>>>>> 2352bb522ef7e7d3434b96b3a1c2326a3a43557c
 
     .createnft-form__title {
       margin-bottom: 0;

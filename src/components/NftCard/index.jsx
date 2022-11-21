@@ -1,19 +1,22 @@
 import './styles.scss';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart as farHeart } from '@fortawesome/free-regular-svg-icons';
 // eslint-disable-next-line no-unused-vars
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
-import image from './images/image-equilibrium.jpg';
-import avatar from './images/image-avatar.png';
+// import image from '../../assets/image-equilibrium.jpg';
+import avatar from '../../assets/image-avatar.png';
 
 // eslint-disable-next-line react/prop-types, object-curly-newline
-const NftCard = ({ bit, name, bid, price, likes }) => {
+const NftCard = ({ product = {} }) => {
+  // eslint-disable-next-line object-curly-newline
+  const { image, name, price, bit, bid, likes } = product;
   return (
     <section className="card">
-      <figure className="card__figure">
-        <img src={image} alt="Equilibrium" className="card__image" />
-      </figure>
+      <Link to={`/productdetail/${product.id}`} className="card__link">
+        <img src={image} alt="NFT" className="card__image" />
+      </Link>
       <div className="card__body">
         <section className="card__biders">
           <div className="avatar__container">
