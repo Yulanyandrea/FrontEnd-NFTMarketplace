@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "name": "The Amazing Game",
+    "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+    "bit": "9+",
+    "bid": "1/20",
+    "price": "0.244",
+    "likes": "322",
+    "number": "22",
+    "owner": "Broodband"
+  },
+    {
+    "id": 2,
+    "name": "Diamond Dog",
+    "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
+    "bit": "10+",
+    "bid": "5/11",
+    "price": "0.892",
+    "likes": "420",
+    "number": "10",
+    "owner": "DufferBrothers"
+  }
+]

@@ -8,7 +8,7 @@
   justify-content: center;
   width: 370px;
   color: $text-silver;
-  gap: 10px;
+  gap: 20px;
 
   .product__image {
     border-radius: 10px;
@@ -18,19 +18,23 @@
     border-width: 5px;
   }
 
-  .product__info {
+  .info__container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 40px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .product__title--color {
+    color: $main-cards;
+    font-size: 24px;
+    font-weight: 700;
   }
 
   .title__buttons {
     display: flex;
     flex-direction: row;
     gap: 10px;
+    align-items: center;
   }
 
   .product__like {
@@ -49,9 +53,11 @@
       width: fit-content;
       height: fit-content;
       height: 40px;
+      background-color: $accent;
+      color: $text-silver;
     }
 
-    .card__totalikes {
+    .product__totalikes {
       margin-left: 4px;
       font-weight: 500;
       width: fit-content;
@@ -69,10 +75,46 @@
     width: fit-content;
     margin: 0;
     height: 40px;
+    border-radius: 10px;
+  }
+
+  .product__bid--color{
+    color: $main-color;
+  }
+
+  .product__ranking{
+    color: $wild-Sand;
+  }
+
+  .info__buttons{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: solid $text-silver;
+    border-width: 1px;
+    border-radius: 7px;
+    padding: 5px;
+    gap: 10px;
+
+    .info__button {
+      width: 100%;
+      background-color: $main-background;
+      border: dashed $text-silver;
+      border-width: 1px;
+      border-radius: 7px;
+      color: $wild-Sand;
+      padding: 10px;
+    }
+
+    .info__button:hover {
+      background-color: $accent;
+      border: none;
+    }
   }
 
   .product__owner {
     align-self: center;
+    text-align: center;
   }
 
   .owner__avatar {
@@ -82,4 +124,77 @@
     border-radius: 30px;
     border-width: 2px;
   }
+
+  .product__tag {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    border: solid $text-silver;
+    border-width: 1px;
+    border-radius: 7px;
+    padding: 15px;
+    gap: 10px;
+  }
+
+  .place__bid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+    border: solid $text-silver;
+    border-width: 1px;
+    border-radius: 7px;
+    padding: 15px;
+
+    .bid__button {
+      width: 100%;
+      background-color: $accent;
+      border: none;
+      border-radius: 7px;
+      color: $wild-Sand;
+      padding: 10px;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+
+  .product__container {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    text-align: left;
+    justify-content: center;
+    width: 80%;
+    color: $text-silver;
+    gap: 20px;
+
+    .product__image {
+      width: 400px;
+      height: auto;
+    }
+
+    .product__owner {
+      align-self: start;
+      text-align: left;
+    }
+
+    .info__buttons {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+    }
+
+    .place__bid {
+      text-align: left;
+    }
+  }
+
+  .product__info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: left;
+    width: 100%;
+  }
+
 }
