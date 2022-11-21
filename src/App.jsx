@@ -11,7 +11,7 @@ import happy from './components/Footer/images/happy.jpg';
 // import Create from './components/CreateandSell';
 // import message from './components/CreateandSell/images/message.jpg';
 
-import ProductDetails from './components/ProductDetails';
+import Details from './pages/Details';
 
 const App = () => {
   return (
@@ -31,7 +31,7 @@ const App = () => {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/productdetail" element={<ProductDetails bid="0.244" number="22" owner="Broodband" />} />
+        <Route path="/productdetail/:id" element={<Details />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/register" element={<RegisterForm />} />
         <Route path="/createnft" element={<CreateNFT />} />
