@@ -1,8 +1,6 @@
 import './App.scss';
 import { Routes, Route } from 'react-router-dom';
 
-import products from './assets/products.json';
-
 import Navbar from './components/Navbar/index';
 import LoginForm from './components/Auth/loginForm';
 import RegisterForm from './components/Auth/RegisterForm';
@@ -12,7 +10,7 @@ import Home from './components/Home';
 import happy from './components/Footer/images/happy.jpg';
 // import Create from './components/CreateandSell';
 // import message from './components/CreateandSell/images/message.jpg';
-import ListNft from './components/ListNft';
+
 import ProductDetails from './components/ProductDetails';
 
 const App = () => {
@@ -32,8 +30,8 @@ const App = () => {
       <Navbar />
 
       <Routes>
-        <Route path="/" element={<ListNft products={products} />} />
-        <Route path="/productdetail" element={<Home bid="0.244" number="22" owner="Broodband" />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/productdetail" element={<ProductDetails bid="0.244" number="22" owner="Broodband" />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/register" element={<RegisterForm />} />
         <Route path="/createnft" element={<CreateNFT />} />
