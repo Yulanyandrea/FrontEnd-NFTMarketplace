@@ -14,7 +14,7 @@ import Details from './pages/Details';
 
 // import ProductDetails from './components/ProductDetails';
 import OurCollection from './pages/OurCollection/OurCollection';
-import data from './pages/OurCollection/collection.json';
+import data from './assets/collection.json';
 
 const App = () => {
   return (

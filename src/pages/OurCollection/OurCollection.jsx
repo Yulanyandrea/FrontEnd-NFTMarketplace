@@ -8,7 +8,7 @@ const Our = ({ informations = [] }) => {
       {
         // eslint-disable-next-line react/prop-types
         informations.map((data) => {
-          console.log(data);
+          // console.log(data);
           return (
             <TopCollection data={data} key={data.id} />
           );
