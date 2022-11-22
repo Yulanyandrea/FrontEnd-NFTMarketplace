@@ -6,6 +6,7 @@ import uploadFile from './images/uploadfile.jpg';
 
 const CreateNFT = () => {
   const [form, setForm] = useState({
+    id: '',
     productName: '',
     description: '',
     price: '',
@@ -14,7 +15,12 @@ const CreateNFT = () => {
     royalty: '',
   });
 
-  const API = 'http://localhost:3000/api/';
+  const API = 'http://localhost:3004/products';
+
+  const handleChange = ({ target }) => {
+    const { id, value } = target;
+    setForm({ ...form, [id]: value });
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -22,7 +28,7 @@ const CreateNFT = () => {
     const payload = {
       method: 'POST',
       Headers: {
-        'Content-type': 'aplication/json',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(form),
     };
@@ -36,14 +42,7 @@ const CreateNFT = () => {
       // eslint-disable-next-line
       console.log(error);
     }
-    // console.log(form);
   };
-
-  const handleChange = ({ target }) => {
-    const { id, value } = target;
-    setForm({ ...form, [id]: value });
-  };
-  // console.log(form);
 
   const hiddenDesktop = useMediaQuery({
     query: '(max-width: 1439px)',
