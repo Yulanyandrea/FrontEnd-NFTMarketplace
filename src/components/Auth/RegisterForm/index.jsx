@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import createUser from '../../../hook/CreateUser';
 import './styles.scss';
 import logoGoogle from '../../../assets/google.png';
 import logoFacebook from '../../../assets/facebook.png';
@@ -7,38 +8,30 @@ import logoLinkedin from '../../../assets/linkedin.png';
 
 const RegisterForm = () => {
   const [form, setForm] = useState({
+    id: '',
+    firstname: '',
+    lastname: '',
     email: '',
     password: '',
+    repassword: '',
   });
 
-  const API = 'http://localhost:3000/api/';
   // const { showRegisterForm } = props;
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    const payload = {
-      method: 'POST',
-      headers: {
-        'Content-type': 'aplication/json',
-      },
-      body: JSON.stringify(form),
-    };
-
-    try {
-      const response = await fetch(API, payload);
-      const data = await response.json();
-      // eslint-disable-next-line
-      console.log(data);
-    } catch (error) {
-      // eslint-disable-next-line
-      console.error(error);
-    }
-  };
 
   const handleChange = ({ target }) => {
     const { id, value } = target;
     setForm({ ...form, [id]: value });
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      await createUser(form);
+    } catch (error) {
+      // eslint-disable-next-line
+      console.error(error);
+    }
   };
 
   const [checkbox, setCheckbox] = useState(false);
@@ -50,7 +43,7 @@ const RegisterForm = () => {
 
   return (
     <div className="register-form">
-      <form className="register-form-first">
+      <form className="register-form-first" onSubmit={handleSubmit}>
         <h2 className="register-form-title-register">Sign up</h2>
         <div className="register-from__firstname">
           <label className="register-form-first__label" htmlFor="firstname">
@@ -66,7 +59,7 @@ const RegisterForm = () => {
         </div>
         <div className="register-from__lastname">
           <label className="register-form-first__label" htmlFor="lastname">
-            Email address
+            Last name
           </label>
           <input
             className="register-from-input"
@@ -97,9 +90,9 @@ const RegisterForm = () => {
           </label>
           <input
             className="register-from-input"
-            id="createpassword"
+            id="password"
             type="password"
-            value={form.createpassword}
+            value={form.password}
             onChange={handleChange}
           />
         </div>
@@ -130,7 +123,6 @@ const RegisterForm = () => {
             className="register-form-button-register"
             type="submit"
             value="submit"
-            onClick={handleSubmit}
           >
             Sign Up
           </button>
