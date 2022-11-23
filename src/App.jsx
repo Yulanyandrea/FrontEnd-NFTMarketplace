@@ -1,16 +1,16 @@
 import './App.scss';
 import { Routes, Route } from 'react-router-dom';
-
+import happy from './components/Footer/images/happy.jpg';
 import Navbar from './components/Navbar/index';
 import LoginForm from './components/Auth/loginForm';
 import RegisterForm from './components/Auth/RegisterForm';
 import CreateNFT from './components/CreateNft';
 import Footer from './components/Footer/index';
 import Home from './components/Home';
-import happy from './components/Footer/images/happy.jpg';
+import Details from './pages/Details';
 // import Create from './components/CreateandSell';
 // import message from './components/CreateandSell/images/message.jpg';
-import Details from './pages/Details';
+import MenuNavigator from './components/MenuNavigator/index';
 
 // import ProductDetails from './components/ProductDetails';
 import OurCollection from './pages/OurCollection/OurCollection';
@@ -32,7 +32,7 @@ const App = () => {
       {/* <TopSeller imageTop={flower} textTop="TrodBrand" priceTop="$400" /> */}
       {/* <NftCard bit="5+" name="NameStroam" bid="1/20" price="0.244" likes="532" /> */}
       <Navbar />
-
+      <MenuNavigator titleBar="Home" nameRoute="home" namePage="home" />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/productdetail/:id" element={<Details />} />
