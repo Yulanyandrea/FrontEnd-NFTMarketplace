@@ -1,12 +1,30 @@
+import { useState, useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleDot } from '@fortawesome/free-solid-svg-icons';
 import './style.scss';
 import hero from '../../assets/hero.png';
-import products from '../../assets/products.json';
-import ListNft from '../../components/ListNft';
+import ListNft from '../ListNft';
+
+import { getAllProducts } from '../../services/products';
 
 const Home = () => {
+  // eslint-disable-next-line no-unused-vars
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const data = await getAllProducts();
+        console.log(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    getData();
+  }, []);
+
   const hiddenDesktop = useMediaQuery({
     query: '(max-width: 1439px)',
   });
