@@ -4,7 +4,7 @@ import { faCircleDot } from '@fortawesome/free-solid-svg-icons';
 import './style.scss';
 import hero from '../../assets/hero.png';
 import products from '../../assets/products.json';
-import ListNft from '../ListNft';
+import ListNft from '../../components/ListNft';
 
 const Home = () => {
   const hiddenDesktop = useMediaQuery({

@@ -88,7 +88,13 @@
       "owner": "Broodband"
     },
     {
-      "id": 4
+      "id": 4,
+      "productName": "NFT arrow",
+      "description": "Arrow launch in 1899",
+      "price": "300",
+      "size": "12px",
+      "propertie": "test",
+      "royalty": "120%"
     }
   ],
   "collection": [
