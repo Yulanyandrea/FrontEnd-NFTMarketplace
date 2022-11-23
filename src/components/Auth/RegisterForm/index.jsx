@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import createUser from '../../../hook/CreateUser';
+import { createUser } from '../../../hook/create';
 import './styles.scss';
 import logoGoogle from '../../../assets/google.png';
 import logoFacebook from '../../../assets/facebook.png';
@@ -15,6 +15,8 @@ const RegisterForm = () => {
     password: '',
     repassword: '',
   });
+
+  const [checkbox, setCheckbox] = useState(false);
 
   // const { showRegisterForm } = props;
 
@@ -33,8 +35,6 @@ const RegisterForm = () => {
       console.error(error);
     }
   };
-
-  const [checkbox, setCheckbox] = useState(false);
 
   const handleCheckChange = () => {
     setCheckbox(!checkbox);
