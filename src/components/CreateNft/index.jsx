@@ -30,7 +30,6 @@ const CreateNFT = () => {
       console.error(error);
     }
   };
-
   // eslint-disable-next-line
   console.log(form);
 
