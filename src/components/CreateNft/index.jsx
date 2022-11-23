@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
-// import MediaQuery from 'react-responsive';
+import { createNft } from '../../hook/create';
 import './style.scss';
 import uploadFile from './images/uploadfile.jpg';
 
@@ -15,8 +15,6 @@ const CreateNFT = () => {
     royalty: '',
   });
 
-  const API = 'http://localhost:3004/products';
-
   const handleChange = ({ target }) => {
     const { id, value } = target;
     setForm({ ...form, [id]: value });
@@ -25,24 +23,15 @@ const CreateNFT = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const payload = {
-      method: 'POST',
-      Headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(form),
-    };
-
     try {
-      const response = await fetch(API, payload);
-      const data = await response.json();
-      // eslint-disable-next-line
-      console.log(data);
+      await createNft(form);
     } catch (error) {
       // eslint-disable-next-line
-      console.log(error);
+      console.error(error);
     }
   };
+  // eslint-disable-next-line
+  console.log(form);
 
   const hiddenDesktop = useMediaQuery({
     query: '(max-width: 1439px)',
@@ -53,7 +42,7 @@ const CreateNFT = () => {
   });
 
   return (
-    <form className="createnft-form">
+    <form className="createnft-form" onSubmit={handleSubmit}>
       <div className="createnft-form__section">
         <p className="createnft-form__title">Upload file</p>
         <p className="createnft-form__description">
@@ -65,27 +54,34 @@ const CreateNFT = () => {
           alt="UploadFile"
         />
         {hiddenMobile && (
-        <div className="createnft-form__note">
-          <p className="createnft-form__note-title">Note:</p>
-          <p className="createnft-form__note-description">
-            Service fee: <span>2.5%</span>
-          </p>
-          <p className="createnft-form__note-description">
-            You will receive: <span>25.00 ETH $50,000</span>
-          </p>
-        </div>
+          <div className="createnft-form__note">
+            <p className="createnft-form__note-title">Note:</p>
+            <p className="createnft-form__note-description">
+              Service fee: <span>2.5%</span>
+            </p>
+            <p className="createnft-form__note-description">
+              You will receive: <span>25.00 ETH $50,000</span>
+            </p>
+          </div>
         )}
       </div>
       <div className="createnft-form__product">
         <div className="createnft-form__product-name">
           <label htmlFor="product-name">Product Name</label>
-          <input id="productName" onChange={handleChange} placeholder="e.g. `Digital Awesome Game`" />
+          <input
+            id="productName"
+            type="text"
+            value={form.productName}
+            onChange={handleChange}
+            placeholder="e.g. `Digital Awesome Game`"
+          />
         </div>
         <div className="createnft-form__product-description">
           <label htmlFor="product-name">Description</label>
           <textarea
             id="description"
             type="text"
+            value={form.description}
             onChange={handleChange}
             placeholder="e.g. 'After purshasing the product you can get time...'"
           />
@@ -93,20 +89,41 @@ const CreateNFT = () => {
         <div className="createnft-form__product-viewDesktop">
           <div className="createnft-form__product-price">
             <label htmlFor="product-name">Item Price in $</label>
-            <input id="price" type="number" onChange={handleChange} placeholder="e.g. `$20`" />
+            <input
+              id="price"
+              type="number"
+              value={form.price}
+              onChange={handleChange}
+              placeholder="e.g. `$20`"
+            />
           </div>
           <div className="createnft-form__product-size">
             <label htmlFor="product-name">Size</label>
-            <input id="size" onChange={handleChange} placeholder="e.g. `Size`" />
+            <input
+              id="size"
+              value={form.size}
+              onChange={handleChange}
+              placeholder="e.g. `Size`"
+            />
           </div>
           <div className="createnft-form__product-propertie">
             <label htmlFor="product-name">Propertie</label>
-            <input id="propertie" onChange={handleChange} placeholder="e.g. `Propertie`" />
+            <input
+              id="propertie"
+              value={form.propertie}
+              onChange={handleChange}
+              placeholder="e.g. `Propertie`"
+            />
           </div>
         </div>
         <div className="createnft-form__product-royality">
           <label htmlFor="product-name">Royality</label>
-          <input id="royalty" onChange={handleChange} placeholder="e.g. `20%`" />
+          <input
+            id="royalty"
+            value={form.royalty}
+            onChange={handleChange}
+            placeholder="e.g. `20%`"
+          />
         </div>
         <div className="createnft-form__checklist">
           <div className="createnft-form__checklist-sale">
@@ -123,14 +140,10 @@ const CreateNFT = () => {
           </div>
         </div>
         <div className="createnft-form__buttons">
-          <button type="button" className="button_preview" onClick={handleSubmit}>
+          <button type="submit" className="button_preview" value="preview">
             Preview
           </button>
-          <button
-            type="button"
-            className="button_submititem"
-            onClick={handleSubmit}
-          >
+          <button type="submit" value="submit" className="button_submititem">
             Submit Item
           </button>
         </div>

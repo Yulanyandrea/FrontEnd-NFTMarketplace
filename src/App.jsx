@@ -6,7 +6,7 @@ import LoginForm from './components/Auth/loginForm';
 import RegisterForm from './components/Auth/RegisterForm';
 import CreateNFT from './components/CreateNft';
 import Footer from './components/Footer/index';
-import Home from './components/Home';
+import Home from './pages/Home';
 import Details from './pages/Details';
 // import Create from './components/CreateandSell';
 // import message from './components/CreateandSell/images/message.jpg';
