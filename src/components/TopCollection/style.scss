@@ -49,14 +49,15 @@ $font-size:10px;
   align-items: center;
   width: 100%;
   border-radius: 5px;
+  height: 192px;
   @include flex(flex,none,center);
 }
 
 .cardTopCollection__imageProfile{
-  width: 21%;
+  width: 15%;
   position: absolute;
   left: 38%;
-  //top: 43%;
+  height: 50px;
   @include borders(68px,solid ,#474765 );
 }
 
@@ -111,7 +112,7 @@ $breakpoint-tablet: 1200px;
 
   .cardTopCollection__image{
     width: 100%;
-    height: 200px;
+    height: 165px;
   }
 
   .cardTopCollection__imageOne{
@@ -130,11 +131,17 @@ $breakpoint-tablet: 1200px;
   }
 
   .cardTopCollection__imageProfile{
-      display: flex;
-      flex-direction: row;
-      width: 5%;
-      left: 10%;
-      top: 10%;
-  }
+    display: flex;
+    flex-direction: row;
+    width: 27px;
+    height: 23px;
+    // left: 100px;
+    position:relative;
+    top: -25px;
+   }
+
+   .cardTopCollection__smallImage{
+    padding: 0;
+   }
 
 }
