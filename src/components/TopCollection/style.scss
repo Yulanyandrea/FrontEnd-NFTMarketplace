@@ -43,6 +43,7 @@ $font-size:10px;
   font-family: $font-stack;
   @include flex(flex,column,center);
   margin: auto;
+  position: relative;
 }
 
 .cardTopCollection__image{
@@ -54,6 +55,7 @@ $font-size:10px;
 }
 
 .cardTopCollection__imageProfile{
+  top: 162px;
   width: 15%;
   position: absolute;
   left: 38%;
@@ -108,6 +110,7 @@ $breakpoint-tablet: 1200px;
     margin-top: 50px;
     margin-left: 2px;
     margin-right: 17px;
+    position: relative;
   }
 
   .cardTopCollection__image{
@@ -133,11 +136,9 @@ $breakpoint-tablet: 1200px;
   .cardTopCollection__imageProfile{
     display: flex;
     flex-direction: row;
-    width: 27px;
-    height: 23px;
-    // left: 100px;
-    position:relative;
-    top: -25px;
+    width: 45px;
+    height: 39px;
+    position:absolute;
    }
 
    .cardTopCollection__smallImage{
