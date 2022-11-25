@@ -161,5 +161,37 @@
       "name": "stickers",
       "items": 20
     }
+  ],
+  "topnft": [
+    {
+      "id":"1",
+      "name":"nuron",
+      "type":"image",
+      "percent":"2",
+      "percent2":"30",
+      "price":100,
+      "owner":"Yulany",
+      "items":"10k"
+    },
+    {
+      "id":"2",
+      "name":"nuron",
+      "type":"image",
+      "percent":"2",
+      "percent2":"30",
+      "price":100,
+      "owner":"Luna",
+      "items":"30k"
+    },
+    {
+      "id":"3",
+      "name":"sun",
+      "type":"image",
+      "percent":"2",
+      "percent2":"30",
+      "price":100,
+      "owner":"Camilo",
+      "items":"10k"
+    }
   ]
 }

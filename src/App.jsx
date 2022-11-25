@@ -14,7 +14,7 @@ import MenuNavigator from './components/MenuNavigator/index';
 
 // import ProductDetails from './components/ProductDetails';
 import OurCollection from './pages/OurCollection/OurCollection';
-// import data from './assets/collection.json';
+import TopNft from './pages/TopNFT/index';
 
 const App = () => {
   return (
@@ -40,6 +40,7 @@ const App = () => {
         <Route path="/register" element={<RegisterForm />} />
         <Route path="/createnft" element={<CreateNFT />} />
         <Route path="/ourcollection" element={<OurCollection />} />
+        <Route path="/topnft" element={<TopNft />} />
 
       </Routes>
 
