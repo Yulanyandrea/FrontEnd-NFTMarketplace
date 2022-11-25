@@ -10,9 +10,10 @@ import Home from './pages/Home';
 import Details from './pages/Details';
 // import Create from './components/CreateandSell';
 // import message from './components/CreateandSell/images/message.jpg';
+import MenuNavigator from './components/MenuNavigator/index';
 
 import OurCollection from './pages/OurCollection/OurCollection';
-import data from './assets/collection.json';
+// import data from './assets/collection.json';
 
 const App = () => {
   return (
@@ -30,14 +31,14 @@ const App = () => {
       {/* <TopSeller imageTop={flower} textTop="TrodBrand" priceTop="$400" /> */}
       {/* <NftCard bit="5+" name="NameStroam" bid="1/20" price="0.244" likes="532" /> */}
       <Navbar />
-
+      <MenuNavigator titleBar="Home" nameRoute="home" namePage="home" />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/productdetail/:id" element={<Details />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/register" element={<RegisterForm />} />
         <Route path="/createnft" element={<CreateNFT />} />
-        <Route path="/ourcollection" element={<OurCollection informations={data} />} />
+        <Route path="/ourcollection" element={<OurCollection />} />
 
       </Routes>
 
