@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleDot } from '@fortawesome/free-solid-svg-icons';
@@ -6,25 +5,7 @@ import './style.scss';
 import hero from '../../assets/hero.png';
 import ListNft from '../ListNft';
 
-import { getAllProducts } from '../../services/products';
-
 const Home = () => {
-  // eslint-disable-next-line no-unused-vars
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const data = await getAllProducts();
-        console.log(data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    getData();
-  }, []);
-
   const hiddenDesktop = useMediaQuery({
     query: '(max-width: 1439px)',
   });
@@ -71,7 +52,7 @@ const Home = () => {
           <FontAwesomeIcon icon={faCircleDot} style={{ color: '#00A3FF' }} className="home-livebidding__title__img" />
           <h1 className="home-livebidding-title">Live Bidding</h1>
         </div>
-        <ListNft products={products} />
+        <ListNft />
       </div>
     </div>
   );
