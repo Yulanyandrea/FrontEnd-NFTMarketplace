@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleDot } from '@fortawesome/free-solid-svg-icons';
 import './style.scss';
 import hero from '../../assets/hero.png';
-import ListNft from '../ListNft';
+import ListNft from '../../components/ListNft';
 
 const Home = () => {
   const hiddenDesktop = useMediaQuery({
