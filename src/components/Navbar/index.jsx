@@ -8,35 +8,37 @@ import logo from '../../assets/logo.png';
 
 const Navbar = () => {
   return (
-    <header className="navbar">
-      <Link to="/" className="logo__link">
-        <img src={logo} alt="Nuron-logo" className="navbar__logo" />
-      </Link>
-      <nav className="menu">
-        <ul className="menu__list">
-          <li className="menu__item">
-            <Link to="/" className="menu__link">Home</Link>
-          </li>
-          <li className="menu__item">
-            <Link to="/login" className="menu__link">Login</Link>
-          </li>
-          <li className="menu__item">
-            <Link to="/register" className="menu__link">Register</Link>
-          </li>
-          <li className="menu__item">
-            <Link to="/createnft" className="menu__link">Create</Link>
-          </li>
-          <li className="menu__item">
-            <Link to="/" className="menu__link">Blog</Link>
-          </li>
-          <li className="menu__item">
-            <Link to="/" className="menu__link">Contact</Link>
-          </li>
-        </ul>
+    <header className="navbar__container">
+      <nav className="navbar">
+        <Link to="/" className="logo__link">
+          <img src={logo} alt="Nuron-logo" className="navbar__logo" />
+        </Link>
+        <div className="menu">
+          <ul className="menu__list">
+            <li className="menu__item">
+              <Link to="/" className="menu__link">Home</Link>
+            </li>
+            <li className="menu__item">
+              <Link to="/login" className="menu__link">Login</Link>
+            </li>
+            <li className="menu__item">
+              <Link to="/register" className="menu__link">Register</Link>
+            </li>
+            <li className="menu__item">
+              <Link to="/createnft" className="menu__link">Create</Link>
+            </li>
+            <li className="menu__item">
+              <Link to="/" className="menu__link">Blog</Link>
+            </li>
+            <li className="menu__item">
+              <Link to="/" className="menu__link">Contact</Link>
+            </li>
+          </ul>
+        </div>
       </nav>
       <div className="buttons__container">
         <form className="menu__form">
-          <input type="text" className="menu__input" />
+          <input type="text" placeholder="Search Here" className="menu__input" />
           <button type="button" className="menu__button button__search">
             <FontAwesomeIcon icon={faMagnifyingGlass} style={{ color: '#ACACAC' }} />
           </button>

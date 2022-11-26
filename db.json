@@ -40,6 +40,14 @@
       "email": "jmuñoz@makeitreal.com",
       "password": 1234567,
       "rol": "admin"
+    },
+    {
+      "id": 4,
+      "firstname": "Juan",
+      "lastname": "Munoz",
+      "email": "j@h.com",
+      "password": "123456",
+      "repassword": "123456"
     }
   ],
   "products": [

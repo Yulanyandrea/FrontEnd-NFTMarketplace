@@ -12,7 +12,6 @@ import Details from './pages/Details';
 // import message from './components/CreateandSell/images/message.jpg';
 import MenuNavigator from './components/MenuNavigator/index';
 
-// import ProductDetails from './components/ProductDetails';
 import OurCollection from './pages/OurCollection/OurCollection';
 // import data from './assets/collection.json';
 
