@@ -2,7 +2,7 @@ import './style.scss';
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSuitcase } from '@fortawesome/free-solid-svg-icons';
-import { getData } from './data';
+import { getData } from '../../hook/TopNft';
 
 const TopNft = () => {
   const [top, setTop] = useState([]);

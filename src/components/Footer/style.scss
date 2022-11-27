@@ -32,7 +32,7 @@ $font-size:12px;
   @include flex(flex,column,center,center);
   font-size: $font-size;
   position: relative;
-  padding: 20px;
+  padding: 10px;
   background-color: $backgroud;
   color: $font-color;
   width: 100%;
@@ -318,7 +318,7 @@ $breakpoint-tablet: 1200px;
     font-weight: $font-weight;
     font-size: 13px;
     position: absolute;
-    top: 319px;
+    top: 300px;
   }
 
   .cardFooter__facebook{

@@ -12,8 +12,7 @@ import Details from './pages/Details';
 // import message from './components/CreateandSell/images/message.jpg';
 import MenuNavigator from './components/MenuNavigator/index';
 
-// import ProductDetails from './components/ProductDetails';
-import OurCollection from './pages/OurCollection/OurCollection';
+import OurCollection from './pages/OurCollection/index';
 import TopNft from './pages/TopNFT/index';
 
 const App = () => {

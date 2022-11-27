@@ -2,14 +2,20 @@
 @import '../../scss/_color.scss';
 
 .TopNFT{
- color:white;
+  color:white;
   padding: 17px;
+  margin-bottom: 53px;
 }
 
 .TopNFT__title{
   font-size: 13px;
   padding-top: 19px;
   padding-bottom: 17px;
+  display: flex;
+}
+
+.TopNFT__text{
+  font-size: 15px;
 }
 
 .TopNFT__container{
@@ -57,6 +63,10 @@
 @media(min-width:1200px){
   .TopNFT{
     padding: 0px 80px 0px 80px;
+  }
+
+  .TopNFT__text{
+    font-size: 18px;
   }
 
   .TopNFT__container{
