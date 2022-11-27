@@ -12,12 +12,8 @@
     margin: 10px;
   }
 
-  .menu {
+  .navbar{
     display: none;
-  }
-
-  .menu__list {
-    list-style-type: none;
   }
 
   .menu__link {
@@ -88,6 +84,14 @@
     .navbar__logo {
       height: 30px;
       margin: 0;
+    }
+
+    .logo__link {
+      display: none;
+    }
+
+    .logo__link--hide {
+      display: inline;
     }
 
     .menu {

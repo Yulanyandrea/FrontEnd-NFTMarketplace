@@ -9,8 +9,11 @@ import logo from '../../assets/logo.png';
 const Navbar = () => {
   return (
     <header className="navbar__container">
+      <Link to="/" className="logo__link">
+        <img src={logo} alt="Nuron-logo" className="navbar__logo" />
+      </Link>
       <nav className="navbar">
-        <Link to="/" className="logo__link">
+        <Link to="/" className="logo__link--hide">
           <img src={logo} alt="Nuron-logo" className="navbar__logo" />
         </Link>
         <div className="menu">
