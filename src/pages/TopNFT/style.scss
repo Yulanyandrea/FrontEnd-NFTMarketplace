@@ -1,0 +1,97 @@
+@import '../../scss/_global.scss';
+@import '../../scss/_color.scss';
+
+.TopNFT{
+  color:white;
+  padding: 17px;
+  margin-bottom: 53px;
+}
+
+.TopNFT__title{
+  font-size: 13px;
+  padding-top: 19px;
+  padding-bottom: 17px;
+  display: flex;
+}
+
+.TopNFT__text{
+  font-size: 15px;
+}
+
+.TopNFT__container{
+  display: grid;
+  text-align: left;
+  padding-top: 20px;
+  background-color: #1a1a28;
+}
+
+.TopNFT__tab{
+  padding-left: 10px;
+}
+
+.TopNFT__TabHead{
+  font-size: 10px;
+}
+
+.TopNFT__tablehead{
+  padding-bottom: 10px;
+}
+
+.TopNFT__tableheadProduct{
+  padding-right: 40px;
+  padding-bottom: 10px;
+}
+
+.TopNFT__tableContent{
+  font-size: 12px;
+  color: gray;
+}
+
+.TopNFT__tableDescriptionImage{
+  font-size: 10px;
+  width: 21%;
+}
+
+.TopNFT__tableDescriptionImage-width{
+  width: 28%;
+  border-radius: 10px;
+  height: 20px;
+  border-style: solid;
+  border-color: gray;
+}
+
+@media(min-width:1200px){
+  .TopNFT{
+    padding: 0px 80px 0px 80px;
+  }
+
+  .TopNFT__text{
+    font-size: 18px;
+  }
+
+  .TopNFT__container{
+    font-size: 16px;
+  }
+
+  .TopNFT__icon{
+    padding-right: 20px;
+  }
+
+  .TopNFT__TabHead{
+    font-size: 17px;
+  }
+
+  .TopNFT__tableContent{
+    font-size: 19px;
+  }
+
+  .TopNFT__tableDescriptionImage{
+    font-size: 15px;
+  }
+
+  .TopNFT__tableDescriptionImage-width{
+    width: 19%;
+    border-radius: 19px;
+    height: 37px;
+  }
+}

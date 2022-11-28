@@ -12,8 +12,8 @@ import Details from './pages/Details';
 // import message from './components/CreateandSell/images/message.jpg';
 import MenuNavigator from './components/MenuNavigator/index';
 
-import OurCollection from './pages/OurCollection/OurCollection';
-// import data from './assets/collection.json';
+import OurCollection from './pages/OurCollection/index';
+import TopNft from './pages/TopNFT/index';
 
 const App = () => {
   return (
@@ -39,6 +39,7 @@ const App = () => {
         <Route path="/register" element={<RegisterForm />} />
         <Route path="/createnft" element={<CreateNFT />} />
         <Route path="/ourcollection" element={<OurCollection />} />
+        <Route path="/topnft" element={<TopNft />} />
 
       </Routes>
 

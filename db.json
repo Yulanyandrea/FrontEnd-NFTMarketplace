@@ -169,5 +169,57 @@
       "name": "stickers",
       "items": 20
     }
+  ],
+  "topnft": [
+    {
+      "id": "1",
+      "name": "https://picsum.photos/id/237/200/300",
+      "type": "image",
+      "percent": "2",
+      "percent2": "30",
+      "price": 100,
+      "owner": "3K",
+      "items": "10k"
+    },
+    {
+      "id": "2",
+      "name": "https://picsum.photos/id/237/200/300",
+      "type": "image",
+      "percent": "2",
+      "percent2": "30",
+      "price": 100,
+      "owner": "2.5K",
+      "items": "30k"
+    },
+    {
+      "id": "3",
+      "name": "https://picsum.photos/id/237/200/300",
+      "type": "image",
+      "percent": "2",
+      "percent2": "30",
+      "price": 100,
+      "owner": "3.6K",
+      "items": "10k"
+    },
+    {
+      "id": "4",
+      "name": "https://picsum.photos/id/237/200/300",
+      "type": "image",
+      "percent": "2",
+      "percent2": "30",
+      "price": 100,
+      "owner": "3.2K",
+      "items": "10k"
+    },
+    {
+      "id": "5",
+      "name": "https://picsum.photos/id/237/200/300",
+      "type": "image",
+      "percent": "2",
+      "percent2": "30",
+      "price": 100,
+      "owner": "33K",
+      "items": "10k"
+    }
   ]
 }

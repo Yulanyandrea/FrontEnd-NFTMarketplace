@@ -1,23 +1,32 @@
 @import '../../scss/_global.scss';
 @import '../../scss/_color.scss';
 
+@mixin flex($dis,$direction,$just) {
+  display: $dis;
+  flex-direction: $direction;
+  justify-content: $just;
+}
+
 .menuTop{
-  display: flex;
-  flex-direction: row;
+  @include flex(flex,column,space-between);
   color: white;
-  justify-content: space-between;
   padding-left: 20px;
   padding-right: 20px;
 }
 
+.menuTop__container{
+  @include flex(flex,column,center);
+  text-align: center;
+
+}
+
 .menuTop__title{
+  @include flex(flex,column,none);
   font-size: 18px;
 }
 
 .menuTop__container2{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  @include flex(flex,row,center);
 }
 
 .menuTop__route{
@@ -39,6 +48,13 @@
     padding-left: 132px;
     padding-right: 141px;
     padding-top: 22px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .menuTop__container{
+    display: flex;
+    flex-direction: row;
   }
 
   .menuTop__title{
