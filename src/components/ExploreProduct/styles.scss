@@ -1,0 +1,113 @@
+@import "../../scss/_global.scss";
+@import "../../scss/_color.scss";
+
+.explore__container {
+  display: block;
+  margin: 20px;
+
+  .explore__header {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+
+  .explore__title {
+    color: $main-cards;
+    text-transform: capitalize;
+  }
+
+  .button__header {
+    color: $main-cards;
+    background-color: $main-color;
+    text-transform: capitalize;
+    border: none;
+    height: 40px;
+    width: 65px;
+    padding: 5px;
+    border-radius: 7px;
+  }
+
+  .button__header--color {
+    color: $main-cards;
+    background-color: $accent;
+    text-transform: capitalize;
+    border: none;
+    height: 40px;
+    width: 65px;
+    padding: 5px;
+    border-radius: 7px;
+  }
+
+  .explore__form {
+    display: none;
+    width: 100%;
+    text-transform: capitalize;
+  }
+
+  .explore__form--active {
+    display: block;
+  }
+
+  .explore__label {
+    width: 100%;
+    display: inline-block;
+    color: $text-silver;
+    margin-bottom: 15px;
+  }
+
+  .explore__select {
+    width: 100%;
+    background-color: $accent;
+    color: $main-cards;
+    border: none;
+    border-radius: 7px;
+    height: 40px;
+    margin-top: 10px;
+    text-transform: capitalize;
+  }
+
+  .button__filter {
+    color: $main-cards;
+    background-color: $main-color;
+    text-transform: capitalize;
+    border: none;
+    height: 20px;
+    width: 65px;
+    padding: 0px 5px 0px 5px;
+    border-radius: 7px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .explore__container{
+
+    .explore__header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 0px;
+      margin-bottom: 30px;
+    }
+
+    .button__header {
+      color: $main-cards;
+      background-color: $main-color;
+      text-transform: capitalize;
+      border: none;
+      width: 80px;
+      padding: 5px;
+      border-radius: 7px;
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    .explore__form--active {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;
+    }
+
+  }
+}
