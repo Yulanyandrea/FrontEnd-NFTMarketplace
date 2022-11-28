@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import './style.scss';
 import TopCollection from '../../components/TopCollection/index';
-import { getCollection } from './Collection';
+import { getCollection } from '../../hook/OurCollection';
 
 // eslint-disable-next-line react/prop-types
 const Our = () => {
