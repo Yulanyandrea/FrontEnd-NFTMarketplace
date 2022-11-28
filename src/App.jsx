@@ -32,7 +32,7 @@ const App = () => {
       {/* <TopSeller imageTop={flower} textTop="TrodBrand" priceTop="$400" /> */}
       {/* <NftCard bit="5+" name="NameStroam" bid="1/20" price="0.244" likes="532" /> */}
       <Navbar />
-      <MenuNavigator titleBar="Home" nameRoute="home" namePage="home" />
+      <MenuNavigator nameRoute="home" />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/productdetail/:id" element={<Details />} />
