@@ -2,18 +2,48 @@
 @import "../../scss/_color.scss";
 
 .navbar__container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 15px;
+    display: block;
+    text-align: center;
+
 
   .navbar__logo {
     height: 40px;
     margin: 10px;
   }
 
-  .navbar{
+  .navbar__active {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    align-items: flex-start;
+    text-align: left;
+    height: 100%;
+    width: 85%;
+    top: 0px;
+    background-color: $accent;
+    gap: 20px;
+    padding: 20px;
+    transition: 0.3s ease-in-out;
+  }
+
+  .navbar {
     display: none;
+  }
+
+  .logo__aside {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .menu__list {
+    list-style-type: none;
+  }
+
+  .menu__item {
+    margin-bottom: 15px;
   }
 
   .menu__link {
@@ -48,6 +78,10 @@
     margin: 0px 3px 0px 3px;
   }
 
+  .button__close {
+    border: none;
+  }
+
   .menu__button--color {
     width: max-content;
     height: 40px;
@@ -67,7 +101,7 @@
 
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1200px) {
   .navbar__container {
     display: flex;
     flex-direction: row;
@@ -77,8 +111,14 @@
 
     .navbar{
       display: flex;
+      flex-direction: row;
+      position: relative;
+      height: 40px;
       justify-content: space-around;
+      background-color: $main-background;
       gap: 20px;
+      padding: 0;
+      width: auto;
     }
 
     .navbar__logo {
@@ -90,8 +130,16 @@
       display: none;
     }
 
+    .logo__aside {
+      width: auto;
+    }
+
     .logo__link--hide {
       display: inline;
+    }
+
+    .button__close {
+      display: none;
     }
 
     .menu {
@@ -103,7 +151,7 @@
       flex-direction: row;
       align-items: center;
       gap: 25px;
-      height: 30px;
+      height: 40px;
     }
 
     .menu__item{

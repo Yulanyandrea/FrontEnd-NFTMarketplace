@@ -1,21 +1,33 @@
 import './styles.scss';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // eslint-disable-next-line object-curly-newline
-import { faMagnifyingGlass, faBars, faSun, faBell } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass, faBars, faSun, faBell, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 import logo from '../../assets/logo.png';
 
 const Navbar = () => {
+  const [toggle, setToggle] = useState(false);
+
+  function handleMenu() {
+    setToggle(!toggle);
+  }
+
   return (
     <header className="navbar__container">
       <Link to="/" className="logo__link">
         <img src={logo} alt="Nuron-logo" className="navbar__logo" />
       </Link>
-      <nav className="navbar">
-        <Link to="/" className="logo__link--hide">
-          <img src={logo} alt="Nuron-logo" className="navbar__logo" />
-        </Link>
+      <nav className={toggle ? 'navbar__active' : 'navbar'}>
+        <div className="logo__aside">
+          <Link to="/" className="logo__link--hide">
+            <img src={logo} alt="Nuron-logo" className="navbar__logo" />
+          </Link>
+          <button type="button" className="menu__button button__close" onClick={handleMenu}>
+            <FontAwesomeIcon icon={faXmark} style={{ color: '#ACACAC' }} />
+          </button>
+        </div>
         <div className="menu">
           <ul className="menu__list">
             <li className="menu__item">
@@ -50,7 +62,7 @@ const Navbar = () => {
         <button type="button" className="menu__button">
           <FontAwesomeIcon icon={faBell} style={{ color: '#ACACAC' }} />
         </button>
-        <button type="button" className="menu__button button__bars">
+        <button type="button" className="menu__button button__bars" onClick={handleMenu}>
           <FontAwesomeIcon icon={faBars} style={{ color: '#ACACAC' }} />
         </button>
         <button type="button" className="menu__button">
