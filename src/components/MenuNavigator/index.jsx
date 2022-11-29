@@ -1,5 +1,4 @@
 import './style.scss';
-// import {Link, useLocation } from 'react-router-dom';
 
 const MenuNavigator = (props) => {
   const url = window.location.pathname;
