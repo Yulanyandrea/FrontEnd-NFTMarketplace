@@ -1,4 +1,3 @@
-import './App.scss';
 import { Routes, Route } from 'react-router-dom';
 import happy from './components/Footer/images/happy.jpg';
 import Navbar from './components/Navbar/index';
@@ -8,28 +7,16 @@ import CreateNFT from './components/CreateNft';
 import Footer from './components/Footer/index';
 import Home from './pages/Home';
 import Details from './pages/Details';
-// import Create from './components/CreateandSell';
-// import message from './components/CreateandSell/images/message.jpg';
+import EditProfile from './components/EditProfile/Edit';
 
-// import ProductDetails from './components/ProductDetails';
 import OurCollection from './pages/OurCollection/OurCollection';
 import data from './assets/collection.json';
+import './App.scss';
 
 const App = () => {
   return (
 
     <div className="App">
-      {/* <Create
-        title="STEP-01"
-        imageHeader={message}
-        titleArticle="Set up your wallet"
-        description="Powerful features and inclusions,
-      which makes Nuron standout, easily customizable and scalable."
-      /> */}
-      {/* <CreateNFT /> */}
-      {/* <TopCollection imageSell={tree} imageProfile={profile} /> */}
-      {/* <TopSeller imageTop={flower} textTop="TrodBrand" priceTop="$400" /> */}
-      {/* <NftCard bit="5+" name="NameStroam" bid="1/20" price="0.244" likes="532" /> */}
       <Navbar />
 
       <Routes>
@@ -39,6 +26,7 @@ const App = () => {
         <Route path="/register" element={<RegisterForm />} />
         <Route path="/createnft" element={<CreateNFT />} />
         <Route path="/ourcollection" element={<OurCollection informations={data} />} />
+        <Route path="/editprofile" element={<EditProfile />} />
 
       </Routes>
 

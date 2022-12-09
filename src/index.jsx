@@ -1,41 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-// import './index.scss';
-// import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import App from './App';
+import { store } from './app/store';
 import reportWebVitals from './reportWebVitals';
-// import LoginForm from './components/Auth/loginForm';
-// import RegisterForm from './components/Auth/RegisterForm';
-// import CreateNFT from './components/CreateNft';
-
-// const router = createBrowserRouter([
-//   {
-//     path: '/',
-//     element: <App />,
-//   },
-//   {
-//     path: '/login',
-//     element: <LoginForm />,
-//   },
-//   {
-//     path: '/register',
-//     element: <RegisterForm />,
-//   },
-//   {
-//     path: '/createnft',
-//     element: <CreateNFT />,
-//   },
-// ]);
+import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <Provider store={store}>
     {/* <RouterProvider router={router} /> */}
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </React.StrictMode>,
+  </Provider>,
 );
 
 // If you want to start measuring performance in your app, pass a function

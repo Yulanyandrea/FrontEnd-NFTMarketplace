@@ -1,0 +1,30 @@
+@import '../../../scss/global';
+
+.editimage {
+  color: $main-cards;
+  border: 1.7px solid rgb(56, 57, 72);
+  border-radius: 4px;
+
+}
+
+.editprofile-header_button {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  &-icon {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 1440px) {
+
+  .editimage {
+    width: 900px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+}
