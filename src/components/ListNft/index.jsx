@@ -3,16 +3,13 @@ import NftCard from '../NftCard';
 import './styles.scss';
 
 const ListNft = () => {
-  const products = useSelector((state) => state.nftMarketPlace.data.products);
+  const allProducts = useSelector((state) => state.nftMarketPlace.data.products);
 
   return (
     <div className="products__container">
-      {
-        // eslint-disable-next-line arrow-parens
-        products.map(product => {
-          return <NftCard product={product} key={product.id} />;
-        })
-      }
+      {allProducts ? allProducts.map((product) => (
+        <NftCard product={product} key={product.id} />
+      )) : null}
     </div>
   );
 };

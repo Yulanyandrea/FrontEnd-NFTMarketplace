@@ -16,6 +16,7 @@ export async function GetData(data) {
     const data = response.json();
     return data;
   } catch (error) {
+    // eslint-disable-next-line
     console.error(error);
   }
 }
