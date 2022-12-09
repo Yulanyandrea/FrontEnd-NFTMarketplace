@@ -1,6 +1,7 @@
 const API = 'http://localhost:8080/api';
 
-export async function getData(data) {
+// eslint-disable-next-line import/prefer-default-export
+export async function GetData(data) {
   const payload = {
     method: 'GET',
     headers: {
@@ -10,7 +11,8 @@ export async function getData(data) {
   };
 
   try {
-    const response = await fetch(`${API}`, payload);
+    const response = await fetch(`${API}/allData`, payload);
+    // eslint-disable-next-line no-shadow
     const data = response.json();
     return data;
   } catch (error) {

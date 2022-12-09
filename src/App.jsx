@@ -1,4 +1,7 @@
+import { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { fetchData } from './feature/api/counterSlice';
 import happy from './components/Footer/images/happy.jpg';
 import Navbar from './components/Navbar/index';
 import LoginForm from './components/Auth/loginForm';
@@ -15,6 +18,15 @@ import Explore from './pages/Explore';
 import TopNft from './pages/TopNFT/index';
 
 const App = () => {
+  const dispatch = useDispatch();
+  const dispatchData = () => {
+    dispatch(fetchData());
+  };
+
+  useEffect(() => {
+    dispatchData();
+  }, []);
+
   return (
 
     <div className="App">
