@@ -1,25 +1,9 @@
-import './styles.scss';
-import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import NftCard from '../NftCard';
+import './styles.scss';
 
-import { getAllProducts } from '../../hook/products';
-
-// eslint-disable-next-line react/prop-types
 const ListNft = () => {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const data = await getAllProducts();
-        setProducts(data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    getData();
-  }, []);
+  const products = useSelector((state) => state.nftMarketPlace.data.products);
 
   return (
     <div className="products__container">
