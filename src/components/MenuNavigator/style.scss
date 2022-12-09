@@ -1,0 +1,75 @@
+@import '../../scss/_global.scss';
+@import '../../scss/_color.scss';
+
+@mixin flex($dis,$direction,$just) {
+  display: $dis;
+  flex-direction: $direction;
+  justify-content: $just;
+}
+
+.menuTop{
+  @include flex(flex,column,space-between);
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.menuTop__container{
+  @include flex(flex,column,center);
+  text-align: center;
+
+}
+
+.menuTop__title{
+  @include flex(flex,column,none);
+  font-size: 18px;
+}
+
+.menuTop__container2{
+  @include flex(flex,row,center);
+}
+
+.menuTop__route{
+  font-size: 10px;
+  padding-right: 5px;
+}
+
+.menuTop__arrow{
+  font-size: 10px;
+}
+
+.menuTop__page{
+  font-size: 10px;
+  padding-left: 5px;
+}
+
+@media(min-width:1200px){
+  .menuTop{
+    padding-left: 132px;
+    padding-right: 141px;
+    padding-top: 22px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .menuTop__container{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .menuTop__title{
+    font-size: 28px;
+  }
+
+  .menuTop__route{
+    font-size: 15px;
+  }
+
+  .menuTop__page{
+    font-size: 15px;
+  }
+
+  .menuTop__arrow{
+    font-size: 14px;
+  }
+}

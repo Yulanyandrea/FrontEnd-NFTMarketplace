@@ -11,8 +11,10 @@ const TopCollection = ({ data = {} }) => {
   } = data;
   return (
     <div className="cardTopCollection">
-      <img src={imageSell} alt="" className="cardTopCollection__image" />
-      <img src={imageProfile} alt="" className="cardTopCollection__imageProfile" />
+      <div className="cardTopCollection__imageProfileContainer">
+        <img src={imageSell} alt="" className="cardTopCollection__image" />
+        <img src={imageProfile} alt="" className="cardTopCollection__imageProfile" />
+      </div>
       <div className="cardTopCollection__smallImage">
         <img src={imageSell} alt="" className="cardTopCollection__imageOne" />
         <img src={imageSell} alt="" className="cardTopCollection__imageTwo" />

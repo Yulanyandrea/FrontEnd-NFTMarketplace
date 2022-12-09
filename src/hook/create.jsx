@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 const API = 'http://localhost:3004';
+=======
+const API = 'http://localhost:8080/api';
+>>>>>>> 72d320cf5cb83bdd164201481b4e5835cf907006
 
 export async function createUser(user) {
   const payload = {

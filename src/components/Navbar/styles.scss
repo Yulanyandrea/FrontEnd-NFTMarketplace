@@ -1,32 +1,65 @@
 @import "../../scss/_global.scss";
 @import "../../scss/_color.scss";
 
-.navbar {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 15px;
+.navbar__container {
+    display: block;
+    text-align: center;
+
 
   .navbar__logo {
     height: 40px;
     margin: 10px;
   }
 
-  .menu {
+  .navbar__active {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    align-items: flex-start;
+    text-align: left;
+    height: 100%;
+    width: 85%;
+    top: 0px;
+    background-color: $accent;
+    gap: 20px;
+    padding: 20px;
+    transition: 0.3s ease-in-out;
+  }
+
+  .navbar {
     display: none;
+  }
+
+  .logo__aside {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
   }
 
   .menu__list {
     list-style-type: none;
   }
 
+  .menu__item {
+    margin-bottom: 15px;
+  }
+
   .menu__link {
     color: $text-silver;
     font-weight: 500;
     text-decoration: none;
+    transition: 0.3s ease-in-out;
+  }
+
+  .menu__link:hover {
+    color: $main-cards;
   }
 
   .menu__input {
     display: none;
+    border: none;
   }
 
   .buttons__container {
@@ -45,29 +78,68 @@
     margin: 0px 3px 0px 3px;
   }
 
+  .button__close {
+    border: none;
+  }
+
   .menu__button--color {
     width: max-content;
     height: 40px;
     padding: 10px;
     margin: 0px 3px 0px 3px;
     color: $main-cards;
+    background-color: $accent;
+    border: none;
     font-weight: 700;
     font-size: 14px;
     border-radius: 7px;
   }
+
+  .menu__button--color:hover {
+    background-color: $main-color;
+  }
+
 }
 
-@media screen and (min-width: 1440px) {
-  .navbar {
+@media screen and (min-width: 1200px) {
+  .navbar__container {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 20px 70px 20px 70px;
     gap: 10px;
+
+    .navbar{
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      height: 40px;
+      justify-content: space-around;
+      background-color: $main-background;
+      gap: 20px;
+      padding: 0;
+      width: auto;
+    }
 
     .navbar__logo {
       height: 30px;
       margin: 0;
+    }
+
+    .logo__link {
+      display: none;
+    }
+
+    .logo__aside {
+      width: auto;
+    }
+
+    .logo__link--hide {
+      display: inline;
+    }
+
+    .button__close {
+      display: none;
     }
 
     .menu {
@@ -79,7 +151,7 @@
       flex-direction: row;
       align-items: center;
       gap: 25px;
-      height: 30px;
+      height: 40px;
     }
 
     .menu__item{
@@ -101,6 +173,12 @@
       border: none;
       height: 30px;
       background-color: $main-background;
+      padding: 10px;
+      color: $text-silver;
+    }
+
+    .menu__input:focus {
+      outline: none;
     }
 
     .button__search {

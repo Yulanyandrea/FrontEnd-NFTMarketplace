@@ -1,4 +1,4 @@
-const API = 'http://localhost:3004';
+const API = 'http://localhost:8080/api';
 
 export async function getData(data) {
   const payload = {

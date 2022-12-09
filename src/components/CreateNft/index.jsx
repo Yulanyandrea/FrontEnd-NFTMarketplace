@@ -7,6 +7,8 @@ import uploadFile from './images/uploadfile.jpg';
 const CreateNFT = () => {
   const [form, setForm] = useState({
     id: '',
+    owner: 'unknown',
+    image: 'https://picsum.photos/id/40/200',
     productName: '',
     description: '',
     price: '',

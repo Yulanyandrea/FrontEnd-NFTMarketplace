@@ -8,24 +8,27 @@ import Footer from './components/Footer/index';
 import Home from './pages/Home';
 import Details from './pages/Details';
 import EditProfile from './components/EditProfile/Edit';
+import MenuNavigator from './components/MenuNavigator/index';
 
-import OurCollection from './pages/OurCollection/OurCollection';
-import data from './assets/collection.json';
-import './App.scss';
+import OurCollection from './pages/OurCollection/index';
+import Explore from './pages/Explore';
+import TopNft from './pages/TopNFT/index';
 
 const App = () => {
   return (
 
     <div className="App">
       <Navbar />
-
+      <MenuNavigator nameRoute="home" />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/productdetail/:id" element={<Details />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/register" element={<RegisterForm />} />
         <Route path="/createnft" element={<CreateNFT />} />
-        <Route path="/ourcollection" element={<OurCollection informations={data} />} />
+        <Route path="/ourcollection" element={<OurCollection />} />
+        <Route path="/explore" element={<Explore />} />
+        <Route path="/topnft" element={<TopNft />} />
         <Route path="/editprofile" element={<EditProfile />} />
 
       </Routes>
