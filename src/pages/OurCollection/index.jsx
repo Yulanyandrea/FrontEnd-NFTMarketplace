@@ -1,30 +1,16 @@
 /* eslint-disable no-unused-vars */
-import { useState, useEffect } from 'react';
-import './style.scss';
+import { useSelector } from 'react-redux';
 import TopCollection from '../../components/TopCollection/index';
-import { getCollection } from '../../hook/OurCollection';
+import './style.scss';
 
-// eslint-disable-next-line react/prop-types
 const Our = () => {
-  const [collection, setCollection] = useState([]);
-  useEffect(() => {
-    const dataCollection = async () => {
-      try {
-        const pageCollection = await getCollection();
-        setCollection(pageCollection);
-        console.log(pageCollection);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    dataCollection();
-  }, []);
+  const collection = useSelector((state) => state.nftMarketPlace.data.collection);
 
   return (
     <div className="bigbox">
       {
         // eslint-disable-next-line react/prop-types
-        collection.map((data) => {
+        collection?.map((data) => {
           // console.log(data);
           return (
             <TopCollection data={data} key={data.id} />

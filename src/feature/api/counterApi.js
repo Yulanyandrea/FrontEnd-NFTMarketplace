@@ -20,3 +20,23 @@ export async function GetData(data) {
     console.error(error);
   }
 }
+
+export async function FetchPost(data) {
+  const payload = {
+    method: 'POST',
+    headers: {
+      'Content-type': 'aplication/json',
+    },
+    body: JSON.stringify(data),
+  };
+
+  try {
+    const response = await fetch(`${API}/`, payload);
+    // eslint-disable-next-line no-shadow
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    // eslint-disable-next-line
+    console.error(error);
+  }
+}
