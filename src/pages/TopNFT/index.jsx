@@ -1,22 +1,10 @@
-import './style.scss';
-import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSuitcase } from '@fortawesome/free-solid-svg-icons';
-import { getData } from '../../hook/TopNft';
+import './style.scss';
 
 const TopNft = () => {
-  const [top, setTop] = useState([]);
-  useEffect(() => {
-    const dataTop = async () => {
-      try {
-        const pageTop = await getData();
-        setTop(pageTop);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    dataTop();
-  }, []);
+  const data = useSelector((state) => state.nftMarketPlace.data.topnft);
 
   return (
     <div className="TopNFT">
@@ -40,7 +28,7 @@ const TopNft = () => {
           </thead>
           <tbody>
             {
-            top.map((info) => {
+            data?.map((info) => {
               return (
                 <tr className="TopNFT__tableContent">
                   <td className="TopNFT__tableDescription">{info.id} .</td>

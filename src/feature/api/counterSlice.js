@@ -4,6 +4,7 @@ import { GetData } from './counterApi';
 const initialState = {
   data: [],
   status: 'idle',
+  currentSelect: null,
 };
 
 export const fetchData = createAsyncThunk('data/fetch', async (data) => {
@@ -14,7 +15,12 @@ export const fetchData = createAsyncThunk('data/fetch', async (data) => {
 export const counterSlice = createSlice({
   name: 'nftStore',
   initialState,
-  reducers: {},
+  reducers: {
+    setCurrentData: (state, action) => {
+      // eslint-disable-next-line no-param-reassign
+      state.currentSelect = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchData.pending, (state) => {
@@ -31,5 +37,7 @@ export const counterSlice = createSlice({
       });
   },
 });
+
+export const { setCurrentData } = counterSlice.actions;
 
 export default counterSlice.reducer;
