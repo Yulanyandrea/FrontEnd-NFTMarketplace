@@ -8,6 +8,7 @@ import './styles.scss';
 
 const ListNft = () => {
   const allProducts = useSelector((state) => state.nftMarketPlace.data.products);
+<<<<<<< HEAD
 
   const dispatch = useDispatch();
 
@@ -54,6 +55,14 @@ const ListNft = () => {
           </section>
         ))
         : null}
+=======
+
+  return (
+    <div className="products__container">
+      {allProducts ? allProducts.map((product) => (
+        <NftCard product={product} key={product.id} />
+      )) : null}
+>>>>>>> af67316a5da8ddde78eb6776db81efdafee97a57
     </div>
   );
 };
