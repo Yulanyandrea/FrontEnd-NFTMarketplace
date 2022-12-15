@@ -17,7 +17,6 @@ export async function GetData(data) {
     return data;
   } catch (error) {
     // eslint-disable-next-line
-<<<<<<< HEAD
     console.error(error);
   }
 }
@@ -38,8 +37,6 @@ export async function FetchPost(data) {
     return data;
   } catch (error) {
     // eslint-disable-next-line
-=======
->>>>>>> af67316a5da8ddde78eb6776db81efdafee97a57
     console.error(error);
   }
 }
