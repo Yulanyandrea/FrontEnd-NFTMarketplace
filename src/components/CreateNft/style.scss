@@ -30,12 +30,45 @@
     }
   }
 
-  .createnft-form__img-uploadfile {
-    width: 345px;
-    border: 2px solid $border-color-components;
-    border-style: dashed;
-    border-radius: 4px;
-    margin: 20px 0;
+  .createnft-form__img{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $text-silver;
+
+    &-upload {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 70%;
+      justify-content: center;
+      text-align: center;
+      line-height: 2;
+
+      &_icon {
+        font-size: 40px;
+        color: $main-color;
+      }
+
+      &_input {
+        display: none;
+      }
+
+      &_title {
+        font-size: 25px;
+        font-weight: 400;
+      }
+    }
+
+    &-uploadfile {
+      width: 345px;
+      border: 2px solid $border-color-components;
+      border-style: dashed;
+      border-radius: 4px;
+      margin: 20px 0;
+    }
   }
 
   &__product {
@@ -54,7 +87,7 @@
     }
 
     .createnft-form__product-name {
-      margin-top: 40px;
+      margin-top: 20px;
     }
 
     .createnft-form__product-description {
@@ -110,12 +143,16 @@
   .createnft-form__buttons {
     display: flex;
     flex-direction: column;
+    margin-bottom: 20px;
   }
 
   .button_preview {
     width: 299px;
     height: 55px;
     margin: 7px 0;
+    cursor: pointer;
+    border-radius: 10px;
+    border-style: none;
   }
 
   .button_submititem {

@@ -1,8 +1,7 @@
-import './styles.scss';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// eslint-disable-next-line no-unused-vars
 import { faFilter, faXmark } from '@fortawesome/free-solid-svg-icons';
+import './styles.scss';
 
 const ExploreProduct = () => {
   const [toggle, setToggle] = useState(false);

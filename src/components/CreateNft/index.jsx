@@ -1,14 +1,19 @@
+import { faUpload } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { createNft } from '../../hook/create';
-import './style.scss';
 import uploadFile from './images/uploadfile.jpg';
+import './style.scss';
 
 const CreateNFT = () => {
+  const [file, setFile] = useState(null);
+  const [img, setImg] = useState(null);
+
   const [form, setForm] = useState({
     id: '',
     owner: 'unknown',
-    image: 'https://picsum.photos/id/40/200',
+    image: '',
     productName: '',
     description: '',
     price: '',
@@ -18,12 +23,33 @@ const CreateNFT = () => {
   });
 
   const handleChange = ({ target }) => {
-    const { id, value } = target;
+    const { id, value, files } = target;
+    // eslint-disable-next-line no-shadow
+    const file = files[0];
+    // eslint-disable-next-line no-console
+    console.log('🚀 ~ file: Upload.jsx:10 ~ handleChange ~ file', file);
+
     setForm({ ...form, [id]: value });
+    setFile(file);
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    const formData = new FormData();
+    const url = 'http://localhost:8080/api/upload';
+
+    formData.append('file', file);
+    formData.append('filename', file.name);
+
+    const options = {
+      method: 'POST',
+      body: formData,
+    };
+
+    const response = await fetch(url, options);
+    const data = await response.json();
+    setImg(data.url);
 
     try {
       await createNft(form);
@@ -50,11 +76,42 @@ const CreateNFT = () => {
         <p className="createnft-form__description">
           Drag or choose your file yo upload
         </p>
-        <img
-          className="createnft-form__img-uploadfile"
-          src={uploadFile}
-          alt="UploadFile"
-        />
+        <label
+          htmlFor="file"
+          className="createnft-form__img"
+        >
+          <div className="createnft-form__img-upload">
+            <FontAwesomeIcon
+              icon={faUpload}
+              className="createnft-form__img-upload_icon"
+            />
+            <input
+              id="file"
+              name="file"
+              type="file"
+              onChange={handleChange}
+              accept="image/*"
+              className="createnft-form__img-upload_input"
+            />
+            <h3 className="createnft-form__img-upload_title">Choose a File</h3>
+            <p className="createnft-form__img-upload_description">
+              PNG, GIF, WEBP, MP4 OR MP3, Max 1Gb.
+            </p>
+          </div>
+          {img ? (
+            <img
+              className="createnft-form__img-uploadfile"
+              src={img}
+              alt="UploadFile"
+            />
+          ) : (
+            <img
+              className="createnft-form__img-uploadfile"
+              src={uploadFile}
+              alt="img"
+            />
+          )}
+        </label>
         {hiddenMobile && (
           <div className="createnft-form__note">
             <p className="createnft-form__note-title">Note:</p>
