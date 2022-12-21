@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import './styles.scss';
 import logoGoogle from '../../../assets/google.png';
 import logoFacebook from '../../../assets/facebook.png';
 import logoTwitter from '../../../assets/twitter.png';
 import logoLinkedin from '../../../assets/linkedin.png';
+import './styles.scss';
 
 const LoginForm = () => {
   const [form, setForm] = useState({
@@ -11,7 +11,7 @@ const LoginForm = () => {
     password: '',
   });
 
-  const API = 'http://localhost:3000/api/';
+  const API = process.env.REACT_APP_USER_LOGIN;
   // const { showRegisterForm } = props;
 
   const handleSubmit = async (event) => {
@@ -20,7 +20,7 @@ const LoginForm = () => {
     const payload = {
       method: 'POST',
       headers: {
-        'Content-type': 'aplication/json',
+        'Content-type': 'application/json',
       },
       body: JSON.stringify(form),
     };
