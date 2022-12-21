@@ -30,7 +30,7 @@ export async function createNft(nft) {
   };
 
   try {
-    const response = await fetch(`${API}/products`, payload);
+    const response = await fetch(`${API}/product`, payload);
     const data = await response.json();
     // eslint-disable-next-line
     console.log(data);

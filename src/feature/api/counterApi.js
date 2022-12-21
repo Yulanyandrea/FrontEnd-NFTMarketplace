@@ -11,7 +11,7 @@ export async function GetData(data) {
   };
 
   try {
-    const response = await fetch(`${API}/allData`, payload);
+    const response = await fetch(`${API}/product`, payload);
     // eslint-disable-next-line no-shadow
     const data = response.json();
     return data;
@@ -25,7 +25,7 @@ export async function FetchPost(data) {
   const payload = {
     method: 'POST',
     headers: {
-      'Content-type': 'aplication/json',
+      'Content-type': 'application/json',
     },
     body: JSON.stringify(data),
   };
