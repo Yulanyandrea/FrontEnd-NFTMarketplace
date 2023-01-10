@@ -47,7 +47,6 @@ const LoginForm = () => {
     const { id, value } = target;
     setForm({ ...form, [id]: value });
   };
-  // console.log(form);
 
   const [checkbox, setCheckbox] = useState(false);
 

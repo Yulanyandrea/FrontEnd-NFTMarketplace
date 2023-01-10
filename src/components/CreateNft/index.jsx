@@ -33,7 +33,6 @@ const CreateNFT = () => {
 
   const handleChange = ({ target }) => {
     const { id, value } = target;
-
     setForm({ ...form, [id]: value });
   };
 
