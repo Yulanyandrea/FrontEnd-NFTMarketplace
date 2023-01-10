@@ -1,11 +1,15 @@
-import './styles.scss';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// eslint-disable-next-line object-curly-newline
-import { faMagnifyingGlass, faBars, faSun, faBell, faXmark } from '@fortawesome/free-solid-svg-icons';
-
+import {
+  faMagnifyingGlass,
+  faBars,
+  faSun,
+  faBell,
+  faXmark,
+} from '@fortawesome/free-solid-svg-icons';
 import logo from '../../assets/logo.png';
+import './styles.scss';
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -43,10 +47,10 @@ const Navbar = () => {
               <Link to="/createnft" className="menu__link">Create</Link>
             </li>
             <li className="menu__item">
-              <Link to="/" className="menu__link">Blog</Link>
+              <Link to="/explore" className="menu__link">Explore</Link>
             </li>
             <li className="menu__item">
-              <Link to="/" className="menu__link">Contact</Link>
+              <Link to="/ourcollection" className="menu__link">Our Collection</Link>
             </li>
           </ul>
         </div>

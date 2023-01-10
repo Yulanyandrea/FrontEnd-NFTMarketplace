@@ -1,5 +1,4 @@
 import './style.scss';
-// import PropTypes from 'prop-types';
 
 // eslint-disable-next-line react/prop-types
 const TopCollection = ({ data = {} }) => {
@@ -9,6 +8,7 @@ const TopCollection = ({ data = {} }) => {
     name,
     items,
   } = data;
+
   return (
     <div className="cardTopCollection">
       <div className="cardTopCollection__imageProfileContainer">

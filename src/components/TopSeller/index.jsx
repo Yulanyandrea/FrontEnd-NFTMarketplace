@@ -1,8 +1,9 @@
-import './style.scss';
 import PropTypes from 'prop-types';
+import './style.scss';
 
 const TopSeller = (props) => {
   const { imageTop, textTop, priceTop } = props;
+
   return (
     <div className="cardTopSeller">
       <section className="cardTopSeller__Containerimage">
