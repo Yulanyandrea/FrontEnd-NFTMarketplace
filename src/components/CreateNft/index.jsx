@@ -34,6 +34,7 @@ const CreateNFT = () => {
   const handleChange = ({ target }) => {
     const { id, value } = target;
     setForm({ ...form, [id]: value });
+    setFile(file);
   };
 
   const handleSubmit = async (event) => {
@@ -41,7 +42,6 @@ const CreateNFT = () => {
 
     const formData = new FormData();
     const url = 'http://localhost:8080/api/upload/file';
-
     // console.log(file);
 
     formData.append('file', file);
