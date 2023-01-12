@@ -9,10 +9,12 @@ import {
   faXmark,
 } from '@fortawesome/free-solid-svg-icons';
 import logo from '../../assets/logo.png';
+
 import './styles.scss';
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+  const tokenLive = localStorage.getItem('token');
 
   function handleMenu() {
     setToggle(!toggle);
@@ -37,12 +39,22 @@ const Navbar = () => {
             <li className="menu__item">
               <Link to="/" className="menu__link">Home</Link>
             </li>
-            <li className="menu__item">
-              <Link to="/login" className="menu__link">Login</Link>
-            </li>
-            <li className="menu__item">
-              <Link to="/register" className="menu__link">Register</Link>
-            </li>
+            {!tokenLive
+              ? (
+                <li className="menu__item">
+                  <Link to="/login" className="menu__link">Login</Link>
+                </li>
+              ) : (
+                <li className="menu__item">
+                  <Link to="/profile" className="menu__link">Profile</Link>
+                </li>
+              )}
+            {!tokenLive
+              ? (
+                <li className="menu__item">
+                  <Link to="/register" className="menu__link">Register</Link>
+                </li>
+              ) : null }
             <li className="menu__item">
               <Link to="/createnft" className="menu__link">Create</Link>
             </li>

@@ -2,32 +2,36 @@ import { faUpload } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
+import { useSelector } from 'react-redux';
 import { createNft } from '../../hook/create';
 import uploadFile from './images/uploadfile.jpg';
+
 import './style.scss';
 
 const CreateNFT = () => {
   const [file, setFile] = useState(null);
   const [img, setImg] = useState(null);
 
+  const userId = useSelector((state) => state.nftMarketPlace.user.profile._id);
+
   const [form, setForm] = useState({
-    id: '',
-    owner: 'unknown',
-    image: img,
     name: '',
     description: '',
     price: '',
+    owner: userId,
+    images: img,
     size: '',
-    propertie: '',
+    categories: '',
     royalty: '',
   });
 
   const handleChangeInput = ({ target }) => {
     const { files } = target;
-    // eslint-disable-next-line no-shadow
     const fileImage = files[0];
+
     // eslint-disable-next-line no-console
     console.log('🚀 ~ file: Upload.jsx:10 ~ handleChange ~ file', fileImage);
+
     setFile(fileImage);
   };
 
@@ -40,10 +44,9 @@ const CreateNFT = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const formData = new FormData();
     const url = 'http://localhost:8080/api/upload/file';
-    // console.log(file);
 
+    const formData = new FormData();
     formData.append('file', file);
     formData.append('filename', file.name);
 
@@ -59,15 +62,14 @@ const CreateNFT = () => {
     try {
       await createNft({
         ...form,
-        image: data.url,
-        createdBy: '63940e92dc2a7b3f2380eb3e',
+        images: data.url,
+        createdBy: userId,
       });
     } catch (error) {
       // eslint-disable-next-line
       console.error(error);
     }
   };
-  // console.log(form);
 
   const hiddenDesktop = useMediaQuery({
     query: '(max-width: 1439px)',
@@ -176,8 +178,8 @@ const CreateNFT = () => {
           <div className="createnft-form__product-propertie">
             <label htmlFor="product-name">Propertie</label>
             <input
-              id="propertie"
-              value={form.propertie}
+              id="categories"
+              value={form.categories}
               onChange={handleChange}
               placeholder="e.g. `Propertie`"
             />

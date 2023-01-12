@@ -2,9 +2,10 @@
 
 .register-form {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
-
+  align-items: center;
 }
 
 .register-from__firstname,
@@ -24,6 +25,8 @@
     border: 2px solid $border-color-components;
     width: 275px;
     height: 45px;
+    padding: 0 10px;
+    font-size: 18px;
   }
 }
 
@@ -127,7 +130,9 @@
 
   .register-form {
     min-height: 900px;
+    flex-direction: row;
     align-content: center;
+    align-items: flex-start;
   }
 
   .register-form-first, .register-form-second {

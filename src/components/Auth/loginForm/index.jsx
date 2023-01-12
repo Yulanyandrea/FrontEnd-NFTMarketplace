@@ -1,8 +1,12 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import logoGoogle from '../../../assets/google.png';
 import logoFacebook from '../../../assets/facebook.png';
 import logoTwitter from '../../../assets/twitter.png';
 import logoLinkedin from '../../../assets/linkedin.png';
+import { loginUser } from '../../../feature/api/counterSlice';
+
 import './styles.scss';
 
 const LoginForm = () => {
@@ -11,37 +15,14 @@ const LoginForm = () => {
     password: '',
   });
 
-  const API = process.env.REACT_APP_USER_LOGIN;
-  // const { showRegisterForm } = props;
+  const dispatch = useDispatch();
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
-    const payload = {
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json',
-      },
-      body: JSON.stringify(form),
-    };
-
-    try {
-      const response = await fetch(API, payload);
-      const data = await response.json();
-      // eslint-disable-next-line
-      console.log(data);
-    } catch (error) {
-      // eslint-disable-next-line
-      console.error(error);
-    }
+    dispatch(loginUser(form));
   };
-
-  // const handleChange = (event) => {
-  //   setForm({
-  //     ...form,
-  //     [event.target.id]: event.target.value,
-  //   });
-  // };
 
   const handleChange = ({ target }) => {
     const { id, value } = target;
@@ -102,7 +83,7 @@ const LoginForm = () => {
             className="login-form-button-singup"
             type="submit"
             value="signUp"
-            // onClick={showRegisterForm}
+            onClick={() => navigate('/register')}
           >
             Sign Up
           </button>

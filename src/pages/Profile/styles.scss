@@ -1,0 +1,12 @@
+@import '../../scss/color';
+
+.profile {
+  height: 800px;
+  color: $main-cards;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 50px;
+}

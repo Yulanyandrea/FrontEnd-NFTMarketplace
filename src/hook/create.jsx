@@ -21,9 +21,12 @@ export async function createUser(user) {
 }
 
 export async function createNft(nft) {
+  const token = localStorage.getItem('token');
+
   const payload = {
     method: 'POST',
     headers: {
+      Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(nft),
