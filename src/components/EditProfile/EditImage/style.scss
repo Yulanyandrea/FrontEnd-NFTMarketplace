@@ -2,29 +2,96 @@
 
 .editimage {
   color: $main-cards;
-  border: 1.7px solid rgb(56, 57, 72);
-  border-radius: 4px;
-
-}
-
-.editprofile-header_button {
+  width: 900px;
+  background-color: $background-color-input;
+  border: 1px solid $border-color-components;
+  border-radius: 5px;
+  margin-left: 20px;
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+  flex-wrap: nowrap;
 
-  &-icon {
-    font-size: 13px;
+  &-profile {
+    width: 30%;
+    margin: 10px 0 10px 30px;
+
+    &_title {
+      margin-top: 15px;
+    }
+
+    &_img {
+      width: 230px;
+      height: 300px;
+      margin: 20px 0 30px 0;
+      border: 5px solid $border-color-components;
+      border-radius: 5px;
+
+      &_link {
+        object-fit: cover;
+      }
+    }
+
+    &_btn {
+      color: $main-cards;
+      width: 120px;
+      height: 35px;
+      background-color: $main-color;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+  }
+
+  &-cover {
+    width: 70%;
+    margin: 10px 30px 10px 0;
+
+    &_title {
+      margin-top: 15px;
+    }
+
+    &_img {
+      width: 580px;
+      height: 300px;
+      margin: 20px 0 30px 0;
+      border: 5px solid $border-color-components;
+      border-radius: 5px;
+    }
+
+    &_btn {
+      color: $main-cards;
+      width: 120px;
+      height: 35px;
+      background-color: $main-color;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
   }
 }
 
-@media (min-width: 1440px) {
+// .editprofile-header_button {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-evenly;
 
-  .editimage {
-    width: 900px;
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-direction: row;
-    flex-wrap: nowrap;
-  }
-}
+//   &-icon {
+//     font-size: 13px;
+//   }
+// }
+
+// @media (min-width: 1440px) {
+
+//   .editimage {
+//     width: 900px;
+//     display: flex;
+//     justify-content: space-around;
+//     align-items: flex-start;
+//     flex-direction: row;
+//     flex-wrap: nowrap;
+//   }
+// }
