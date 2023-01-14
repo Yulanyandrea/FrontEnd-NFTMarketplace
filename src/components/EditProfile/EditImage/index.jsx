@@ -2,22 +2,22 @@ import './style.scss';
 
 const EditImage = () => {
   return (
-    <div className="editimage">
-      <div>
-        <h3>Change your profile picture</h3>
-        <div>
-          <p>image</p>
+    <main className="editimage">
+      <section className="editimage-profile">
+        <h3 className="editimage-profile_title">Change your profile picture</h3>
+        <div className="editimage-profile_img">
+          <img alt="profile_picture" />
         </div>
-        <button type="button">Upload Profile</button>
-      </div>
-      <div>
-        <h3>Change your cover photo</h3>
-        <div>
-          <p>image</p>
+        <button className="editimage-profile_btn" type="button">Upload Profile</button>
+      </section>
+      <section className="editimage-cover">
+        <h3 className="editimage-cover_title">Change your cover photo</h3>
+        <div className="editimage-cover_img">
+          <img alt="image_cover" />
         </div>
-        <button type="button">Upload Cover</button>
-      </div>
-    </div>
+        <button className="editimage-cover_btn" type="button">Upload Cover</button>
+      </section>
+    </main>
   );
 };
 

@@ -2,6 +2,7 @@
 @import "../../scss/_color.scss";
 
 .card {
+  width: 210px;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -9,104 +10,102 @@
   text-align: left;
   justify-content: center;
   padding: 8px;
-  width: 370px;
   color: $text-silver;
-}
 
-.card__image {
-  border-radius: 10px;
-  width: 100%;
-  height: auto;
-}
+  .card__image {
+    border-radius: 10px;
+    width: 100%;
+    height: 194px;
+    object-fit: cover;
+  }
 
-.card__body {
-  margin: 15px 15px 20px 15px;
-}
+  .card__body {
+    margin: 10px;
+  }
 
-.card__biders {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
+  .card__biders {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
 
-.avatar__container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-}
+  .avatar__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin-left: 15px;
 
-.avatar__text {
-  margin: 10px;
-  font-weight: 500;
-  width: max-content;
-}
+    .card__avatar {
+      width: 35px;
+      height: 35px;
+      border: solid $border-color-components;
+      border-radius: 30px;
+      border-width: 2px;
+      margin-left: -20px;
+    }
+  }
 
-.card__avatar {
-  width: 40px;
-  height: 40px;
-  border: solid $text-silver;
-  border-radius: 30px;
-  border-width: 2px;
-}
+  .avatar__text {
+    margin: 10px;
+    font-weight: 300;
+    width: max-content;
+  }
 
-.card__button {
-  background-color: $accent;
-  border: none;
-  color: $text-silver;
-  padding: 5px;
-  text-decoration: none;
-  font-size: 30px;
-  text-align: end;
-  margin: 0;
-}
+  .card__button {
+    background-color: $accent;
+    border: none;
+    color: $text-silver;
+    padding: 5px;
+    text-decoration: none;
+    font-size: 20px;
+    text-align: end;
+    margin: 0;
+  }
 
-.card__info {
-  margin-top: 15px;
-}
+  .card__info {
+    margin-top: 15px;
+  }
 
-.card__title--color {
-  color: $main-cards;
-  margin-bottom: 5px;
-  font-weight: 500;
-}
+  .card__title--color {
+    color: $main-cards;
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 500;
+  }
 
-.card__stats {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
+  .card__stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
 
-.card__subtitle {
-  font-weight: 400;
-}
+  .card__subtitle {
+    font-size: 12px;
+    font-weight: 300;
+  }
 
-.card__like {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin: 15px 10px 0px 0px;
-}
+  .card__like {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 15px 10px 0px 0px;
+  }
 
-.card__totalikes {
-  margin-left: 4px;
-  font-weight: 500;
-  width: fit-content;
-}
+  .card__totalikes {
+    margin-left: 4px;
+    font-weight: 500;
+    width: fit-content;
+  }
 
-.nft__price {
-  color: $main-color;
-  font-weight: 500;
-  margin-top: 15px;
-}
-
-@media screen and (min-width: 750px) {
-
-.card {
-    width: 300px;
+  .nft__price {
+    color: $main-color;
+    font-size: 12px;
+    font-weight: 300;
+    margin-top: 15px;
   }
 }
