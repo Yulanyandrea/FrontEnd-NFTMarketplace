@@ -1,0 +1,238 @@
+@import '../../../scss/color';
+
+.editprofile {
+  color: $main-cards;
+  width: 900px;
+  background-color: $background-color-input;
+  border: 1px solid $border-color-components;
+  border-radius: 5px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  padding: 20px 0;
+
+  &-content {
+
+    &_name {
+      display: flex;
+      flex-direction: row;
+
+      &-first {
+        margin: 10px 10px 10px 0;
+
+        &_input {
+          color: $main-cards;
+          padding-left: 10px;
+          width: 400px;
+          height: 45px;
+          background-color: $background-color-input;
+          border: 2px solid $border-color-components;
+          border-radius: 5px;
+          margin-top: 10px;
+        }
+      }
+
+      &-last {
+        margin: 10px 0 10px 10px;
+
+        &_input {
+          color: $main-cards;
+          padding-left: 10px;
+          width: 400px;
+          height: 45px;
+          background-color: $background-color-input;
+          border: 2px solid $border-color-components;
+          border-radius: 5px;
+          margin-top: 10px;
+        }
+      }
+    }
+
+    &_email {
+      display: flex;
+      flex-direction: column;
+      margin: 10px 0;
+
+      &_input {
+        color: $main-cards;
+        padding-left: 10px;
+        width: 820px;
+        height: 45px;
+        background-color: $background-color-input;
+        border: 2px solid $border-color-components;
+        border-radius: 5px;
+        margin-top: 10px;
+      }
+    }
+
+    &_bio {
+      display: flex;
+      flex-direction: column;
+      margin: 10px 0;
+
+      &_input {
+        color: $main-cards;
+        padding-left: 10px;
+        width: 820px;
+        height: 45px;
+        background-color: $background-color-input;
+        border: 2px solid $border-color-components;
+        border-radius: 5px;
+        margin-top: 10px;
+      }
+    }
+
+    &_role {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      margin: 10px 0;
+
+      &_edit {
+        margin: 10px 10px 10px 0;
+
+        &_input {
+          color: $main-cards;
+          padding-left: 10px;
+          width: 400px;
+          height: 45px;
+          background-color: $background-color-input;
+          border: 2px solid $border-color-components;
+          border-radius: 5px;
+          margin-top: 10px;
+        }
+      }
+
+      &_gender {
+        margin: 10px 0 10px 10px;
+
+        &_input {
+          color: $main-cards;
+          padding-left: 10px;
+          width: 400px;
+          height: 45px;
+          background-color: $background-color-input;
+          border: 2px solid $border-color-components;
+          border-radius: 5px;
+          margin-top: 10px;
+        }
+      }
+    }
+
+    &_candp {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      margin: 10px 0;
+
+      &_currency {
+        margin: 10px 10px 10px 0;
+
+        &_input {
+          color: $main-cards;
+          padding-left: 10px;
+          width: 400px;
+          height: 45px;
+          background-color: $background-color-input;
+          border: 2px solid $border-color-components;
+          border-radius: 5px;
+          margin-top: 10px;
+        }
+      }
+
+      &_phone {
+        margin: 10px 0 10px 10px;
+
+        &_input {
+          color: $main-cards;
+          padding-left: 10px;
+          width: 400px;
+          height: 45px;
+          background-color: $background-color-input;
+          border: 2px solid $border-color-components;
+          border-radius: 5px;
+          margin-top: 10px;
+        }
+
+        &_input::-webkit-outer-spin-button,
+        &_input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+      }
+    }
+
+    &_landa {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      margin: 10px 0;
+
+      &_location {
+        margin: 10px 10px 10px 0;
+
+        &_input {
+          color: $main-cards;
+          padding-left: 10px;
+          width: 400px;
+          height: 45px;
+          background-color: $background-color-input;
+          border: 2px solid $border-color-components;
+          border-radius: 5px;
+          margin-top: 10px;
+        }
+      }
+
+      &_address {
+        margin: 10px 0 10px 10px;
+
+        &_input {
+          color: $main-cards;
+          padding-left: 10px;
+          width: 400px;
+          height: 45px;
+          background-color: $background-color-input;
+          border: 2px solid $border-color-components;
+          border-radius: 5px;
+          margin-top: 10px;
+        }
+      }
+    }
+
+    &-button {
+      display: flex;
+      justify-content: flex-end;
+
+      &_cancel {
+        width: 70px;
+        height: 40px;
+        color: $main-cards;
+        background-color: $border-color-components;
+        border: none;
+        border-radius: 5px;
+        margin: 10px 0 20px 10px;
+        cursor: pointer;
+      }
+
+      &_submit {
+        width: 70px;
+        height: 40px;
+        color: $main-cards;
+        background-color: $main-color;
+        border: none;
+        border-radius: 5px;
+        margin: 10px 0 20px 10px;
+        cursor: pointer;
+      }
+
+      &_cancel:hover,
+      &_submit:hover {
+        background-color: $main-color;
+        border: none;
+      }
+    }
+  }
+}

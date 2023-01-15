@@ -1,14 +1,15 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { createUser } from '../../../hook/create';
-import './styles.scss';
 import logoGoogle from '../../../assets/google.png';
 import logoFacebook from '../../../assets/facebook.png';
 import logoTwitter from '../../../assets/twitter.png';
 import logoLinkedin from '../../../assets/linkedin.png';
 
+import './styles.scss';
+
 const RegisterForm = () => {
   const [form, setForm] = useState({
-    id: '',
     firstname: '',
     lastname: '',
     email: '',
@@ -18,7 +19,7 @@ const RegisterForm = () => {
 
   const [checkbox, setCheckbox] = useState(false);
 
-  // const { showRegisterForm } = props;
+  const navigate = useNavigate();
 
   const handleChange = ({ target }) => {
     const { id, value } = target;
@@ -39,7 +40,9 @@ const RegisterForm = () => {
   const handleCheckChange = () => {
     setCheckbox(!checkbox);
   };
-  // console.log(checkbox ? 'checkbox' : 'No select checkbox');
+
+  // eslint-disable-next-line no-console
+  console.log('handlechange: ', form);
 
   return (
     <div className="register-form">
@@ -130,7 +133,7 @@ const RegisterForm = () => {
             className="register-form-button-singup"
             type="submit"
             value="signUp"
-            // onClick={showRegisterForm}
+            onClick={() => navigate('/login')}
           >
             Log in
           </button>
@@ -148,7 +151,7 @@ const RegisterForm = () => {
         <div className="register-from-second-redsocials">
           <button className="register-from-google" type="submit">
             <img className="register-from-img" src={logoGoogle} alt="google" />
-            <span>Log in with Google</span>
+            <span>Register with Google</span>
           </button>
           <button className="register-from-facebook" type="submit">
             <img
@@ -156,11 +159,11 @@ const RegisterForm = () => {
               src={logoFacebook}
               alt="google"
             />
-            <span>Log in with Facebook</span>
+            <span>Register with Facebook</span>
           </button>
           <button className="register-from-twitter" type="submit">
             <img className="register-from-img" src={logoTwitter} alt="google" />
-            <span>Log in with Twitter</span>
+            <span>Register with Twitter</span>
           </button>
           <button className="register-from-linkedin" type="submit">
             <img
@@ -168,7 +171,7 @@ const RegisterForm = () => {
               src={logoLinkedin}
               alt="google"
             />
-            <span>Log in with Linkedin</span>
+            <span>Register with Linkedin</span>
           </button>
         </div>
       </div>

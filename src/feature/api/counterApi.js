@@ -1,18 +1,37 @@
-const API = 'http://localhost:8080/api';
+const API = process.env.REACT_APP_API;
+const APIUSER = process.env.REACT_APP_USER_LOGIN;
 
-// eslint-disable-next-line import/prefer-default-export
-export async function GetData(data) {
+export async function LoginUser(data) {
   const payload = {
-    method: 'GET',
+    method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
+      'Content-type': 'application/json',
     },
     body: JSON.stringify(data),
   };
 
   try {
+    const response = await fetch(APIUSER, payload);
+    const user = await response.json();
+    localStorage.setItem('token', user.token);
+    return user;
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error(error);
+  }
+}
+
+export async function GetData() {
+  const payload = {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(),
+  };
+
+  try {
     const response = await fetch(`${API}/product`, payload);
-    // eslint-disable-next-line no-shadow
     const data = response.json();
     return data;
   } catch (error) {
@@ -35,6 +54,48 @@ export async function FetchPost(data) {
     // eslint-disable-next-line no-shadow
     const data = await response.json();
     return data;
+  } catch (error) {
+    // eslint-disable-next-line
+    console.error(error);
+  }
+}
+
+export async function GetDataUser() {
+  const payload = {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(),
+  };
+
+  try {
+    const response = await fetch(`${API}/users`, payload);
+    const data = response.json();
+    return data;
+  } catch (error) {
+    // eslint-disable-next-line
+    console.error(error);
+  }
+}
+
+export async function UpdateUser(form, idUser) {
+  const token = localStorage.getItem('token');
+
+  const payload = {
+    method: 'PATCH',
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(form),
+  };
+
+  try {
+    const response = await fetch(`${API}/users/${idUser}`, payload);
+    const data = response.json();
+    // eslint-disable-next-line
+    console.log(data);
   } catch (error) {
     // eslint-disable-next-line
     console.error(error);

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { fetchData } from './feature/api/counterSlice';
+import { fetchData, fetchUsers } from './feature/api/counterSlice';
 import happy from './components/Footer/images/happy.jpg';
 import Navbar from './components/Navbar/index';
 import LoginForm from './components/Auth/loginForm';
@@ -12,15 +12,17 @@ import Home from './pages/Home';
 import Details from './pages/Details';
 import EditProfile from './components/EditProfile/Edit';
 import MenuNavigator from './components/MenuNavigator/index';
-
 import OurCollection from './pages/OurCollection/index';
 import Explore from './pages/Explore';
 import TopNft from './pages/TopNFT/index';
+import User from './pages/User';
+import Profile from './pages/Profile';
 
 const App = () => {
   const dispatch = useDispatch();
   const dispatchData = () => {
     dispatch(fetchData());
+    dispatch(fetchUsers());
   };
 
   useEffect(() => {
@@ -34,6 +36,8 @@ const App = () => {
       <MenuNavigator nameRoute="home" />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/user" element={<User />} />
         <Route path="/productdetail/:id" element={<Details />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/register" element={<RegisterForm />} />

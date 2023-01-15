@@ -1,0 +1,49 @@
+@import '../../../scss/color';
+
+.menuProfile {
+  width: 250px;
+  background-color: $background-color-input;
+  border: 1px solid $border-color-components;
+  border-radius: 5px;
+
+  &-menu {
+    display: flex;
+    flex-direction: column;
+
+    &_icon {
+      margin-right: 10px;
+      font-weight: 300;
+    }
+
+    &_img,
+    &_info,
+    &_pass,
+    &_sett {
+      color: $main-cards;
+      background-color: $background-color-input;
+      border: 1px dashed $border-color-components;
+      height: 40px;
+      margin: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: left;
+      padding-left: 20px;
+    }
+
+    &_img:hover,
+    &_info:hover,
+    &_pass:hover,
+    &_sett:hover {
+      background-color: $main-color;
+      border: none;
+    }
+
+    &_img:focus,
+    &_info:focus,
+    &_pass:focus,
+    &_sett:focus {
+      background-color: $main-color;
+      border: none;
+    }
+  }
+}

@@ -72,7 +72,7 @@
     background-color: $main-background;
     width: 40px;
     height: 40px;
-    border: solid $text-silver;
+    border: solid $border-color-components;
     border-radius: 30px;
     border-width: 1px;
     margin: 0px 3px 0px 3px;
@@ -85,7 +85,7 @@
   .menu__button--color {
     width: max-content;
     height: 40px;
-    padding: 10px;
+    padding: 0 25px;
     margin: 0px 3px 0px 3px;
     color: $main-cards;
     background-color: $accent;
@@ -105,9 +105,12 @@
   .navbar__container {
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
     justify-content: space-between;
     padding: 20px 70px 20px 70px;
     gap: 10px;
+    border-bottom: 1px solid $border-color-components;
 
     .navbar{
       display: flex;
@@ -122,7 +125,7 @@
     }
 
     .navbar__logo {
-      height: 30px;
+      height: 40px;
       margin: 0;
     }
 
@@ -132,10 +135,12 @@
 
     .logo__aside {
       width: auto;
+      border-right: 1px solid $border-color-components;
     }
 
     .logo__link--hide {
       display: inline;
+      margin-right: 20px;
     }
 
     .button__close {
@@ -156,16 +161,17 @@
 
     .menu__item{
       font-size: 15px;
+      margin: 0;
     }
 
     .menu__form {
       display: flex;
-      border: solid $text-silver;
+      border: solid $border-color-components;
       border-radius: 7px;
       border-width: 1px;
       height: 40px;
       align-items: center;
-      margin: 0px 3px 0px 3px;
+      margin: 0px 10px 0px 3px;
     }
 
     .menu__input {
@@ -190,6 +196,14 @@
       display: flex;
       flex-direction: row;
       justify-content: center;
+    }
+
+    .menu__button {
+      margin: 0px 5px;
+    }
+
+    .menu__button--color {
+      margin: 0px 5px;
     }
 
     .button__bars {
