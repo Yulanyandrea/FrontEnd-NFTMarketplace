@@ -94,6 +94,14 @@
     flex-direction: row;
     align-items: center;
     margin: 15px 10px 0px 0px;
+
+    &_icon {
+      cursor: pointer;
+    }
+
+    &_icon:hover {
+      color: red;
+    }
   }
 
   .card__totalikes {

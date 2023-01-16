@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useSelector } from 'react-redux';
 import {
   faMagnifyingGlass,
   faBars,
@@ -14,7 +15,8 @@ import './styles.scss';
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
-  const tokenLive = localStorage.getItem('token');
+
+  const user = useSelector((state) => state.nftMarketPlace.user?.profile);
 
   function handleMenu() {
     setToggle(!toggle);
@@ -39,7 +41,7 @@ const Navbar = () => {
             <li className="menu__item">
               <Link to="/" className="menu__link">Home</Link>
             </li>
-            {!tokenLive
+            {!user
               ? (
                 <li className="menu__item">
                   <Link to="/login" className="menu__link">Login</Link>
@@ -49,7 +51,7 @@ const Navbar = () => {
                   <Link to="/profile" className="menu__link">Profile</Link>
                 </li>
               )}
-            {!tokenLive
+            {!user
               ? (
                 <li className="menu__item">
                   <Link to="/register" className="menu__link">Register</Link>
