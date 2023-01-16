@@ -10,7 +10,6 @@ import CreateNFT from './components/CreateNft';
 import Footer from './components/Footer/index';
 import Home from './pages/Home';
 import Details from './pages/Details';
-import EditProfile from './components/EditProfile/Edit';
 import MenuNavigator from './components/MenuNavigator/index';
 import OurCollection from './pages/OurCollection/index';
 import Explore from './pages/Explore';
@@ -45,7 +44,6 @@ const App = () => {
         <Route path="/ourcollection" element={<OurCollection />} />
         <Route path="/explore" element={<Explore />} />
         <Route path="/topnft" element={<TopNft />} />
-        <Route path="/editprofile" element={<EditProfile />} />
 
       </Routes>
 

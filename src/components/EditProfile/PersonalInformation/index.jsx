@@ -1,24 +1,26 @@
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
-import { UpdateUser } from '../../../feature/api/counterApi';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateUser } from '../../../feature/api/counterSlice';
 
 import './style.scss';
 
 const PersonalInformation = () => {
   const user = useSelector((state) => state.nftMarketPlace.user?.profile);
-  const idUser = useSelector((state) => state.nftMarketPlace.user?.profile._id);
+  const idUser = useSelector((state) => state.nftMarketPlace.user?.profile?._id);
+
+  const dispatch = useDispatch();
 
   const [form, setForm] = useState({
-    firstname: user.firstname,
-    lastname: user.lastname,
-    email: user.email,
-    Bio: '',
-    role: user.role,
-    gender: '',
-    currency: user.currency,
-    phone: '',
-    location: '',
-    address: '',
+    firstname: user?.firstname,
+    lastname: user?.lastname,
+    email: user?.email,
+    Bio: user?.bio,
+    role: user?.role,
+    gender: user?.gender,
+    currency: user?.currency,
+    phone: user?.phone,
+    location: user?.location,
+    address: user?.address,
   });
 
   const handleChange = ({ target }) => {
@@ -28,13 +30,7 @@ const PersonalInformation = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
-    try {
-      await UpdateUser(form, idUser);
-    } catch (error) {
-      // eslint-disable-next-line
-      console.error(error);
-    }
+    dispatch(updateUser(form, idUser));
   };
 
   return (

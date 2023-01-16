@@ -1,5 +1,10 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { GetData, GetDataUser, LoginUser } from './counterApi';
+import {
+  GetData,
+  GetDataUser,
+  LoginUser,
+  UpdateUser,
+} from './counterApi';
 
 const initialState = {
   data: [],
@@ -8,12 +13,13 @@ const initialState = {
   user: createInitialState(),
   status: 'idle',
   currentSelect: null,
+  currentUserSelect: null,
 };
 
 function createInitialState() {
   const user = localStorage.getItem('user');
 
-  if (user === undefined) {
+  if (user === 'undefined') {
     return null;
   }
   return {
@@ -23,17 +29,22 @@ function createInitialState() {
 }
 
 export const fetchData = createAsyncThunk('data/fetch', async (data) => {
-  const response = GetData(data);
+  const response = await GetData(data);
   return response;
 });
 
 export const fetchUsers = createAsyncThunk('users/fetch', async (data) => {
-  const response = GetDataUser(data);
+  const response = await GetDataUser(data);
   return response;
 });
 
 export const loginUser = createAsyncThunk('user/post', async (data) => {
-  const response = LoginUser(data);
+  const response = await LoginUser(data);
+  return response;
+});
+
+export const updateUser = createAsyncThunk('user/patch', async (data) => {
+  const response = await UpdateUser(data);
   return response;
 });
 
@@ -42,13 +53,20 @@ export const counterSlice = createSlice({
   initialState,
   reducers: {
     setCurrentData: (state, action) => {
-      // eslint-disable-next-line no-param-reassign
       state.currentSelect = action.payload;
     },
+    setCurrentUser: (state, action) => {
+      return {
+        ...state,
+        currentUserSelect: action.payload,
+      };
+    },
+    // setCurrentUser: (state, action) => {
+    //   state.currentUserSelect = action.payload;
+    // },
   },
   extraReducers: (builder) => {
     builder
-      /* eslint-disable no-param-reassign */
       // data:
       .addCase(fetchData.pending, (state) => {
         state.status = 'loading';
@@ -78,10 +96,26 @@ export const counterSlice = createSlice({
         const user = action.payload;
         localStorage.setItem('user', JSON.stringify(user.profile));
         state.user = user;
+      })
+      .addCase(loginUser.rejected, (state) => { // -> check
+        state.status = 'reject';
+      })
+      // update:
+      .addCase(updateUser.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(updateUser.fulfilled, (state, action) => {
+        state.status = 'finish';
+        const user = action.payload;
+        localStorage.setItem('user', JSON.stringify(user));
+        state.user = user;
+      })
+      .addCase(updateUser.rejected, (state) => {
+        state.status = 'reject';
       });
   },
 });
 
-export const { setCurrentData } = counterSlice.actions;
+export const { setCurrentData, setCurrentUser } = counterSlice.actions;
 
 export default counterSlice.reducer;

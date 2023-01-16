@@ -5,7 +5,7 @@ import './styles.scss';
 
 const User = () => {
   return (
-    <div className="profile">
+    <div className="userSelect">
       <UserHeader />
       <UserContent />
     </div>

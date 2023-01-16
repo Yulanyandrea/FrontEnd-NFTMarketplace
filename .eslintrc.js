@@ -1,4 +1,12 @@
 module.exports = {
+  overrides: [
+    {
+      // feel free to replace with your preferred file pattern - eg. 'src/**/*Slice.ts'
+      files: ['src/feature/api/counterSlice.js'],
+      // avoid state param assignment
+      rules: { 'no-param-reassign': ['error', { props: false }] },
+    },
+  ],
   env: {
     browser: true,
     es2021: true,

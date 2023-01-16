@@ -13,11 +13,14 @@ export async function LoginUser(data) {
   try {
     const response = await fetch(APIUSER, payload);
     const user = await response.json();
-    localStorage.setItem('token', user.token);
+    if (user?.token) {
+      localStorage.setItem('token', user.token);
+    }
     return user;
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error(error);
+    return error;
   }
 }
 
@@ -82,6 +85,9 @@ export async function GetDataUser() {
 export async function UpdateUser(form, idUser) {
   const token = localStorage.getItem('token');
 
+  // eslint-disable-next-line
+  console.log('id user: ', idUser);
+
   const payload = {
     method: 'PATCH',
     headers: {
@@ -92,10 +98,32 @@ export async function UpdateUser(form, idUser) {
   };
 
   try {
-    const response = await fetch(`${API}/users/${idUser}`, payload);
+    const response = await fetch(`${API}/users/63beb4859f59b1f1d3445c61`, payload);
     const data = response.json();
     // eslint-disable-next-line
     console.log(data);
+    return data;
+  } catch (error) {
+    // eslint-disable-next-line
+    console.error(error);
+  }
+}
+
+export async function LikeNft(like, id) {
+  const token = localStorage.getItem('token');
+
+  const payload = {
+    method: 'PATCH',
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(like),
+  };
+
+  try {
+    const response = await fetch(`${API}/product/${id}`, payload);
+    response.json();
   } catch (error) {
     // eslint-disable-next-line
     console.error(error);

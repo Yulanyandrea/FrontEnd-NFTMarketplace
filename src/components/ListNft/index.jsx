@@ -14,13 +14,15 @@ const ListNft = () => {
   };
 
   return (
-    <div className="products__container">
-      {allProducts
-        ? allProducts.map((product) => (
-          <NftCard product={product} function={getDataProduct} key={product._id} />
-        ))
-        : null}
-    </div>
+    <main className="nftList">
+      <div className="nftList_map">
+        {allProducts
+          ? allProducts.map((product) => (
+            <NftCard product={product} function={getDataProduct} key={product._id} />
+          ))
+          : null}
+      </div>
+    </main>
   );
 };
 
