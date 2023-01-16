@@ -1,5 +1,6 @@
 import ListNft from '../../components/ListNft';
 import ProductDetails from '../../components/ProductDetails';
+
 import './styles.scss';
 
 const Details = () => {

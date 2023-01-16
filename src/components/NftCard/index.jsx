@@ -1,6 +1,10 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart as farHeart } from '@fortawesome/free-regular-svg-icons';
+import { LikeNft } from '../../feature/api/counterApi';
+import { fetchData } from '../../feature/api/counterSlice';
 import avatar from '../../assets/image-avatar.png';
 
 import './styles.scss';
@@ -15,6 +19,36 @@ const NftCard = ({ product = {} }) => {
     bids,
     likes,
   } = product;
+
+  const [userLike, setUserLike] = useState(likes);
+
+  const idUser = useSelector((state) => state.nftMarketPlace.user?.profile?._id);
+  const idNft = product._id;
+  const like = likes.includes(idUser);
+
+  const dispatch = useDispatch();
+
+  const idFilter = userLike.filter((e) => e !== idUser);
+
+  useEffect(() => {
+    if (like === false) {
+      setUserLike([...likes, idUser]);
+    } else {
+      setUserLike(idFilter);
+    }
+  }, [like]);
+
+  const handleLikes = async (event) => {
+    event.preventDefault();
+    const likeUser = { likes: userLike };
+    try {
+      await LikeNft(likeUser, idNft);
+      dispatch(fetchData());
+    } catch (error) {
+      // eslint-disable-next-line
+      console.error(error);
+    }
+  };
 
   return (
     <section className="card">
@@ -37,8 +71,8 @@ const NftCard = ({ product = {} }) => {
           <div className="card__stats">
             <h4 className="nft__price">{price}wETH</h4>
             <div className="card__like">
-              <FontAwesomeIcon icon={farHeart} />
-              <h4 className="card__totalikes">{likes}</h4>
+              <FontAwesomeIcon className="card__like_icon" icon={farHeart} onClick={handleLikes} />
+              <h4 className="card__totalikes">{likes.length}</h4>
             </div>
           </div>
         </div>

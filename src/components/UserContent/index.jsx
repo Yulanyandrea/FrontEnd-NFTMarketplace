@@ -6,6 +6,7 @@ import './styless.scss';
 
 const UserContent = () => {
   const [select, setSelect] = useState(null);
+  const [active, setActive] = useState(null);
 
   const allProducts = useSelector((state) => state.nftMarketPlace?.data);
 
@@ -18,7 +19,9 @@ const UserContent = () => {
   const filterOwned = allProducts.filter(
     (nft) => nft.owner === '63beb4859f59b1f1d3445c61',
   );
-  const filterLiked = [];
+  const filterLiked = allProducts.filter(
+    (nft) => nft.likes.includes('63beb4859f59b1f1d3445c61'),
+  );
 
   return (
     <div className="content">
@@ -26,29 +29,48 @@ const UserContent = () => {
         <div className="usercontent-navbar">
           <button
             className="usercontent-navbar_btn"
+            name="onsale"
             type="button"
-            onClick={() => setSelect(filterOnSale)}
+            onClick={(event) => {
+              setSelect(filterOnSale); setActive(event.target.name);
+            }}
+            style={active === 'onsale' ? { background: '#00A3FF', border: 'none' } : null}
           >
             On Sale
           </button>
           <button
             className="usercontent-navbar_btn"
+            name="owned"
             type="button"
-            onClick={() => setSelect(filterOwned)}
+            onClick={(event) => {
+              setSelect(filterOwned);
+              setActive(event.target.name);
+            }}
+            style={active === 'owned' ? { background: '#00A3FF', border: 'none' } : null}
           >
             Owned
           </button>
           <button
             className="usercontent-navbar_btn"
+            name="create"
             type="button"
-            onClick={() => setSelect(filterCreatedBy)}
+            onClick={(event) => {
+              setSelect(filterCreatedBy);
+              setActive(event.target.name);
+            }}
+            style={active === 'create' ? { background: '#00A3FF', border: 'none' } : null}
           >
             Created
           </button>
           <button
             className="usercontent-navbar_btn"
+            name="like"
             type="button"
-            onClick={() => setSelect(filterLiked)}
+            onClick={(event) => {
+              setSelect(filterLiked);
+              setActive(event.target.name);
+            }}
+            style={active === 'like' ? { background: '#00A3FF', border: 'none' } : null}
           >
             Liked
           </button>

@@ -3,12 +3,13 @@
 
 @media screen and (min-width: 750px) {
 
-  .products__container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-    gap: 20px;
+  .nftList {
+
+    &_map {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
   }
 }

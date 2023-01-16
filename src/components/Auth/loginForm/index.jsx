@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { loginUser } from '../../../feature/api/counterSlice';
 import logoGoogle from '../../../assets/google.png';
 import logoFacebook from '../../../assets/facebook.png';
 import logoTwitter from '../../../assets/twitter.png';
 import logoLinkedin from '../../../assets/linkedin.png';
-import { loginUser } from '../../../feature/api/counterSlice';
 
 import './styles.scss';
 
@@ -15,9 +15,16 @@ const LoginForm = () => {
     password: '',
   });
 
-  const dispatch = useDispatch();
-
+  const user = useSelector((state) => state.nftMarketPlace.user?.profile);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (user) {
+      navigate('/');
+    }
+  }, [user]);
+
+  const dispatch = useDispatch();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
