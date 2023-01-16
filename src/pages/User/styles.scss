@@ -1,7 +1,11 @@
 @import '../../scss/color';
 
-.profile {
-  color: white;
+.userSelect {
+  min-height: 800px;
+  color: #FFFFFF;
   display: flex;
   flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin-top: 50px;
 }

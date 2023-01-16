@@ -1,0 +1,13 @@
+@import "../../scss/_global.scss";
+@import "../../scss/_color.scss";
+
+.cardlist {
+
+  &-map {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+

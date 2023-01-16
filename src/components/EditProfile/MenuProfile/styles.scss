@@ -37,13 +37,5 @@
       background-color: $main-color;
       border: none;
     }
-
-    &_img:focus,
-    &_info:focus,
-    &_pass:focus,
-    &_sett:focus {
-      background-color: $main-color;
-      border: none;
-    }
   }
 }

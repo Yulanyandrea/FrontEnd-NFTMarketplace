@@ -6,13 +6,15 @@ import {
   faShareNodes,
   faUserPlus,
 } from '@fortawesome/free-solid-svg-icons';
+
 import './styless.scss';
 
 const UserHeader = () => {
-  const user = useSelector((state) => state.nftMarketPlace.user?.profile);
+  const user = useSelector((state) => state.nftMarketPlace?.currentUserSelect);
+  // const user = useSelector((state) => state.nftMarketPlace.user?.profile);
 
   const background = 'https://source.unsplash.com/random/1440x900';
-  const avatar = `https://robohash.org/${user.firstname}.png`;
+  const avatar = `https://robohash.org/${user?.firstname}.png`;
 
   return (
     <div className="profileheader">
@@ -25,11 +27,11 @@ const UserHeader = () => {
         </div>
         <div className="profileheader-info_fullname">
           <h2>
-            {user.firstname} {user.lastname}
+            {user?.firstname} {user?.lastname}
           </h2>
         </div>
         <div className="profileheader-info-social">
-          <h3 className="profileheader-info-social_red">{user.email}</h3>
+          <h3 className="profileheader-info-social_red">{user?.email}</h3>
           <div className="profileheader-info-social_follow">
             <div className="profileheader-info-social_follow_followers">
               <h3 className="profileheader-info-social_follow_followers_numbers">164k</h3>
