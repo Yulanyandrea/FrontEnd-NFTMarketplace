@@ -15,7 +15,6 @@ const initialState = {
   status: 'idle',
   currentSelect: null,
   currentUserSelect: null,
-  auth: false,
 };
 
 function createInitialState() {
@@ -73,11 +72,6 @@ export const counterSlice = createSlice({
 
       };
     },
-    // authUser: (state, action) => {
-    //   state.auth = true;
-    //   state.token = action.payload.token;
-    //   state.profile = action.payload.profile;
-    // },
     // setCurrentUser: (state, action) => {
     //   state.currentUserSelect = action.payload;
     // },
