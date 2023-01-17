@@ -6,11 +6,13 @@ import './styles.scss';
 
 const ProductDetails = () => {
   const data = useSelector((state) => state.nftMarketPlace.currentSelect);
+  const ownerUser = useSelector((state) => state.nftMarketPlace.dataUser);
+  const findOwner = ownerUser.find((user) => user._id === data.owner);
 
   return (
     <div className="product__container">
       <section className="images__container">
-        <img src={data?.image} alt="NFT" className="product__image" />
+        <img src={data?.images} alt="NFT" className="product__image" />
       </section>
       <section className="info__container">
         <section className="product__info">
@@ -20,7 +22,7 @@ const ProductDetails = () => {
               <button type="button" className="like__button">
                 <FontAwesomeIcon icon={farHeart} />
               </button>
-              <h4 className="product__totalikes">{data?.likes}</h4>
+              <h4 className="product__totalikes">{data?.likes.length}</h4>
             </div>
             <button className="product__button" type="button">
               ...
@@ -50,7 +52,7 @@ const ProductDetails = () => {
         <section className="product__owner">
           <h4>Owner</h4>
           <img src={avatar} alt="avatar" className="owner__avatar" />
-          <h3>{data?.owner}</h3>
+          <h3>{findOwner?.firstname}{findOwner?.lastname}</h3>
         </section>
         <section>
           <h4>Property</h4>
@@ -67,7 +69,7 @@ const ProductDetails = () => {
             <h3>{data?.bid}wETH</h3>
           </div>
           <button className="bid__button" type="button">
-            Place a Bid
+            Buy
           </button>
         </section>
       </section>
