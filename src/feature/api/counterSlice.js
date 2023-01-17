@@ -14,6 +14,7 @@ const initialState = {
   user: createInitialState(),
   status: 'idle',
   currentSelect: null,
+  total: 0,
   currentUserSelect: null,
   total: 0,
 };
@@ -58,6 +59,12 @@ export const counterSlice = createSlice({
       return {
         ...state,
         currentSelect: action.payload,
+      };
+    },
+    addToCart: (state, action) => {
+      return {
+        ...state,
+        shoppingCart: state.shoppingCart.push(action.payload),
       };
     },
     setCurrentUser: (state, action) => {
