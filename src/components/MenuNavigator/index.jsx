@@ -5,7 +5,6 @@ const MenuNavigator = (props) => {
   const name = url.slice(1);
   // eslint-disable-next-line react/prop-types
   const { nameRoute } = props;
-
   return (
     <div className="menuTop">
       <header className="menuTop__container">
