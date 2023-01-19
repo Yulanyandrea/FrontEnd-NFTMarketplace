@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import {
   faMagnifyingGlass,
   faBars,
-  faSun,
+  faCartShopping,
   faBell,
   faXmark,
 } from '@fortawesome/free-solid-svg-icons';
@@ -84,7 +84,9 @@ const Navbar = () => {
           <FontAwesomeIcon icon={faBars} style={{ color: '#ACACAC' }} />
         </button>
         <button type="button" className="menu__button">
-          <FontAwesomeIcon icon={faSun} style={{ color: '#ACACAC' }} />
+          <Link to="/checkout" className="menu__link">
+            <FontAwesomeIcon icon={faCartShopping} style={{ color: '#ACACAC' }} />
+          </Link>
         </button>
       </div>
     </header>

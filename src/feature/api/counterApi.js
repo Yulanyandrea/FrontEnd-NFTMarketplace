@@ -129,3 +129,29 @@ export async function LikeNft(like, id) {
     console.error(error);
   }
 }
+
+export async function BuyNft(paymentMethod, total) {
+  const token = localStorage.getItem('token');
+
+  const payload = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({
+      paymentMethod,
+      amount: Math.floor(total * 100),
+    }),
+  };
+  console.log(payload);
+
+  try {
+    const response = await fetch(`${API}/payment/`, payload);
+    const data = await response.json();
+    console.log('🚀 ~ counterApi ~ buyNft ~ data', data);
+  } catch (error) {
+    // eslint-disable-next-line
+    console.error(error);
+  }
+}

@@ -1,0 +1,31 @@
+@import "../../scss/_global.scss";
+@import "../../scss/_color.scss";
+
+.checkoutForm__container{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 90%;
+  gap: 10px;
+}
+
+.checkoutForm__title {
+  color: $wild-Sand;
+}
+
+.checkoutForm__button {
+  width: max-content;
+  height: 40px;
+  padding: 0 20px;
+  margin: 10px 3px 0px 3px;
+  color: $main-cards;
+  background-color: $main-color;
+  border: none;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 7px;
+}
+
+.checkoutForm__button:hover {
+  background-color: $accent;
+}
