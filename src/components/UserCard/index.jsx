@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { setCurrentUser } from '../../feature/api/counterSlice';
 
 import './styless.scss';
@@ -12,6 +13,8 @@ const UserCard = ({ user = {} }) => {
 
   const allProducts = useSelector((state) => state.nftMarketPlace?.data);
 
+  const navigate = useNavigate();
+
   const filterOwned = allProducts?.filter(
     (nft) => nft.owner === _id,
   );
@@ -20,6 +23,7 @@ const UserCard = ({ user = {} }) => {
 
   const getDataUser = (data) => {
     dispatch(setCurrentUser(data));
+    navigate('/user');
   };
 
   return (

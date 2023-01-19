@@ -61,9 +61,6 @@ export const counterSlice = createSlice({
         currentUserSelect: action.payload,
       };
     },
-    // setCurrentUser: (state, action) => {
-    //   state.currentUserSelect = action.payload;
-    // },
   },
   extraReducers: (builder) => {
     builder
