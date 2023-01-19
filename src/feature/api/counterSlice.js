@@ -127,6 +127,8 @@ export const counterSlice = createSlice({
   },
 });
 
-export const { setCurrentData, setCurrentUser, addCart } = counterSlice.actions;
+export const {
+  setCurrentData, setCurrentUser, addCart, authentication,
+} = counterSlice.actions;
 
 export default counterSlice.reducer;

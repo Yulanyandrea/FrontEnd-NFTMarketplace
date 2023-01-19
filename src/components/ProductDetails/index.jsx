@@ -52,7 +52,7 @@ const ProductDetails = () => {
         <section className="product__owner">
           <h4>Owner</h4>
           <img src={avatar} alt="avatar" className="owner__avatar" />
-          <h3>{findOwner?.firstname}{findOwner?.lastname}</h3>
+          <h3>{findOwner?.firstname}  {findOwner?.lastname}</h3>
         </section>
         <section>
           <h4>Property</h4>
