@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart as farHeart } from '@fortawesome/free-regular-svg-icons';
 import { LikeNft } from '../../feature/api/counterApi';
 import { fetchData, setCurrentData } from '../../feature/api/counterSlice';
-import { fetchData, setCurrentData } from '../../feature/api/counterSlice';
 import avatar from '../../assets/image-avatar.png';
 
 import './styles.scss';
@@ -59,7 +58,6 @@ const NftCard = ({ product = {} }) => {
 
   return (
     <section className="card">
-      <Link to={`/productdetail/${product._id}`} className="card__link" onClick={() => (handleNftData(product))}>
       <Link to={`/productdetail/${product._id}`} className="card__link" onClick={() => (handleNftData(product))}>
         <img src={images} alt="NFT" className="card__image" />
       </Link>
