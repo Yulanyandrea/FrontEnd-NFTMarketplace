@@ -9,6 +9,7 @@ import {
 const initialState = {
   data: [],
   dataUser: [],
+  shoppingCart: [],
   // eslint-disable-next-line no-use-before-define
   user: createInitialState(),
   status: 'idle',
@@ -53,12 +54,22 @@ export const counterSlice = createSlice({
   initialState,
   reducers: {
     setCurrentData: (state, action) => {
-      state.currentSelect = action.payload;
+      return {
+        ...state,
+        currentSelect: action.payload,
+      };
     },
     setCurrentUser: (state, action) => {
       return {
         ...state,
         currentUserSelect: action.payload,
+      };
+    },
+    addCart: (state, action) => {
+      return {
+        ...state,
+        shoppingCart: state.shoppingCart.push(action.payload),
+
       };
     },
     // setCurrentUser: (state, action) => {
@@ -116,6 +127,8 @@ export const counterSlice = createSlice({
   },
 });
 
-export const { setCurrentData, setCurrentUser } = counterSlice.actions;
+export const {
+  setCurrentData, setCurrentUser, addCart, authentication,
+} = counterSlice.actions;
 
 export default counterSlice.reducer;

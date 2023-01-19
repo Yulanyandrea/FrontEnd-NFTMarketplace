@@ -42,3 +42,22 @@ export async function createNft(nft) {
     console.error(error);
   }
 }
+
+export async function deleteUser(id) {
+  const token = localStorage.getItem('token');
+
+  const payload = {
+    method: 'DELETE',
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(id),
+  };
+
+  try {
+    const response = await fetch(`${API}/users/${id}`, payload);
+    response.json();
+  } catch (error) {
+    console.error(error);
+  }
+}

@@ -15,7 +15,6 @@ const LoginForm = () => {
     password: '',
   });
 
-
   const user = useSelector((state) => state.nftMarketPlace.user?.profile);
   const navigate = useNavigate();
 

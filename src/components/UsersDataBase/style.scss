@@ -1,0 +1,58 @@
+@import '../../scss/_global.scss';
+@import '../../scss/_color.scss';
+
+.ContainerUserDataBase{
+  color:white;
+  padding: 80px;
+  line-height: 41px;
+}
+
+
+.ContainerUserDataBase__userRegister{
+  font-size: 40px;
+  padding-bottom: 46px;
+}
+
+.ContainerUserDataBase__nametitle--contain{
+  background-color: #294e99;
+  margin-left: 10px;
+  width: 8%;
+  border-radius: 6px;
+}
+
+.ContainerUserDataBase__name--title{
+  text-align: center;
+}
+
+.ContainerUserDataBase__name{
+  border-style: solid;
+  border-color: gray;
+}
+
+.ContainerUserDataBase__name--info{
+  padding-right: 80px;
+}
+
+.ContainerUserDataBase__email{
+  background-color: #294e99;
+  margin-left: 10px;
+  width: 8%;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.ContainerUserDataBase__button{
+  height: 30px;
+  width: 112px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  background-color: #1f3971;
+  color: aliceblue;
+  border-style: none;
+}
+
+.ContainerUserDataBase__button:hover{
+  background-color: #294e99;
+
+}
