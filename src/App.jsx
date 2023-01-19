@@ -32,7 +32,6 @@ const App = () => {
   }, []);
 
   return (
-
     <div className="App">
       <Navbar />
       <MenuNavigator nameRoute="home" />
@@ -54,14 +53,17 @@ const App = () => {
             <RequireAuth roles="ADMIN">
               <NotAuth />
             </RequireAuth>
-)}
+          )}
         />
-
       </Routes>
 
-      <Footer image={happy} name="picture" characteristic="Highest bid 1/20" price={30} />
+      <Footer
+        image={happy}
+        name="picture"
+        characteristic="Highest bid 1/20"
+        price={30}
+      />
     </div>
-
   );
 };
 

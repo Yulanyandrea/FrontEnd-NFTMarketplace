@@ -1,23 +1,14 @@
-/* eslint-disable no-unused-vars */
-import { useSelector } from 'react-redux';
-import TopCollection from '../../components/TopCollection/index';
+import ListUser from '../../components/ListUser';
+
 import './style.scss';
 
 const Our = () => {
-  const collection = useSelector((state) => state.nftMarketPlace.data.collection);
-
   return (
-    <div className="bigbox">
-      {
-        // eslint-disable-next-line react/prop-types
-        collection?.map((data) => {
-          // console.log(data);
-          return (
-            <TopCollection data={data} key={data.id} />
-          );
-        })
-      }
-    </div>
+    <main className="bigbox">
+      <section className="bigbox-list">
+        <ListUser />
+      </section>
+    </main>
   );
 };
 export default Our;

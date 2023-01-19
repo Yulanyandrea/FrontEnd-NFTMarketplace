@@ -1,15 +1,13 @@
-/* eslint-disable react/prop-types */
-// import { Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import UsersDataBase from '../UsersDataBase';
 
+/* eslint-disable react/prop-types */
 const RequireAuth = ({ children, roles }) => {
   const userAuth = useSelector((state) => state.nftMarketPlace?.user?.profile?.role);
 
   return (
     <section>
       {userAuth === roles ? <UsersDataBase /> : children }
-
     </section>
   );
 };

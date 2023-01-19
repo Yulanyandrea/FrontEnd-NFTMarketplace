@@ -146,6 +146,16 @@
     border-radius: 7px;
     padding: 15px;
 
+    .bid__button--off{
+      width: 100%;
+      background-color: $accent;
+      border: none;
+      border-radius: 7px;
+      color: $wild-Sand;
+      padding: 10px;
+      cursor: pointer;
+    }
+
     .bid__button {
       width: 100%;
       background-color: $accent;
@@ -153,6 +163,11 @@
       border-radius: 7px;
       color: $wild-Sand;
       padding: 10px;
+      cursor: pointer;
+    }
+
+    .bid__button:hover {
+      background-color: $main-color;
     }
   }
 }
