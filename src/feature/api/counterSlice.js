@@ -66,17 +66,9 @@ export const counterSlice = createSlice({
         currentUserSelect: action.payload,
       };
     },
-<<<<<<< HEAD
-    addCart: (state, action) => {
-      return {
-        ...state,
-        shoppingCart: state.shoppingCart.push(action.payload),
-      };
-=======
     addToCart: (state, action) => {
       state.shoppingCart.push({ ...action.payload });
       state.total += action.payload.price;
->>>>>>> 6750475d4067459270d236e29ab23262a77933e8
     },
   },
   extraReducers: (builder) => {

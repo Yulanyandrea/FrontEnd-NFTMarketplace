@@ -17,6 +17,7 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   const user = useSelector((state) => state.nftMarketPlace.user?.profile);
+  const itemBuy = useSelector((state) => state.nftMarketPlace.shoppingCart);
 
   const navigate = useNavigate();
 
@@ -91,7 +92,8 @@ const Navbar = () => {
         </button>
         <button type="button" className="menu__button">
           <Link to="/checkout" className="menu__link">
-            <FontAwesomeIcon icon={faCartShopping} style={{ color: '#ACACAC' }} />
+            <FontAwesomeIcon className="menu__link-icon" icon={faCartShopping} style={itemBuy.length > 0 ? { color: '#00A3FF' } : null} />
+            {itemBuy.length > 0 ? <p className="menu__link-items">{itemBuy.length}</p> : null }
           </Link>
         </button>
       </div>

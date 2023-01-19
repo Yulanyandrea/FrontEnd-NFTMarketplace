@@ -11,6 +11,11 @@ const ProductDetails = () => {
   const product = useSelector((state) => state.nftMarketPlace.currentSelect);
   const ownerUser = useSelector((state) => state.nftMarketPlace.dataUser);
   const findOwner = ownerUser.find((user) => user._id === product.owner);
+  const findProduct = useSelector((state) => state.nftMarketPlace.shoppingCart);
+
+  const producBuy = findProduct.find(({ _id }) => _id === product._id);
+  // console.log('find: ', producBuy);
+  // console.log('current select: ', product._id);
 
   const handleBid = (data) => {
     dispatch(addToCart(data));
@@ -59,7 +64,10 @@ const ProductDetails = () => {
         <section className="product__owner">
           <h4>Owner</h4>
           <img src={avatar} alt="avatar" className="owner__avatar" />
-          <h3>{findOwner?.firstname}{findOwner?.lastname}</h3>
+          <h3>
+            {findOwner?.firstname}
+            {findOwner?.lastname}
+          </h3>
         </section>
         <section>
           <h4>Property</h4>
@@ -72,12 +80,28 @@ const ProductDetails = () => {
           <h4>Wining bit</h4>
           <div className="bid__owner">
             <img src={avatar} alt="avatar" className="owner__avatar" />
-            <h3>Created by: {findOwner?.firstname}{findOwner?.lastname}</h3>
+            <h3>
+              Created by: {findOwner?.firstname}
+              {findOwner?.lastname}
+            </h3>
             <h3>{product?.price} wETH</h3>
           </div>
-          <button className="bid__button" type="button" onClick={() => (handleBid(product))}>
-            Place a Bid
-          </button>
+          {producBuy ? (
+            <button
+              className="bid__button--off"
+              type="button"
+            >
+              Product is already in your cart
+            </button>
+          ) : (
+            <button
+              className="bid__button"
+              type="button"
+              onClick={() => handleBid(product)}
+            >
+              Place a Bid
+            </button>
+          )}
         </section>
       </section>
     </div>
