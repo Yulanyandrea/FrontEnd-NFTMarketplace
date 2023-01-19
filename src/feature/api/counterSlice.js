@@ -15,6 +15,7 @@ const initialState = {
   status: 'idle',
   currentSelect: null,
   currentUserSelect: null,
+  total: 0,
 };
 
 function createInitialState() {
@@ -65,15 +66,18 @@ export const counterSlice = createSlice({
         currentUserSelect: action.payload,
       };
     },
+<<<<<<< HEAD
     addCart: (state, action) => {
       return {
         ...state,
         shoppingCart: state.shoppingCart.push(action.payload),
       };
+=======
+    addToCart: (state, action) => {
+      state.shoppingCart.push({ ...action.payload });
+      state.total += action.payload.price;
+>>>>>>> 6750475d4067459270d236e29ab23262a77933e8
     },
-    // setCurrentUser: (state, action) => {
-    //   state.currentUserSelect = action.payload;
-    // },
   },
   extraReducers: (builder) => {
     builder
@@ -127,7 +131,7 @@ export const counterSlice = createSlice({
 });
 
 export const {
-  setCurrentData, setCurrentUser, addCart, authentication,
+  setCurrentData, setCurrentUser, addToCart, authentication,
 } = counterSlice.actions;
 
 export default counterSlice.reducer;
