@@ -60,12 +60,6 @@ export const counterSlice = createSlice({
         currentSelect: action.payload,
       };
     },
-    addToCart: (state, action) => {
-      return {
-        ...state,
-        currentSelect: action.payload,
-      };
-    },
     setCurrentUser: (state, action) => {
       return {
         ...state,
