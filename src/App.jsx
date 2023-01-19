@@ -18,6 +18,7 @@ import User from './pages/User';
 import Profile from './pages/Profile';
 import NotAuth from './pages/NotAuthorized/index';
 import RequireAuth from './components/RequireAuth';
+import Payment from './pages/Payment';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -46,6 +47,7 @@ const App = () => {
         <Route path="/ourcollection" element={<OurCollection />} />
         <Route path="/explore" element={<Explore />} />
         <Route path="/topnft" element={<TopNft />} />
+        <Route path="/checkout" element={<Payment />} />
         <Route
           path="/userdata_base"
           element={(
