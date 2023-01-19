@@ -1,10 +1,11 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart as farHeart } from '@fortawesome/free-regular-svg-icons';
 import { LikeNft } from '../../feature/api/counterApi';
-import { fetchData } from '../../feature/api/counterSlice';
+import { fetchData, setCurrentData } from '../../feature/api/counterSlice';
 import avatar from '../../assets/image-avatar.png';
 
 import './styles.scss';
@@ -38,6 +39,11 @@ const NftCard = ({ product = {} }) => {
     }
   }, [like]);
 
+  const handleNftData = (data) => {
+    // event.preventDefault();
+    dispatch(setCurrentData(data));
+  };
+
   const handleLikes = async (event) => {
     event.preventDefault();
     const likeUser = { likes: userLike };
@@ -52,7 +58,7 @@ const NftCard = ({ product = {} }) => {
 
   return (
     <section className="card">
-      <Link to={`/productdetail/${product._id}`} className="card__link">
+      <Link to={`/productdetail/${product._id}`} className="card__link" onClick={() => (handleNftData(product))}>
         <img src={images} alt="NFT" className="card__image" />
       </Link>
       <div className="card__body">
