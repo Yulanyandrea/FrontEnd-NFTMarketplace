@@ -29,9 +29,6 @@ const CreateNFT = () => {
     const { files } = target;
     const fileImage = files[0];
 
-    // eslint-disable-next-line no-console
-    console.log('🚀 ~ file: Upload.jsx:10 ~ handleChange ~ file', fileImage);
-
     setFile(fileImage);
   };
 

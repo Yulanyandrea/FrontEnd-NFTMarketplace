@@ -2,57 +2,88 @@
 @import '../../scss/_color.scss';
 
 .ContainerUserDataBase{
+  width: 100%;
+  min-height: 900px;
   color:white;
-  padding: 80px;
-  line-height: 41px;
-}
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
+  &-title {
+    width: 1100px;
+    height: 100px;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
 
-.ContainerUserDataBase__userRegister{
-  font-size: 40px;
-  padding-bottom: 46px;
-}
+  &-section {
+    border: 1px solid $border-color-components;
+    border-radius: 7px;
+    padding: 0 20px;
+  }
 
-.ContainerUserDataBase__nametitle--contain{
-  background-color: #294e99;
-  margin-left: 10px;
-  width: 8%;
-  border-radius: 6px;
-}
+  &__button{
+    height: 50px;
+    width: 112px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    background-color: #1f3971;
+    color: aliceblue;
+    border-style: none;
+    cursor: pointer;
+  }
 
-.ContainerUserDataBase__name--title{
-  text-align: center;
+  &__button:hover{
+    background-color: #294e99;
+  }
+
+  &__header {
+    width: 1100px;
+    height: 80px;
+    display: flex;
+    border: 5px;
+    padding: 0 20px;
+    align-items: center;
+    font-size: 22px;
+
+    &-info {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+
+      &_name,
+      &_email,
+      &_id {
+        width: 316px;
+      }
+    }
+  }
 }
 
 .ContainerUserDataBase__name{
-  border-style: solid;
-  border-color: gray;
-}
+  width: 1100px;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  border: 5px;
+  padding: 0 20px;
 
-.ContainerUserDataBase__name--info{
-  padding-right: 80px;
-}
+  &-info {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    color: $text-silver;
 
-.ContainerUserDataBase__email{
-  background-color: #294e99;
-  margin-left: 10px;
-  width: 8%;
-  border-radius: 6px;
-  text-align: center;
-}
-
-.ContainerUserDataBase__button{
-  height: 30px;
-  width: 112px;
-  margin-top: 10px;
-  margin-bottom: 5px;
-  border-radius: 10px;
-  background-color: #1f3971;
-  color: aliceblue;
-  border-style: none;
-}
-
-.ContainerUserDataBase__button:hover{
-  background-color: #294e99;
-
+    &_name,
+    &_email,
+    &_id {
+      width: 40%;
+    }
+  }
 }

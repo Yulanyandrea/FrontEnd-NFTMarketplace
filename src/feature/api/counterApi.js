@@ -82,11 +82,12 @@ export async function GetDataUser() {
   }
 }
 
-export async function UpdateUser(form, idUser) {
+export async function UpdateUser(form) {
   const token = localStorage.getItem('token');
+  const id = (JSON.parse(localStorage.getItem('user')))._id;
 
   // eslint-disable-next-line
-  console.log('id user: ', idUser);
+  console.log('id user: ', id);
 
   const payload = {
     method: 'PATCH',
@@ -98,7 +99,7 @@ export async function UpdateUser(form, idUser) {
   };
 
   try {
-    const response = await fetch(`${API}/users/63beb4859f59b1f1d3445c61`, payload);
+    const response = await fetch(`${API}/users/${id}`, payload);
     const data = response.json();
     // eslint-disable-next-line
     console.log(data);

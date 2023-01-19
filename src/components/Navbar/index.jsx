@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useSelector } from 'react-redux';
 import {
@@ -17,6 +17,8 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   const user = useSelector((state) => state.nftMarketPlace.user?.profile);
+
+  const navigate = useNavigate();
 
   function handleMenu() {
     setToggle(!toggle);
@@ -76,7 +78,11 @@ const Navbar = () => {
             <FontAwesomeIcon icon={faMagnifyingGlass} style={{ color: '#ACACAC' }} />
           </button>
         </form>
-        <button type="button" className="menu__button--color">Wallet connect</button>
+        {user?.role === 'ADMIN' ? (
+          <div className="userRegistered">
+            <button className="userRegistered-btn" type="button" onClick={() => navigate('/userdata_base')}>User registered</button>
+          </div>
+        ) : null}
         <button type="button" className="menu__button">
           <FontAwesomeIcon icon={faBell} style={{ color: '#ACACAC' }} />
         </button>

@@ -58,6 +58,7 @@ export async function deleteUser(id) {
     const response = await fetch(`${API}/users/${id}`, payload);
     response.json();
   } catch (error) {
+    // eslint-disable-next-line
     console.error(error);
   }
 }
