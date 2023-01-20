@@ -1,17 +1,21 @@
+import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart as farHeart } from '@fortawesome/free-regular-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../../feature/api/counterSlice';
-import { useDispatch, useSelector } from 'react-redux';
-import { addToCart } from '../../feature/api/counterSlice';
+import Modal from '../Modal';
+
 import avatar from '../../assets/image-avatar.png';
 import './styles.scss';
 
 const ProductDetails = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const dispatch = useDispatch();
 
   const product = useSelector((state) => state.nftMarketPlace.currentSelect);
   const dispatch = useDispatch();
+
+  // onClick={() => (handleBid(product))
 
   const product = useSelector((state) => state.nftMarketPlace.currentSelect);
   const ownerUser = useSelector((state) => state.nftMarketPlace.dataUser);
@@ -22,6 +26,7 @@ const ProductDetails = () => {
   // console.log('find: ', producBuy);
   // console.log('current select: ', product._id);
 
+  // eslint-disable-next-line no-unused-vars
   const handleBid = (data) => {
     dispatch(addToCart(data));
   };
@@ -115,6 +120,7 @@ const ProductDetails = () => {
           )}
         </section>
       </section>
+      {isOpen && <Modal setIsOpen={setIsOpen} />}
     </div>
   );
 };
