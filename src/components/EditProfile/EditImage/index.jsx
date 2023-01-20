@@ -5,6 +5,8 @@ import { updateUser } from '../../../feature/api/counterSlice';
 import './style.scss';
 
 const EditImage = () => {
+  const API = process.env.REACT_APP_API;
+
   const user = useSelector((state) => state.nftMarketPlace.user?.profile);
 
   const [file, setFile] = useState(null);
@@ -30,7 +32,7 @@ const EditImage = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const url = 'http://localhost:8080/api/upload/file';
+    const url = `${API}/upload/file`;
 
     const formData = new FormData();
     formData.append('file', file);
