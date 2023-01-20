@@ -82,11 +82,12 @@ export async function GetDataUser() {
   }
 }
 
-export async function UpdateUser(form, idUser) {
+export async function UpdateUser(form) {
   const token = localStorage.getItem('token');
+  const id = (JSON.parse(localStorage.getItem('user')))._id;
 
   // eslint-disable-next-line
-  console.log('id user: ', idUser);
+  console.log('id user: ', id);
 
   const payload = {
     method: 'PATCH',
@@ -98,7 +99,7 @@ export async function UpdateUser(form, idUser) {
   };
 
   try {
-    const response = await fetch(`${API}/users/63beb4859f59b1f1d3445c61`, payload);
+    const response = await fetch(`${API}/users/${id}`, payload);
     const data = response.json();
     // eslint-disable-next-line
     console.log(data);
@@ -124,6 +125,32 @@ export async function LikeNft(like, id) {
   try {
     const response = await fetch(`${API}/product/${id}`, payload);
     response.json();
+  } catch (error) {
+    // eslint-disable-next-line
+    console.error(error);
+  }
+}
+
+export async function BuyNft(paymentMethod, total) {
+  const token = localStorage.getItem('token');
+
+  const payload = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({
+      paymentMethod,
+      amount: Math.floor(total * 100),
+    }),
+  };
+  console.log(payload);
+
+  try {
+    const response = await fetch(`${API}/payment/`, payload);
+    const data = await response.json();
+    console.log('🚀 ~ counterApi ~ buyNft ~ data', data);
   } catch (error) {
     // eslint-disable-next-line
     console.error(error);

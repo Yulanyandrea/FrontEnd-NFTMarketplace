@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useSelector } from 'react-redux';
 import {
   faMagnifyingGlass,
   faBars,
-  faSun,
+  faCartShopping,
   faBell,
   faXmark,
 } from '@fortawesome/free-solid-svg-icons';
@@ -17,6 +17,9 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   const user = useSelector((state) => state.nftMarketPlace.user?.profile);
+  const itemBuy = useSelector((state) => state.nftMarketPlace.shoppingCart);
+
+  const navigate = useNavigate();
 
   function handleMenu() {
     setToggle(!toggle);
@@ -76,7 +79,11 @@ const Navbar = () => {
             <FontAwesomeIcon icon={faMagnifyingGlass} style={{ color: '#ACACAC' }} />
           </button>
         </form>
-        <button type="button" className="menu__button--color">Wallet connect</button>
+        {user?.role === 'ADMIN' ? (
+          <div className="userRegistered">
+            <button className="userRegistered-btn" type="button" onClick={() => navigate('/userdata_base')}>User registered</button>
+          </div>
+        ) : null}
         <button type="button" className="menu__button">
           <FontAwesomeIcon icon={faBell} style={{ color: '#ACACAC' }} />
         </button>
@@ -84,7 +91,10 @@ const Navbar = () => {
           <FontAwesomeIcon icon={faBars} style={{ color: '#ACACAC' }} />
         </button>
         <button type="button" className="menu__button">
-          <FontAwesomeIcon icon={faSun} style={{ color: '#ACACAC' }} />
+          <Link to="/checkout" className="menu__link">
+            <FontAwesomeIcon className="menu__link-icon" icon={faCartShopping} style={itemBuy.length > 0 ? { color: '#00A3FF' } : null} />
+            {itemBuy.length > 0 ? <p className="menu__link-items">{itemBuy.length}</p> : null }
+          </Link>
         </button>
       </div>
     </header>

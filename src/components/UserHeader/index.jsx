@@ -11,7 +11,7 @@ import './styless.scss';
 
 const UserHeader = () => {
   const user = useSelector((state) => state.nftMarketPlace?.currentUserSelect);
-  // const user = useSelector((state) => state.nftMarketPlace.user?.profile);
+  // console.log(user.profilepicture);
 
   const background = 'https://source.unsplash.com/random/1440x900';
   const avatar = `https://robohash.org/${user?.firstname}.png`;
@@ -19,11 +19,27 @@ const UserHeader = () => {
   return (
     <div className="profileheader">
       <div className="profileheader-background">
-        <img src={background} className="profileheader-background_img" alt="header" />
+        <img
+          src={background}
+          className="profileheader-background_img"
+          alt="header"
+        />
       </div>
       <div className="profileheader-info">
         <div className="profileheader-info_avatar">
-          <img src={avatar} className="profileheader-info_avatar_img" alt="avatar" />
+          {user?.profilepicture ? (
+            <img
+              src={user.profilepicture}
+              className="profileheader-info_avatar_img"
+              alt="avatar"
+            />
+          ) : (
+            <img
+              src={avatar}
+              className="profileheader-info_avatar_img"
+              alt="avatar"
+            />
+          )}
         </div>
         <div className="profileheader-info_fullname">
           <h2>
@@ -34,13 +50,17 @@ const UserHeader = () => {
           <h3 className="profileheader-info-social_red">{user?.email}</h3>
           <div className="profileheader-info-social_follow">
             <div className="profileheader-info-social_follow_followers">
-              <h3 className="profileheader-info-social_follow_followers_numbers">164k</h3>
+              <h3 className="profileheader-info-social_follow_followers_numbers">
+                164k
+              </h3>
               <h3 className="profileheader-info-social_follow_followers_title">
                 followers
               </h3>
             </div>
             <div className="profileheader-info-social_follow_following">
-              <h3 className="profileheader-info-social_follow_following_numbers">120</h3>
+              <h3 className="profileheader-info-social_follow_following_numbers">
+                120
+              </h3>
               <h3 className="profileheader-info-social_follow_following_title">
                 following
               </h3>

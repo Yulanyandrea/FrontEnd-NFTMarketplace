@@ -18,6 +18,7 @@ import User from './pages/User';
 import Profile from './pages/Profile';
 import NotAuth from './pages/NotAuthorized/index';
 import RequireAuth from './components/RequireAuth';
+import Payment from './pages/Payment';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -31,7 +32,6 @@ const App = () => {
   }, []);
 
   return (
-
     <div className="App">
       <Navbar />
       <MenuNavigator nameRoute="home" />
@@ -46,20 +46,24 @@ const App = () => {
         <Route path="/ourcollection" element={<OurCollection />} />
         <Route path="/explore" element={<Explore />} />
         <Route path="/topnft" element={<TopNft />} />
+        <Route path="/checkout" element={<Payment />} />
         <Route
           path="/userdata_base"
           element={(
             <RequireAuth roles="ADMIN">
               <NotAuth />
             </RequireAuth>
-)}
+          )}
         />
-
       </Routes>
 
-      <Footer image={happy} name="picture" characteristic="Highest bid 1/20" price={30} />
+      <Footer
+        image={happy}
+        name="picture"
+        characteristic="Highest bid 1/20"
+        price={30}
+      />
     </div>
-
   );
 };
 

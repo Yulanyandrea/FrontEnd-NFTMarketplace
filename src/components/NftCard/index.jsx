@@ -22,7 +22,6 @@ const NftCard = ({ product = {} }) => {
   } = product;
 
   const [userLike, setUserLike] = useState(likes);
-  const [DataNft, setDataNft] = useState([]);
 
   const idUser = useSelector((state) => state.nftMarketPlace.user?.profile?._id);
   const idNft = product._id;
