@@ -4,7 +4,7 @@ import { faSuitcase } from '@fortawesome/free-solid-svg-icons';
 import './style.scss';
 
 const TopNft = () => {
-  const data = useSelector((state) => state.nftMarketPlace.data.topnft);
+  const data = useSelector((state) => state.nftMarketPlace?.data?.topnft);
 
   return (
     <div className="TopNFT">

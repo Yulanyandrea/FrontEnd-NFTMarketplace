@@ -10,10 +10,10 @@ import './styles.scss';
 const ProductDetails = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const product = useSelector((state) => state.nftMarketPlace.currentSelect);
-  const ownerUser = useSelector((state) => state.nftMarketPlace.dataUser);
+  const product = useSelector((state) => state.nftMarketPlace?.currentSelect);
+  const ownerUser = useSelector((state) => state.nftMarketPlace?.dataUser);
   const findOwner = ownerUser.find((user) => user._id === product.owner);
-  const findProduct = useSelector((state) => state.nftMarketPlace.shoppingCart);
+  const findProduct = useSelector((state) => state.nftMarketPlace?.shoppingCart);
 
   const producBuy = findProduct.find(({ _id }) => _id === product._id);
   // console.log('find: ', producBuy);

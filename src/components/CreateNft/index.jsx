@@ -9,10 +9,12 @@ import uploadFile from './images/uploadfile.jpg';
 import './style.scss';
 
 const CreateNFT = () => {
+  const API = process.env.REACT_APP_API;
+
   const [file, setFile] = useState(null);
   const [img, setImg] = useState(null);
 
-  const userId = useSelector((state) => state.nftMarketPlace.user.profile._id);
+  const userId = useSelector((state) => state.nftMarketPlace.user?.profile?._id);
 
   const [form, setForm] = useState({
     name: '',
@@ -41,7 +43,7 @@ const CreateNFT = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const url = 'http://localhost:8080/api/upload/file';
+    const url = `${API}/upload/file`;
 
     const formData = new FormData();
     formData.append('file', file);
