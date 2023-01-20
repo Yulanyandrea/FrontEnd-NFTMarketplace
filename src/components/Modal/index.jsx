@@ -1,10 +1,20 @@
+import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { addToCart } from '../../feature/api/counterSlice';
 
 import './styles.scss';
 
 // eslint-disable-next-line react/prop-types
 const Modal = ({ setIsOpen }) => {
+  const product = useSelector((state) => state.nftMarketPlace.currentSelect);
+  const dispatch = useDispatch();
+
+  const handleBid = (data) => {
+    dispatch(addToCart(data));
+    setIsOpen(false);
+  };
+
   return (
     // eslint-disable-next-line max-len
     // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
@@ -24,7 +34,7 @@ const Modal = ({ setIsOpen }) => {
           </div>
           <div className="modal__actions}">
             <div className="actions__container">
-              <button type="button" className="confirm__button" onClick={() => setIsOpen(false)}>
+              <button type="button" className="confirm__button" onClick={() => handleBid(product)}>
                 Purchase
               </button>
               <button type="button" className="cancel__button" onClick={() => setIsOpen(false)}>

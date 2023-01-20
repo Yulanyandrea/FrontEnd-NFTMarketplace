@@ -6,7 +6,6 @@ import {
   faMagnifyingGlass,
   faBars,
   faCartShopping,
-  faCartShopping,
   faBell,
   faXmark,
 } from '@fortawesome/free-solid-svg-icons';

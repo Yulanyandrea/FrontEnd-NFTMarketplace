@@ -1,4 +1,4 @@
-const API = 'http://localhost:8080/api';
+const API = process.env.REACT_APP_API;
 
 export async function createUser(user) {
   const payload = {
