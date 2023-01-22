@@ -17,7 +17,7 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   const user = useSelector((state) => state.nftMarketPlace.user?.profile);
-  const itemBuy = useSelector((state) => state.nftMarketPlace.shoppingCart);
+  const itemBuy = useSelector((state) => state.nftMarketPlace?.shoppingCart);
 
   const navigate = useNavigate();
 
