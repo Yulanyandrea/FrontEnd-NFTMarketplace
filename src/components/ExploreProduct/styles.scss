@@ -15,17 +15,23 @@
   .explore__title {
     color: $main-cards;
     text-transform: capitalize;
+    font-size: 30px;
   }
 
   .button__header {
-    color: $main-cards;
-    background-color: $main-color;
+    color: #FFFFFF;
+    background-color: #212E48;
     text-transform: capitalize;
     border: none;
-    height: 40px;
-    width: 65px;
+    height: 50px;
+    width: 150px;
     padding: 5px;
     border-radius: 7px;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
   }
 
   .button__header--color {
@@ -33,10 +39,19 @@
     background-color: $accent;
     text-transform: capitalize;
     border: none;
-    height: 40px;
-    width: 65px;
+    height: 50px;
+    width: 150px;
     padding: 5px;
     border-radius: 7px;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .button__header--color:hover {
+    background-color: $button-color-hover
   }
 
   .explore__form {
@@ -53,7 +68,12 @@
     width: 100%;
     display: inline-block;
     color: $text-silver;
-    margin-bottom: 15px;
+    font-size: 20px;
+    text-transform: capitalize;
+
+    &_price {
+      color: $main-color;
+    }
   }
 
   .explore__select {
@@ -62,20 +82,24 @@
     color: $main-cards;
     border: none;
     border-radius: 7px;
-    height: 40px;
+    height: 50px;
     margin-top: 10px;
+    padding: 10px;
     text-transform: capitalize;
+    font-size: 18px;
   }
 
   .button__filter {
-    color: $main-cards;
+    color: #FFFFFF;
     background-color: $main-color;
     text-transform: capitalize;
     border: none;
-    height: 20px;
-    width: 65px;
+    height: 50px;
+    width: 300px;
     padding: 0px 5px 0px 5px;
     border-radius: 7px;
+    font-size: 20px;
+    cursor: pointer;
   }
 }
 
@@ -95,17 +119,18 @@
       background-color: $main-color;
       text-transform: capitalize;
       border: none;
-      width: 80px;
+      width: 150px;
       padding: 5px;
       border-radius: 7px;
-      font-size: 16px;
       font-weight: 400;
+      font-size: 20px;
     }
 
     .explore__form--active {
+      height: 80px;
       display: flex;
       flex-direction: row;
-      align-items: center;
+      align-items: flex-end;
       gap: 20px;
     }
 

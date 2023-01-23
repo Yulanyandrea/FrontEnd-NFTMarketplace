@@ -12,7 +12,7 @@ const CreateNFT = () => {
   const [file, setFile] = useState(null);
   const [img, setImg] = useState(null);
 
-  const userId = useSelector((state) => state.nftMarketPlace.user.profile._id);
+  const userId = useSelector((state) => state.nftMarketPlace.user?.profile?._id);
 
   const [form, setForm] = useState({
     name: '',
@@ -41,7 +41,7 @@ const CreateNFT = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const url = 'http://localhost:8080/api/upload/file';
+    const url = 'https://backend-nftmarketplace-production.up.railway.app/api/upload/file';
 
     const formData = new FormData();
     formData.append('file', file);
@@ -178,6 +178,10 @@ const CreateNFT = () => {
               id="categories"
               value={form.categories}
               onChange={handleChange}
+              onKeyDown={(e) => {
+                // eslint-disable-next-line prefer-regex-literals
+                if (new RegExp(/[a-zA-Z0-9]/).test(e.key)) { /* empty */ } else e.preventDefault();
+              }}
               placeholder="e.g. `Propertie`"
             />
           </div>

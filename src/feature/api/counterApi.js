@@ -87,7 +87,7 @@ export async function UpdateUser(form) {
   const id = (JSON.parse(localStorage.getItem('user')))._id;
 
   // eslint-disable-next-line
-  console.log('id user: ', id);
+  // console.log('id user: ', id);
 
   const payload = {
     method: 'PATCH',

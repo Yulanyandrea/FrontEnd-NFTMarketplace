@@ -1,4 +1,4 @@
-const API = 'http://localhost:8080/api';
+const API = 'https://backend-nftmarketplace-production.up.railway.app/api';
 
 export async function createUser(user) {
   const payload = {

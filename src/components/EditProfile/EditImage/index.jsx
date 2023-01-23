@@ -7,6 +7,8 @@ import './style.scss';
 const EditImage = () => {
   const user = useSelector((state) => state.nftMarketPlace.user?.profile);
 
+  const background = 'https://source.unsplash.com/random/600x400';
+
   const [file, setFile] = useState(null);
 
   const [form, setForm] = useState({
@@ -30,7 +32,7 @@ const EditImage = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const url = 'http://localhost:8080/api/upload/file';
+    const url = 'https://backend-nftmarketplace-production.up.railway.app/api/upload/file';
 
     const formData = new FormData();
     formData.append('file', file);
@@ -75,7 +77,7 @@ const EditImage = () => {
       <section className="editimage-cover">
         <h3 className="editimage-cover_title">Change your cover photo</h3>
         <div className="editimage-cover_img">
-          <img alt="image_cover" />
+          <img className="editimage-cover_img_bg" alt="image_cover" src={background} />
         </div>
         <button className="editimage-cover_btn" type="button">Upload Cover</button>
       </section>
