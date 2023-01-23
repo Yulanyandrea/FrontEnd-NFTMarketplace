@@ -82,7 +82,7 @@ const ProductDetails = () => {
             </h3>
             <h3>{product?.price} wETH</h3>
           </div>
-          {(owner?._id === currentuser?.profile._id) ? (
+          {(owner?._id === currentuser?.profile?._id) ? (
             <button
               className="bid__button--off"
               type="button"
