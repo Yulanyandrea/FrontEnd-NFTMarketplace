@@ -2,10 +2,10 @@ import { faUpload } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { createNft } from '../../hook/create';
+import { fetchData, fetchUsers } from '../../feature/api/counterSlice';
 import uploadFile from './images/uploadfile.jpg';
-
 import './style.scss';
 
 const CreateNFT = () => {
@@ -13,6 +13,11 @@ const CreateNFT = () => {
 
   const [file, setFile] = useState(null);
   const [img, setImg] = useState(null);
+  const dispatch = useDispatch();
+  const dispatchData = () => {
+    dispatch(fetchData());
+    dispatch(fetchUsers());
+  };
 
   const userId = useSelector((state) => state.nftMarketPlace.user?.profile?._id);
 
@@ -64,6 +69,7 @@ const CreateNFT = () => {
         images: data.url,
         createdBy: userId,
       });
+      dispatchData();
     } catch (error) {
       // eslint-disable-next-line
       console.error(error);

@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateUser } from '../../../feature/api/counterSlice';
-
+import { updateUser, fetchData, fetchUsers } from '../../../feature/api/counterSlice';
 import './style.scss';
 
 const EditImage = () => {
@@ -31,6 +30,11 @@ const EditImage = () => {
     setForm({ ...form, [id]: value });
   };
 
+  const dispatchData = () => {
+    dispatch(fetchData());
+    dispatch(fetchUsers());
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -54,6 +58,7 @@ const EditImage = () => {
       ...form,
       profilepicture: data.url,
     }));
+    dispatchData();
   };
 
   return (
