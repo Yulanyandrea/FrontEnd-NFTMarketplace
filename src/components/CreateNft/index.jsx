@@ -180,6 +180,10 @@ const CreateNFT = () => {
               id="categories"
               value={form.categories}
               onChange={handleChange}
+              onKeyDown={(e) => {
+                // eslint-disable-next-line prefer-regex-literals
+                if (new RegExp(/[a-zA-Z0-9]/).test(e.key)) { /* empty */ } else e.preventDefault();
+              }}
               placeholder="e.g. `Propertie`"
             />
           </div>

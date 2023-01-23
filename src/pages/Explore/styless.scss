@@ -1,0 +1,32 @@
+@import '../../scss/color';
+
+.explorer {
+  width: 100%;
+  min-height: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 200px;
+
+  &-filter {
+    width: 1112px;
+    height: 220px;
+    border: 7px;
+    padding: 10px;
+    margin-bottom: 30px;
+  }
+
+  &-nft {
+    width: 1112px;
+    min-height: 400px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    border: 1px solid $border-color-components;
+    border-radius: 7px;
+    background-color: $background-color-input;
+    gap: 10px;
+  }
+}

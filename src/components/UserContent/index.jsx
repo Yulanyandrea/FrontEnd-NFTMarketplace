@@ -8,19 +8,21 @@ const UserContent = () => {
   const [select, setSelect] = useState(null);
   const [active, setActive] = useState(null);
 
+  const userId = useSelector((state) => state.nftMarketPlace?.currentUserSelect?._id);
+
   const allProducts = useSelector((state) => state.nftMarketPlace?.data);
 
   const filterOnSale = allProducts.filter(
-    (nft) => (nft.state === 'ONSALE' && nft.createdBy === '63beb4859f59b1f1d3445c61'),
+    (nft) => (nft.state === 'ONSALE' && nft.createdBy === userId),
   );
   const filterCreatedBy = allProducts.filter(
-    (nft) => nft.createdBy === '63beb4859f59b1f1d3445c61',
+    (nft) => nft.createdBy === userId,
   );
   const filterOwned = allProducts.filter(
-    (nft) => nft.owner === '63beb4859f59b1f1d3445c61',
+    (nft) => nft.owner === userId,
   );
   const filterLiked = allProducts.filter(
-    (nft) => nft.likes.includes('63beb4859f59b1f1d3445c61'),
+    (nft) => nft.likes.includes(userId),
   );
 
   return (
