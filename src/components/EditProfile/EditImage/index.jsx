@@ -5,9 +5,11 @@ import { updateUser } from '../../../feature/api/counterSlice';
 import './style.scss';
 
 const EditImage = () => {
-  const user = useSelector((state) => state.nftMarketPlace.user?.profile);
+  const API = process.env.REACT_APP_API;
 
   const background = 'https://source.unsplash.com/random/600x400';
+
+  const user = useSelector((state) => state.nftMarketPlace.user?.profile);
 
   const [file, setFile] = useState(null);
 
@@ -32,7 +34,7 @@ const EditImage = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const url = 'https://backend-nftmarketplace-production.up.railway.app/api/upload/file';
+    const url = `${API}/upload/file`;
 
     const formData = new FormData();
     formData.append('file', file);

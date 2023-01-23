@@ -7,7 +7,7 @@ import './styles.scss';
 const options = { style: { base: { color: '#f6f6f6', '::placeholder': { color: '#acacac', background: '#212E48' } }, invalid: { color: '#9e2146' } } };
 
 const CheckoutForm = () => {
-  const total = useSelector((state) => state.nftMarketPlace.total);
+  const total = useSelector((state) => state.nftMarketPlace?.total);
 
   const stripe = useStripe();
   const elements = useElements();

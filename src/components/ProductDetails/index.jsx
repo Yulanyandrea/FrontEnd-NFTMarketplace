@@ -1,25 +1,23 @@
+import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart as farHeart } from '@fortawesome/free-regular-svg-icons';
-import { useDispatch, useSelector } from 'react-redux';
-import { addToCart } from '../../feature/api/counterSlice';
+import { useSelector } from 'react-redux';
+import Modal from '../Modal';
+
 import avatar from '../../assets/image-avatar.png';
 import './styles.scss';
 
 const ProductDetails = () => {
-  const dispatch = useDispatch();
+  const [isOpen, setIsOpen] = useState(false);
 
-  const product = useSelector((state) => state.nftMarketPlace.currentSelect);
-  const ownerUser = useSelector((state) => state.nftMarketPlace.dataUser);
+  const product = useSelector((state) => state.nftMarketPlace?.currentSelect);
+  const ownerUser = useSelector((state) => state.nftMarketPlace?.dataUser);
   const findOwner = ownerUser.find((user) => user._id === product.owner);
-  const findProduct = useSelector((state) => state.nftMarketPlace.shoppingCart);
+  const findProduct = useSelector((state) => state.nftMarketPlace?.shoppingCart);
 
   const producBuy = findProduct.find(({ _id }) => _id === product._id);
   // console.log('find: ', producBuy);
   // console.log('current select: ', product._id);
-
-  const handleBid = (data) => {
-    dispatch(addToCart(data));
-  };
 
   return (
     <div className="product__container">
@@ -97,13 +95,14 @@ const ProductDetails = () => {
             <button
               className="bid__button"
               type="button"
-              onClick={() => handleBid(product)}
+              onClick={() => setIsOpen(true)}
             >
               Place a Bid
             </button>
           )}
         </section>
       </section>
+      {isOpen && <Modal setIsOpen={setIsOpen} />}
     </div>
   );
 };
