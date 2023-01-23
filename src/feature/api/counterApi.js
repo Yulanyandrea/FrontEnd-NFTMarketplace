@@ -145,12 +145,11 @@ export async function BuyNft(paymentMethod, total) {
       amount: Math.floor(total * 100),
     }),
   };
-  console.log(payload);
 
   try {
     const response = await fetch(`${API}/payment/`, payload);
     const data = await response.json();
-    console.log('🚀 ~ counterApi ~ buyNft ~ data', data);
+    return data;
   } catch (error) {
     // eslint-disable-next-line
     console.error(error);

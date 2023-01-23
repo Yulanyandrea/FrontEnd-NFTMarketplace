@@ -70,6 +70,10 @@ export const counterSlice = createSlice({
       state.shoppingCart.push({ ...action.payload });
       state.total += action.payload.price;
     },
+    resetCart: (state) => {
+      state.shoppingCart = [];
+      state.total = 0;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -123,7 +127,7 @@ export const counterSlice = createSlice({
 });
 
 export const {
-  setCurrentData, setCurrentUser, addToCart, authentication,
+  setCurrentData, setCurrentUser, addToCart, authentication, resetCart,
 } = counterSlice.actions;
 
 export default counterSlice.reducer;

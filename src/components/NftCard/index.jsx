@@ -17,13 +17,14 @@ const NftCard = ({ product = {} }) => {
     name,
     price,
     bit,
-    bids,
     likes,
   } = product;
 
   const [userLike, setUserLike] = useState(likes);
 
   const idUser = useSelector((state) => state.nftMarketPlace.user?.profile?._id);
+  const users = useSelector((state) => state.nftMarketPlace?.dataUser);
+  const creator = users.find((user) => user._id === product.createdBy);
   const idNft = product._id;
   const like = likes.includes(idUser);
 
@@ -64,18 +65,21 @@ const NftCard = ({ product = {} }) => {
       <div className="card__body">
         <section className="card__biders">
           <div className="avatar__container">
-            <img src={avatar} alt="avatar" className="card__avatar" />
-            <img src={avatar} alt="avatar" className="card__avatar" />
-            <img src={avatar} alt="avatar" className="card__avatar" />
+            <img src={creator?.profilepicture} alt="avatar" className="card__avatar" />
             <h4 className="avatar__text">{bit} Place Bit.</h4>
           </div>
-          <button className="card__button" type="button">...</button>
+          <Link to={`/productdetail/${product._id}`} className="card__link" onClick={() => (handleNftData(product))}>
+            <button className="card__button" type="button">...</button>
+          </Link>
         </section>
         <div className="card__info">
           <h2 className="card__title--color">{name}</h2>
-          <h3 className="card__subtitle">Highest bid {bids}</h3>
+          <h3 className="card__subtitle">
+            {creator?.firstname}
+            {creator?.lastname}
+          </h3>
           <div className="card__stats">
-            <h4 className="nft__price">{price}wETH</h4>
+            <h4 className="nft__price">{price} wETH</h4>
             <div className="card__like">
               <FontAwesomeIcon className="card__like_icon" icon={farHeart} onClick={handleLikes} />
               <h4 className="card__totalikes">{likes.length}</h4>

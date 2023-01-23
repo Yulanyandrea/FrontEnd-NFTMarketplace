@@ -1,16 +1,22 @@
+import { useState } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { useSelector } from 'react-redux';
 import { BuyNft } from '../../feature/api/counterApi';
+import CheckoutModal from '../CheckoutModal';
 
 import './styles.scss';
 
 const options = { style: { base: { color: '#f6f6f6', '::placeholder': { color: '#acacac', background: '#212E48' } }, invalid: { color: '#9e2146' } } };
 
 const CheckoutForm = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [data, setData] = useState({});
   const total = useSelector((state) => state.nftMarketPlace?.total);
 
   const stripe = useStripe();
   const elements = useElements();
+
+  let response = '';
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -25,7 +31,12 @@ const CheckoutForm = () => {
       return;
     }
 
-    BuyNft(paymentMethod, total);
+    response = await BuyNft(paymentMethod, total);
+
+    if (response) {
+      setIsOpen(true);
+      setData(response);
+    }
 
     elements.getElement(CardElement).clear();
   };
@@ -37,6 +48,7 @@ const CheckoutForm = () => {
         <CardElement options={options} />
         <button className="checkoutForm__button" type="submit">Pay</button>
       </form>
+      {isOpen && <CheckoutModal setIsOpen={setIsOpen} data={data} />}
     </div>
   );
 };

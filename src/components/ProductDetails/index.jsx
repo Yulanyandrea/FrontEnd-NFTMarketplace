@@ -1,19 +1,24 @@
-import { useState } from 'react';
+/* eslint-disable no-nested-ternary */
+import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart as farHeart } from '@fortawesome/free-regular-svg-icons';
 import { useSelector } from 'react-redux';
 import Modal from '../Modal';
 
-import avatar from '../../assets/image-avatar.png';
 import './styles.scss';
 
 const ProductDetails = () => {
   const [isOpen, setIsOpen] = useState(false);
-
   const product = useSelector((state) => state.nftMarketPlace?.currentSelect);
-  const ownerUser = useSelector((state) => state.nftMarketPlace?.dataUser);
-  const findOwner = ownerUser.find((user) => user._id === product.owner);
+  const currentuser = useSelector((state) => state.nftMarketPlace?.user);
+  const users = useSelector((state) => state.nftMarketPlace?.dataUser);
+  const owner = users.find((user) => user._id === product.owner);
+  const creator = users.find((user) => user._id === product.createdBy);
   const findProduct = useSelector((state) => state.nftMarketPlace?.shoppingCart);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [product?._id]);
 
   const producBuy = findProduct.find(({ _id }) => _id === product._id);
   // console.log('find: ', producBuy);
@@ -34,18 +39,15 @@ const ProductDetails = () => {
               </button>
               <h4 className="product__totalikes">{product?.likes.length}</h4>
             </div>
-            <button className="product__button" type="button">
-              ...
-            </button>
           </div>
         </section>
         <section>
           <h4 className="product__bid">
             Price:{' '}
-            <span className="product__bid--color">{product?.price}wETH</span>
+            <span className="product__bid--color">{product?.price} wETH</span>
           </h4>
           <h2 className="product__ranking">
-            #{product?.number} Portal, Info Bellow
+            Info Bellow
           </h2>
         </section>
         <section className="info__buttons">
@@ -55,36 +57,39 @@ const ProductDetails = () => {
           <button className="info__button" type="button">
             Details
           </button>
-          <button className="info__button" type="button">
-            History
-          </button>
         </section>
         <section className="product__owner">
-          <h4>Owner</h4>
-          <img src={avatar} alt="avatar" className="owner__avatar" />
+          <h4>Created by: </h4>
+          <img src={creator?.profilepicture} alt="avatar" className="owner__avatar" />
           <h3>
-            {findOwner?.firstname}
-            {findOwner?.lastname}
+            {creator?.firstname}
+            {creator?.lastname}
           </h3>
         </section>
         <section>
-          <h4>Property</h4>
+          <h4>Categories</h4>
           <div className="product__tag">
-            <h4>HYPE TYPE</h4>
-            <h3>CALM AF (STILL)</h3>
+            <h4>{product?.categories}</h4>
           </div>
         </section>
         <section className="place__bid">
-          <h4>Wining bit</h4>
+          <h4>Owner</h4>
           <div className="bid__owner">
-            <img src={avatar} alt="avatar" className="owner__avatar" />
+            <img src={owner?.profilepicture} alt="avatar" className="owner__avatar" />
             <h3>
-              Created by: {findOwner?.firstname}
-              {findOwner?.lastname}
+              {owner?.firstname}
+              {owner?.lastname}
             </h3>
             <h3>{product?.price} wETH</h3>
           </div>
-          {producBuy ? (
+          {(owner?._id === currentuser?.profile._id) ? (
+            <button
+              className="bid__button--off"
+              type="button"
+            >
+              Put on sale
+            </button>
+          ) : (producBuy ? (
             <button
               className="bid__button--off"
               type="button"
@@ -99,7 +104,7 @@ const ProductDetails = () => {
             >
               Place a Bid
             </button>
-          )}
+          ))}
         </section>
       </section>
       {isOpen && <Modal setIsOpen={setIsOpen} />}

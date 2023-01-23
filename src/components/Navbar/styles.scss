@@ -148,7 +148,7 @@
       position: relative;
       height: 40px;
       justify-content: space-around;
-      background-color: $main-background;
+      background-color: transparent;
       gap: 20px;
       padding: 0;
       width: auto;
@@ -220,6 +220,7 @@
     .button__search {
       border: none;
       height: 30px;
+      background-color: transparent;
     }
 
     .buttons__container {
