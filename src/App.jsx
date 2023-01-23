@@ -10,7 +10,7 @@ import CreateNFT from './components/CreateNft';
 import Footer from './components/Footer/index';
 import Home from './pages/Home';
 import Details from './pages/Details';
-import MenuNavigator from './components/MenuNavigator/index';
+// import MenuNavigator from './components/MenuNavigator/index';
 import OurCollection from './pages/OurCollection/index';
 import Explore from './pages/Explore';
 import TopNft from './pages/TopNFT/index';
@@ -34,7 +34,7 @@ const App = () => {
   return (
     <div className="App">
       <Navbar />
-      <MenuNavigator nameRoute="home" />
+      {/* <MenuNavigator nameRoute="home" /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/profile" element={<Profile />} />

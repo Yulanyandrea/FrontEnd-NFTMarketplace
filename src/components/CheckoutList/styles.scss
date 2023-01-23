@@ -3,4 +3,11 @@
 
 .list__container {
   color: $wild-Sand;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  .list__totalprice{
+    color: $main-color;
+  }
 }

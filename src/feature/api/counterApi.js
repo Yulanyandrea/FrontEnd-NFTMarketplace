@@ -145,12 +145,36 @@ export async function BuyNft(paymentMethod, total) {
       amount: Math.floor(total * 100),
     }),
   };
-  console.log(payload);
 
   try {
     const response = await fetch(`${API}/payment/`, payload);
     const data = await response.json();
-    console.log('🚀 ~ counterApi ~ buyNft ~ data', data);
+    return data;
+  } catch (error) {
+    // eslint-disable-next-line
+    console.error(error);
+  }
+}
+
+export async function updateOwner(id, ownerId) {
+  const token = localStorage.getItem('token');
+
+  const payload = {
+    method: 'PATCH',
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      owner: ownerId,
+    }),
+  };
+
+  console.log(payload);
+
+  try {
+    const response = await fetch(`${API}/product/${id}`, payload);
+    response.json();
   } catch (error) {
     // eslint-disable-next-line
     console.error(error);

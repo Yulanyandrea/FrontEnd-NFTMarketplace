@@ -1,4 +1,21 @@
+@import '../src/scss/color';
+
 body {
   margin: 0;
   padding: 0;
+  display: block;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-image: url(../public/noise.gif);
+  z-index: -1;
+  background-color: $button-color-hover;
+  opacity: 0.05;
 }

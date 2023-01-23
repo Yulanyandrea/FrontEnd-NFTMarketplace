@@ -67,7 +67,10 @@ const Home = () => {
         </div>
         <ListNft />
       </div>
-      <div className="home-usercard">
+      <div className="home-livebidding">
+        <div className="home-livebidding__title">
+          <h1 className="home-livebidding-title">Top Collection</h1>
+        </div>
         <ListUser />
       </div>
     </main>
