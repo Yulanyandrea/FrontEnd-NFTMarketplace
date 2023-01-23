@@ -7,6 +7,8 @@ import './style.scss';
 const EditImage = () => {
   const API = process.env.REACT_APP_API;
 
+  const background = 'https://source.unsplash.com/random/600x400';
+
   const user = useSelector((state) => state.nftMarketPlace.user?.profile);
 
   const [file, setFile] = useState(null);
@@ -77,7 +79,7 @@ const EditImage = () => {
       <section className="editimage-cover">
         <h3 className="editimage-cover_title">Change your cover photo</h3>
         <div className="editimage-cover_img">
-          <img alt="image_cover" />
+          <img className="editimage-cover_img_bg" alt="image_cover" src={background} />
         </div>
         <button className="editimage-cover_btn" type="button">Upload Cover</button>
       </section>

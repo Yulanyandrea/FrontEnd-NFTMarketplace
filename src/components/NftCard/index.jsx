@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -25,11 +24,11 @@ const NftCard = ({ product = {} }) => {
 
   const idUser = useSelector((state) => state.nftMarketPlace.user?.profile?._id);
   const idNft = product._id;
-  const like = likes.includes(idUser);
+  const like = likes?.includes(idUser);
 
   const dispatch = useDispatch();
 
-  const idFilter = userLike.filter((e) => e !== idUser);
+  const idFilter = userLike?.filter((e) => e !== idUser);
 
   useEffect(() => {
     if (like === false) {
@@ -58,7 +57,7 @@ const NftCard = ({ product = {} }) => {
 
   return (
     <section className="card">
-      <Link to={`/productdetail/${product._id}`} className="card__link" onClick={() => (handleNftData(product))}>
+      <Link to={`/productdetail/${product?._id}`} className="card__link" onClick={() => (handleNftData(product))}>
         <img src={images} alt="NFT" className="card__image" />
       </Link>
       <div className="card__body">
@@ -78,7 +77,7 @@ const NftCard = ({ product = {} }) => {
             <h4 className="nft__price">{price}wETH</h4>
             <div className="card__like">
               <FontAwesomeIcon className="card__like_icon" icon={farHeart} onClick={handleLikes} />
-              <h4 className="card__totalikes">{likes.length}</h4>
+              <h4 className="card__totalikes">{likes?.length}</h4>
             </div>
           </div>
         </div>
