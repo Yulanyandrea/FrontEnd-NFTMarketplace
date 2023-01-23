@@ -16,6 +16,7 @@ const initialState = {
   currentSelect: null,
   currentUserSelect: null,
   total: 0,
+  selectFilter: null,
 };
 
 function createInitialState() {
@@ -69,6 +70,12 @@ export const counterSlice = createSlice({
     addToCart: (state, action) => {
       state.shoppingCart.push({ ...action.payload });
       state.total += action.payload.price;
+    },
+    setNftFilter: (state, action) => {
+      return {
+        ...state,
+        selectFilter: action.payload,
+      };
     },
     resetCart: (state) => {
       state.shoppingCart = [];
@@ -127,7 +134,7 @@ export const counterSlice = createSlice({
 });
 
 export const {
-  setCurrentData, setCurrentUser, addToCart, authentication, resetCart,
+  setCurrentData, setCurrentUser, addToCart, authentication, setNftFilter, resetCart,
 } = counterSlice.actions;
 
 export default counterSlice.reducer;

@@ -101,6 +101,7 @@ const ProductDetails = () => {
               className="bid__button"
               type="button"
               onClick={() => setIsOpen(true)}
+              onClick={() => setIsOpen(true)}
             >
               Place a Bid
             </button>
