@@ -6,15 +6,21 @@
   flex-direction: column;
   align-items: left;
   width: 90%;
-  gap: 10px;
+  gap: 20px;
 }
 
 .checkoutForm__title {
   color: $wild-Sand;
 }
 
+.checkoutForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
 .checkoutForm__button {
-  width: max-content;
+  width: 100px;
   height: 40px;
   padding: 0 20px;
   margin: 10px 3px 0px 3px;

@@ -170,6 +170,8 @@ export async function updateOwner(id, ownerId) {
     }),
   };
 
+  console.log(payload);
+
   try {
     const response = await fetch(`${API}/product/${id}`, payload);
     response.json();

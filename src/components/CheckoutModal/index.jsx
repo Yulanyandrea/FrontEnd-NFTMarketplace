@@ -2,21 +2,28 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import { useDispatch } from 'react-redux';
-import { resetCart } from '../../feature/api/counterSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { resetCart, fetchData, fetchUsers } from '../../feature/api/counterSlice';
 import { updateOwner } from '../../feature/api/counterApi';
 
 import './styles.scss';
 
 // eslint-disable-next-line react/prop-types
 const CheckoutModal = ({ setIsOpen, data }) => {
+  const product = useSelector((state) => state.nftMarketPlace?.shoppingCart);
+  const newOwner = useSelector((state) => state.nftMarketPlace?.user?.profile?._id);
   const { message, payment } = data;
   const dispatch = useDispatch();
+  const dispatchData = () => {
+    dispatch(fetchData());
+    dispatch(fetchUsers());
+    dispatch(resetCart());
+  };
 
   const handleConfirm = () => {
     setIsOpen(false);
-    updateOwner();
-    dispatch(resetCart());
+    product.forEach((element) => updateOwner(element._id, newOwner));
+    dispatchData();
   };
 
   return (

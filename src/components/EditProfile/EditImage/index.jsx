@@ -35,7 +35,6 @@ const EditImage = () => {
     event.preventDefault();
 
     const url = `${API}/upload/file`;
-    const url = `${API}/upload/file`;
 
     const formData = new FormData();
     formData.append('file', file);

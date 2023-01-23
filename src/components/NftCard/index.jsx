@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart as farHeart } from '@fortawesome/free-regular-svg-icons';
 import { LikeNft } from '../../feature/api/counterApi';
 import { fetchData, setCurrentData } from '../../feature/api/counterSlice';
-import avatar from '../../assets/image-avatar.png';
+// import avatar from '../../assets/image-avatar.png';
 
 import './styles.scss';
 
