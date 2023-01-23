@@ -155,3 +155,26 @@ export async function BuyNft(paymentMethod, total) {
     console.error(error);
   }
 }
+
+export async function updateOwner(id, ownerId) {
+  const token = localStorage.getItem('token');
+
+  const payload = {
+    method: 'PATCH',
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      owner: ownerId,
+    }),
+  };
+
+  try {
+    const response = await fetch(`${API}/product/${id}`, payload);
+    response.json();
+  } catch (error) {
+    // eslint-disable-next-line
+    console.error(error);
+  }
+}

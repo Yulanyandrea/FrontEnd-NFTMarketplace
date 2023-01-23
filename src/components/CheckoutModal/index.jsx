@@ -4,6 +4,7 @@
 /* eslint-disable no-unused-vars */
 import { useDispatch } from 'react-redux';
 import { resetCart } from '../../feature/api/counterSlice';
+import { updateOwner } from '../../feature/api/counterApi';
 
 import './styles.scss';
 
@@ -14,6 +15,7 @@ const CheckoutModal = ({ setIsOpen, data }) => {
 
   const handleConfirm = () => {
     setIsOpen(false);
+    updateOwner();
     dispatch(resetCart());
   };
 

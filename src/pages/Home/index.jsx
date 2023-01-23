@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import hero from '../../assets/hero.png';
 import ListNft from '../../components/ListNft';
 import ListUser from '../../components/ListUser';
+import TopSeller from '../../components/TopSeller';
 
 import './style.scss';
 
@@ -69,6 +70,9 @@ const Home = () => {
       </div>
       <div className="home-usercard">
         <ListUser />
+      </div>
+      <div>
+        <TopSeller />
       </div>
     </main>
   );
