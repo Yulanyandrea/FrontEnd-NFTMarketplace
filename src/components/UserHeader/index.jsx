@@ -11,7 +11,6 @@ import './styless.scss';
 
 const UserHeader = () => {
   const user = useSelector((state) => state.nftMarketPlace?.currentUserSelect);
-  // console.log(user.profilepicture);
 
   const background = 'https://source.unsplash.com/random/1440x900';
   const avatar = `https://robohash.org/${user?.firstname}.png`;
